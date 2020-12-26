@@ -8,9 +8,10 @@ export async function getStaticProps() {
   for (const key of context.keys()) {
     const demo = key.slice(2);
     const { meta } = await import(`./${demo}`);
-    if (meta) {
+    if (meta && meta.title) {
+      const { title } = meta;
       demos.push({
-        title: meta.title || "",
+        title: title,
         slug: slugify(title),
       });
     }
