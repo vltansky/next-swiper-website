@@ -1,5 +1,5 @@
 import styles from "./footer.module.css";
-import menuList from "../menulist.js";
+import menuList from "../menu-list";
 
 const menu = [{ name: "Swiper", link: "/" }, ...menuList].map(
   ({ name, link }) => {

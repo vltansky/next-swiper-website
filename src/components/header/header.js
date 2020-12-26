@@ -1,5 +1,5 @@
 import s from "./header.module.css";
-import menuList from "../menulist.js";
+import menuList from "../menu-list";
 
 const menu = menuList.map(({ name, link }) => {
   return (
