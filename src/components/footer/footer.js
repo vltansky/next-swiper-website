@@ -54,15 +54,6 @@ export default function Footer() {
           </a>
         </div>
         <div className="flex justify-center my-4">{sponsors}</div>
-        <div className="text-center">
-          <a
-            className="inline-block"
-            href="https://www.netlify.com"
-            target="_blank"
-          >
-            <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" />
-          </a>
-        </div>
         <nav className="my-2">{menu}</nav>
         <div>
           {new Date().getFullYear()} © Swiper by{" "}
