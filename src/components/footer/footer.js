@@ -1,12 +1,12 @@
-import styles from "./footer.module.css";
 import menuList from "../menu-list";
+import Link from "next/link";
 
 const menu = [{ name: "Swiper", link: "/" }, ...menuList].map(
   ({ name, link }) => {
     return (
-      <a key={link} href={link} className="mr-4">
-        {name}
-      </a>
+      <Link key={link} href={link}>
+        <a className="mr-4">{name}</a>
+      </Link>
     );
   }
 );

@@ -1,11 +1,12 @@
 import s from "./header.module.css";
 import menuList from "../menu-list";
+import Link from "next/link";
 
 const menu = menuList.map(({ name, link }) => {
   return (
-    <a key={link} href={link} className="mr-2">
-      {name}
-    </a>
+    <Link key={link} href={link}>
+      <a className="mr-2">{name}</a>
+    </Link>
   );
 });
 export default function Header() {
