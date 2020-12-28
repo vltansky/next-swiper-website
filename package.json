@@ -28,7 +28,9 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^10.0.4",
     "@sindresorhus/slugify": "^1.1.0",
+    "@svgr/webpack": "^5.5.0",
     "autoprefixer": "^10.1.0",
+    "file-loader": "^6.2.0",
     "front-matter": "^4.0.2",
     "postcss": "^8.2.1",
     "simple-functional-loader": "^1.2.1",

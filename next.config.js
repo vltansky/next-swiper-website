@@ -17,6 +17,23 @@ module.exports = withBundleAnalyzer({
   pageExtensions: ["js", "jsx", "mdx"],
   webpack(config, options) {
     config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: { svgoConfig: { plugins: { removeViewBox: false } } },
+        },
+        {
+          loader: "file-loader",
+          options: {
+            publicPath: "/_next",
+            name: "static/media/[name].[hash].[ext]",
+          },
+        },
+      ],
+    });
+
+    config.module.rules.push({
       test: /\.mdx$/,
       use: [
         options.defaultLoaders.babel,
