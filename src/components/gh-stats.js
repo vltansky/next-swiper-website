@@ -52,11 +52,12 @@ export default function GithubStats() {
       ].map(([value, label]) => (
         <a
           key={label}
-          className="mx-1 text-black text-xs"
+          className="mx-1 text-xs font-medium"
           href="https://github.com/nolimits4web/swiper"
           target="_blank"
         >
-          <span className="text-base font-semibold">{value}</span> {label}
+          <span className="text-base text-black">{value}</span>
+          <span className="text-gray-700"> {label}</span>
         </a>
       ))}
     </div>

@@ -1,5 +1,6 @@
 import menuList from "../menu-list";
 import Link from "next/link";
+import sponsors from "../sponsors";
 
 const menu = [{ name: "Swiper", link: "/" }, ...menuList].map(
   ({ name, link }) => {
@@ -11,21 +12,7 @@ const menu = [{ name: "Swiper", link: "/" }, ...menuList].map(
   }
 );
 
-const sponsors = [
-  {
-    href:
-      "https://codersrank.io/?utm_source=partner&utm_medium=referral&utm_campaign=vladimir",
-    title: "CodersRank - Ultimate Profile for Coders",
-    src: "sponsors/codersrank.svg",
-    width: "200",
-  },
-  {
-    href: "https://leaderboard.tech",
-    title: "Developers Leaderboard",
-    src: "sponsors/developers-leaderboard.svg",
-    width: "300",
-  },
-].map(({ href, title, src, width }) => {
+const sponsorsEl = sponsors.map(({ href, title, src, width }) => {
   return (
     <a
       className="flex justify-center items-center p-4 mx-2 border text-center hover:bg-gray-50"
@@ -53,7 +40,7 @@ export default function Footer() {
             COLOGNE WEBDESIGN
           </a>
         </div>
-        <div className="flex justify-center my-4">{sponsors}</div>
+        <div className="flex justify-center my-4">{sponsorsEl}</div>
         <nav className="my-2">{menu}</nav>
         <div>
           {new Date().getFullYear()} © Swiper by{" "}
