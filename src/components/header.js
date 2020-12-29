@@ -1,5 +1,5 @@
-import menuList from "../menu-list";
-import GithubStats from "../gh-stats";
+import menuList from "./menu-list";
+import GithubStats from "./gh-stats";
 import Link from "next/link";
 import { ReactComponent as Logo } from "@/img/logo.svg";
 
