@@ -56,7 +56,7 @@ const headerSlider = (
     coverflowEffect={{ slideShadows: true }}
     keyboard
     a11y
-    initialSlide={2}
+    // initialSlide={2}
     onSlideChange={(s) => {
       // if (s.activeIndex === $(".swiper-slide-gallery").index()) {
       //   $(s.el).find(".swiper-pagination").hide();
