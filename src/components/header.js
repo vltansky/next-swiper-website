@@ -27,10 +27,10 @@ export default function Header() {
           <div className="text-4xl my-2 font-bold">
             Most Modern Mobile Touch Slider
           </div>
-          <nav className="mb-2 mt-4">
+          <nav className="mb-2 mt-4 space-x-4">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
-                <a className="mr-4 font-medium">{name}</a>
+                <a className="font-medium">{name}</a>
               </Link>
             ))}
           </nav>

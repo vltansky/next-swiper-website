@@ -6,7 +6,7 @@ const menu = [{ name: "Swiper", link: "/" }, ...menuList].map(
   ({ name, link }) => {
     return (
       <Link key={link} href={link}>
-        <a className="mr-4">{name}</a>
+        {name}
       </Link>
     );
   }
@@ -41,7 +41,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="flex justify-center my-4">{sponsorsEl}</div>
-        <nav className="my-2">{menu}</nav>
+        <nav className="my-2 space-x-4">{menu}</nav>
         <div>
           {new Date().getFullYear()} © Swiper by{" "}
           <a href="https://github.com/nolimits4web">Vladimir Kharlampidi</a>
