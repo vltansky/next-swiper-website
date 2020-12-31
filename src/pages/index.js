@@ -11,7 +11,7 @@ import SwiperCore, {
 } from "swiper";
 import { ReactComponent as Logo } from "@/img/logo.svg";
 import menuList from "@/components/menu-list";
-import GithubStats from "@/components/gh-stats";
+import GithubStats from "@/components/GithubStats";
 import Link from "next/link";
 
 SwiperCore.use([
@@ -30,7 +30,7 @@ import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/a11y/a11y.min.css";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
 import "swiper/components/thumbs/thumbs.min.css";
-import Carbon from "@/components/carbon";
+import Carbon from "@/components/Carbon";
 
 export function SlideCenter({ children, className, bgColor = "white" }) {
   return (
@@ -45,7 +45,7 @@ export function SlideCenter({ children, className, bgColor = "white" }) {
   );
 }
 
-const headerSlider = () => {
+const HeaderSlider = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [firstSwiper, setFirstSwiper] = useState(null);
   const [secondSwiper, setSecondSwiper] = useState(null);
@@ -315,7 +315,7 @@ export function HomeHeading({ children }) {
 export default function Home() {
   return (
     <>
-      {headerSlider()}
+      {HeaderSlider()}
       <div className="bg-primary h-36 mb-20">
         <Carbon />
       </div>

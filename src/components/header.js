@@ -1,8 +1,8 @@
 import menuList from "./menu-list";
-import GithubStats from "./gh-stats";
+import GithubStats from "./GithubStats";
 import Link from "next/link";
 import { ReactComponent as Logo } from "@/img/logo.svg";
-import Carbon from "./carbon";
+import Carbon from "./Carbon";
 
 export default function Header() {
   return (

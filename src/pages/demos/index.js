@@ -1,5 +1,5 @@
 import slugify from "@sindresorhus/slugify";
-import { Heading } from "@/components/heading";
+import { Heading } from "@/components/Heading";
 import { WithSidebarLayout } from "@/layouts/withSidebar";
 
 export async function getStaticProps() {
