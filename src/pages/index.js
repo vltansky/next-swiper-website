@@ -167,10 +167,12 @@ const headerSlider = () => {
           >
             {Array.from({ length: 5 }).map((el, index) => (
               <SwiperSlide
+                key={index}
                 data-background={`images/demos/images/nature-${index}.jpg`}
                 className="swiper-lazy"
               >
-                <div class="swiper-lazy-preloader"></div>
+                <div className="swiper-lazy-preloader"></div>
+                ts
               </SwiperSlide>
             ))}
           </Swiper>

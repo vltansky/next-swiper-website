@@ -115,4 +115,14 @@ module.exports = withBundleAnalyzer({
 
     return config;
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/api",
+        destination: "/swiper-api",
+        permanent: true,
+      },
+    ];
+  },
 });

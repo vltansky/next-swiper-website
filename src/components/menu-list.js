@@ -1,30 +1,30 @@
 export default [
   {
     name: "Get Started",
-    link: "get-started",
+    link: "/get-started",
   },
   {
     name: "API",
-    link: "swiper-api",
+    link: "/swiper-api",
   },
   {
     name: "Demos",
-    link: "demos",
+    link: "/demos",
   },
   {
     name: "React",
-    link: "react",
+    link: "/react",
   },
   {
     name: "Svelte",
-    link: "svelte",
+    link: "/svelte",
   },
   {
     name: "Vue.js",
-    link: "vue",
+    link: "/vue",
   },
   {
     name: "Angular",
-    link: "angular",
+    link: "/angular",
   },
 ];
