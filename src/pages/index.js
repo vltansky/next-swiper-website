@@ -30,6 +30,7 @@ import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/a11y/a11y.min.css";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
 import "swiper/components/thumbs/thumbs.min.css";
+import Carbon from "@/components/carbon";
 
 export function SlideCenter({ children, className, bgColor = "white" }) {
   return (
@@ -315,7 +316,9 @@ export default function Home() {
   return (
     <>
       {headerSlider()}
-      <div className="bg-primary h-36 mb-20">AD</div>
+      <div className="bg-primary h-36 mb-20">
+        <Carbon />
+      </div>
       <div className="mx-auto max-w-6xl text-lg">
         <div className="flex flex-col space-y-5">
           <h1 className="text-5xl font-bold mb-6">Swiper</h1>
