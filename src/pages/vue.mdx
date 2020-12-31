@@ -186,7 +186,7 @@ SCSS styles are also separate styles for core version and components:
 - `components/thumbs/thumbs.scss` - styles required for Thumbs component
 - `components/zoom/zoom.scss` - styles required for Zoom component
 
-## props
+## Swiper props
 
 `Swiper` Vue.js component receive all <a href="/api/#parameters">Swiper parameters</a> as component props, plus some extra props:
 
@@ -195,7 +195,7 @@ SCSS styles are also separate styles for core version and components:
 | `tag`        | `string` | `'div'` | Main Swiper container HTML element tag |
 | `wrapperTag` | `string` | `'div'` | Swiper wrapper HTML element tag        |
 
-## events
+## Swiper events
 
 Swiper component supports all <a href="/api/#events">Swiper events</a>, including additional `swiper` event that returns swiper instance as soon as posible. For example:
 
@@ -203,7 +203,7 @@ Swiper component supports all <a href="/api/#events">Swiper events</a>, includin
 <swiper @swiper="..." @slideChange="..." @reachEnd="..." ...></swiper>
 ```
 
-## props
+## SwiperSlide props
 
 | Prop           | Type      | Default  | Description                                                      |
 | -------------- | --------- | -------- | ---------------------------------------------------------------- |
@@ -211,7 +211,7 @@ Swiper component supports all <a href="/api/#events">Swiper events</a>, includin
 | `zoom`         | `boolean` | `false`  | Enables additional wrapper required for zoom mode                |
 | `virtualIndex` | `number`  | `'span'` | Actual swiper slide index. Required to be set for virtual slides |
 
-## props
+## SwiperSlide props
 
 `SwiperSlide` component has the following slot props:
 
