@@ -1,4 +1,4 @@
-import { WithSidebarLayout } from "../layouts/withSidebar";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
   Navigation,
@@ -44,120 +44,161 @@ export function SlideCenter({ children, className, bgColor = "white" }) {
   );
 }
 
-const headerSlider = (
-  <Swiper
-    navigation
-    pagination
-    slidesPerView="auto"
-    centeredSlides
-    spaceBetween={100}
-    effect="coverflow"
-    speed={600}
-    coverflowEffect={{ slideShadows: true }}
-    keyboard
-    a11y
-    // initialSlide={2}
-    onSlideChange={(s) => {
-      // if (s.activeIndex === $(".swiper-slide-gallery").index()) {
-      //   $(s.el).find(".swiper-pagination").hide();
-      // } else {
-      //   $(s.el).find(".swiper-pagination").show();
-      // }
-    }}
-  >
-    <SwiperSlide>
-      <SlideCenter>
-        <div className="inline-flex">
-          <Logo
-            className="swiper_logo rounded-full flex-shrink-0"
-            width="180"
-            height="180"
-            alt="Swiper"
-          />
+const headerSlider = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [firstSwiper, setFirstSwiper] = useState(null);
+  const [secondSwiper, setSecondSwiper] = useState(null);
+  return (
+    <Swiper
+      navigation
+      pagination
+      slidesPerView="auto"
+      centeredSlides
+      spaceBetween={100}
+      effect="coverflow"
+      speed={600}
+      coverflowEffect={{ slideShadows: true }}
+      keyboard
+      a11y
+      // initialSlide={2}
+      onSlideChange={(s) => {
+        // if (s.activeIndex === $(".swiper-slide-gallery").index()) {
+        //   $(s.el).find(".swiper-pagination").hide();
+        // } else {
+        //   $(s.el).find(".swiper-pagination").show();
+        // }
+      }}
+    >
+      <SwiperSlide>
+        <SlideCenter>
+          <div className="inline-flex">
+            <Logo
+              className="swiper_logo rounded-full flex-shrink-0"
+              width="180"
+              height="180"
+              alt="Swiper"
+            />
 
-          <div className="ml-10">
-            <div className="text-6xl font-bold text-primary">Swiper</div>
-            <div className="text-5xl my-2 font-bold">
-              The Most Modern Mobile Touch Slider
+            <div className="ml-10">
+              <div className="text-6xl font-bold text-primary">Swiper</div>
+              <div className="text-5xl my-2 font-bold">
+                The Most Modern Mobile Touch Slider
+              </div>
+              <nav className="mb-2 mt-12 space-x-4 font-medium">
+                {menuList.map(({ name, link }) => (
+                  <Link key={link} href={link}>
+                    <a>{name}</a>
+                  </Link>
+                ))}
+              </nav>
+              <div className="text-gray-700 mb-5 mt-3">
+                MIT Licensed, v6.4.5 released on December 18, 2020 |
+                <span> </span>
+                <a
+                  href="https://github.com/nolimits4web/swiper/blob/master/CHANGELOG.md"
+                  target="_blank"
+                >
+                  Changelog
+                </a>{" "}
+                !TODO!
+              </div>
+              <GithubStats />
             </div>
-            <nav className="mb-2 mt-12 space-x-4 font-medium">
-              {menuList.map(({ name, link }) => (
-                <Link key={link} href={link}>
-                  <a>{name}</a>
-                </Link>
-              ))}
-            </nav>
-            <div className="text-gray-700 mb-5 mt-3">
-              MIT Licensed, v6.4.5 released on December 18, 2020 |<span> </span>
-              <a
-                href="https://github.com/nolimits4web/swiper/blob/master/CHANGELOG.md"
-                target="_blank"
-              >
-                Changelog
-              </a>{" "}
-              !TODO!
-            </div>
-            <GithubStats />
           </div>
-        </div>
-      </SlideCenter>
-    </SwiperSlide>
-    <SwiperSlide>
-      <SlideCenter>
-        <span className="text-5xl font-bold mb-16">Top Notch Features</span>
-        <ul className="flex flex-wrap text-lg text-black font-medium">
-          {[
-            "Library Agnostic",
-            "Mutation Observer",
-            "Flexbox Layout",
-            "Full True RTL Support",
-            "Multi Row Slides Layout",
-            "3D Effects",
-            "Two-wayControl",
-            "Full Navigation Control",
-            "Rich API",
-            "Most FlexibleSlides Layout Grid",
-            "Parallax Transitions",
-            "Images Lazy Loading",
-            "Virtual Slides",
-            "And many more ...",
-          ].map((text, index) => (
-            <li key={index} className="w-1/2 flex items-center my-1">
-              <svg
-                className="text-primary mr-2"
-                width="20"
-                height="20"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
+        </SlideCenter>
+      </SwiperSlide>
+      <SwiperSlide>
+        <SlideCenter>
+          <span className="text-5xl font-bold mb-16">Top Notch Features</span>
+          <ul className="flex flex-wrap text-lg text-black font-medium">
+            {[
+              "Library Agnostic",
+              "Mutation Observer",
+              "Flexbox Layout",
+              "Full True RTL Support",
+              "Multi Row Slides Layout",
+              "3D Effects",
+              "Two-wayControl",
+              "Full Navigation Control",
+              "Rich API",
+              "Most FlexibleSlides Layout Grid",
+              "Parallax Transitions",
+              "Images Lazy Loading",
+              "Virtual Slides",
+              "And many more ...",
+            ].map((text, index) => (
+              <li key={index} className="w-1/2 flex items-center my-1">
+                <svg
+                  className="text-primary mr-2"
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                {text}
+              </li>
+            ))}
+            <li></li>
+          </ul>
+        </SlideCenter>
+      </SwiperSlide>
+      <SwiperSlide>
+        <SlideCenter bgColor="black" className="text-white">
+          <span className="text-5xl font-bold">
+            Build Complex Touch Galleries
+          </span>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={10}
+            thumbs={{ swiper: thumbsSwiper }}
+            // onSwiper={setFirstSwiper}
+            // controller={{ control: secondSwiper }}
+            nested
+            resistanceRatio={0}
+            preloadImages={false}
+            lazy
+          >
+            {Array.from({ length: 5 }).map((el, index) => (
+              <SwiperSlide
+                data-background={`images/demos/images/nature-${index}.jpg`}
+                className="swiper-lazy"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              {text}
-            </li>
-          ))}
-          <li></li>
-        </ul>
-      </SlideCenter>
-    </SwiperSlide>
-    <SwiperSlide>
-      <SlideCenter bgColor="black" className="text-white">
-        <span className="text-5xl font-bold">
-          Build Complex Touch Galleries
-        </span>
-      </SlideCenter>
-    </SwiperSlide>
-    <SwiperSlide>
-      <SlideCenter className="items-center">
-        <span className="text-5xl font-bold">Start Using It Now</span>
-      </SlideCenter>
-    </SwiperSlide>
-  </Swiper>
-);
+                <div class="swiper-lazy-preloader"></div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <Swiper
+            slidesPerView={5}
+            onSwiper={setThumbsSwiper}
+            // onSwiper={setSecondSwiper}
+            // controller={{ control: firstSwiper }}
+            spaceBetween={10}
+            centeredSlides
+            touchRatio={0.2}
+            slideToClickedSlide
+            nested
+            resistanceRatio={0}
+          >
+            <SwiperSlide></SwiperSlide>
+          </Swiper>
+        </SlideCenter>
+      </SwiperSlide>
+      <SwiperSlide>
+        <SlideCenter className="items-center">
+          <span className="text-5xl font-bold">Start Using It Now</span>
+        </SlideCenter>
+      </SwiperSlide>
+    </Swiper>
+  );
+};
 
 const feats = [
   {
@@ -271,7 +312,7 @@ export function HomeHeading({ children }) {
 export default function Home() {
   return (
     <>
-      {headerSlider}
+      {headerSlider()}
       <div className="bg-primary h-36 mb-20">AD</div>
       <div className="mx-auto max-w-6xl text-lg">
         <div className="flex flex-col space-y-5">
