@@ -31,11 +31,11 @@ import "swiper/components/a11y/a11y.min.css";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
 import "swiper/components/thumbs/thumbs.min.css";
 
-export function SlideCenter({ children, className }) {
+export function SlideCenter({ children, className, bgColor = "white" }) {
   return (
-    <div className={`bg-white ${className}`}>
+    <div className={`bg-${bgColor}`}>
       <div
-        className="mx-auto max-w-4xl flex justify-center flex-col"
+        className={`mx-auto max-w-4xl flex justify-center flex-col ${className}`}
         style={{ height: 500 }}
       >
         {children}
@@ -145,9 +145,17 @@ const headerSlider = (
       </SlideCenter>
     </SwiperSlide>
     <SwiperSlide>
-      <SlideCenter className="bg-black"></SlideCenter>
+      <SlideCenter bgColor="black" className="text-white">
+        <span className="text-5xl font-bold">
+          Build Complex Touch Galleries
+        </span>
+      </SlideCenter>
     </SwiperSlide>
-    <SwiperSlide>Slide 4</SwiperSlide>
+    <SwiperSlide>
+      <SlideCenter className="items-center">
+        <span className="text-5xl font-bold">Start Using It Now</span>
+      </SlideCenter>
+    </SwiperSlide>
   </Swiper>
 );
 
@@ -264,7 +272,7 @@ export default function Home() {
   return (
     <>
       {headerSlider}
-      <div className="bg-primary h-36 mb-20 mt-5">AD</div>
+      <div className="bg-primary h-36 mb-20">AD</div>
       <div className="mx-auto max-w-6xl text-lg">
         <div className="flex flex-col space-y-5">
           <h1 className="text-5xl font-bold mb-6">Swiper</h1>
