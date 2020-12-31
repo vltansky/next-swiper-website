@@ -2,6 +2,7 @@ import menuList from "./menu-list";
 import GithubStats from "./gh-stats";
 import Link from "next/link";
 import { ReactComponent as Logo } from "@/img/logo.svg";
+import Carbon from "./carbon";
 
 export default function Header() {
   return (
@@ -36,14 +37,7 @@ export default function Header() {
           </nav>
           <GithubStats />
         </div>
-        {/* <div className="carbon">
-          <script
-            async
-            type="text/javascript"
-            src="//cdn.carbonads.com/carbon.js?serve=CKYIE5QE&placement=swiperjscom"
-            id="_carbonads_js"
-          ></script>
-        </div> */}
+        <Carbon />
       </div>
     </header>
   );
