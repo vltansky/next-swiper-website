@@ -19,7 +19,7 @@ export default function TableOfContents({ tableOfContents, currentSection }) {
           </a>
         ))}
       </div>
-      <ul className="overflow-x-hidden text-gray-500 font-medium">
+      <ul className="overflow-x-hidden text-gray-500">
         {tableOfContents.map((section) => {
           let sectionIsActive =
             currentSection === section.slug ||
@@ -49,7 +49,7 @@ export default function TableOfContents({ tableOfContents, currentSection }) {
                     <a
                       href={`#${subsection.slug}`}
                       className={clsx(
-                        "block py-1 transition-colors duration-200 text-gray-900 hover:text-primary font-medium",
+                        "block py-1 transition-colors duration-200 text-gray-900 hover:text-primary",
                         {
                           "text-primary": subsectionIsActive,
                         }
