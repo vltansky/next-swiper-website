@@ -359,7 +359,7 @@ export default function Home() {
           <HomeHeading>Used By Thousands</HomeHeading>
           <div className="grid grid-cols-5 gap-x-6 gap-y-8">
             {logos.map(({ src, title }) => (
-              <div>
+              <div key={title}>
                 <img src={src} alt={title} title={title} />
               </div>
             ))}
