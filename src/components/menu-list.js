@@ -5,7 +5,7 @@ export default [
   },
   {
     name: "API",
-    link: "api",
+    link: "swiper-api",
   },
   {
     name: "Demos",
