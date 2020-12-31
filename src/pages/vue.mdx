@@ -189,24 +189,11 @@ SCSS styles are also separate styles for core version and components:
 ## props
 
 `Swiper` Vue.js component receive all <a href="/api/#parameters">Swiper parameters</a> as component props, plus some extra props:
-table.params-table
-thead
-tr
-th Prop
-th Type
-th Default
-th Description
-tbody
-tr
-td tag
-td string
-td 'div'
-td Main Swiper container HTML element tag
-tr
-td wrapperTag
-td string
-td 'div'
-td Swiper wrapper HTML element tag
+
+| Prop         | Type     | Default | Description                            |
+| ------------ | -------- | ------- | -------------------------------------- |
+| `tag`        | `string` | `'div'` | Main Swiper container HTML element tag |
+| `wrapperTag` | `string` | `'div'` | Swiper wrapper HTML element tag        |
 
 ## events
 
@@ -218,29 +205,11 @@ Swiper component supports all <a href="/api/#events">Swiper events</a>, includin
 
 ## props
 
-table.params-table
-thead
-tr
-th Prop
-th Type
-th Default
-th Description
-tbody
-tr
-td tag
-td string
-td 'div'
-td Swiper Slide HTML element tag
-tr
-td zoom
-td boolean
-td false
-td Enables additional wrapper required for zoom mode
-tr
-td virtualIndex
-td number
-td
-td Actual swiper slide index. Required to be set for virtual slides
+| Prop           | Type      | Default  | Description                                                      |
+| -------------- | --------- | -------- | ---------------------------------------------------------------- |
+| `tag`          | `string`  | `'div'`  | Swiper Slide HTML element tag                                    |
+| `zoom`         | `boolean` | `false`  | Enables additional wrapper required for zoom mode                |
+| `virtualIndex` | `number`  | `'span'` | Actual swiper slide index. Required to be set for virtual slides |
 
 ## props
 
