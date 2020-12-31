@@ -316,7 +316,7 @@ export default function Home() {
   return (
     <>
       {HeaderSlider()}
-      <div className="bg-primary h-36 mb-20">
+      <div className="flex justify-center items-center bg-primary py-10 mb-20">
         <Carbon />
       </div>
       <div className="mx-auto max-w-6xl text-lg">

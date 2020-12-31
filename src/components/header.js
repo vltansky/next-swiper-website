@@ -37,7 +37,9 @@ export default function Header() {
           </nav>
           <GithubStats />
         </div>
-        <Carbon />
+        <div>
+          <Carbon />
+        </div>
       </div>
     </header>
   );
