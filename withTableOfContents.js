@@ -15,7 +15,7 @@ const addExport = function addExport(tree, name, value) {
 };
 module.exports.withTableOfContents = () => {
   return (tree) => {
-    const component = addImport(tree, "@/components/heading", "Heading");
+    const component = addImport(tree, "@/components/Heading", "Heading");
     const contents = [];
 
     for (let i = 0; i < tree.children.length; i++) {
