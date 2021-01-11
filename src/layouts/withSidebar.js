@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext, useCallback } from "react";
-import { PageHeader } from "@/components/PageHeader";
+import PageHeader from "@/components/PageHeader";
 import TableOfContents from "@/components/TableOfContents";
 
 export const ContentsContext = createContext();
