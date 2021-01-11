@@ -2,9 +2,9 @@ const slugify = require("@sindresorhus/slugify");
 const addImport = function addImport(tree, mod, name) {
   tree.children.unshift({
     type: "import",
-    value: `import { ${name} as _${name} } from '${mod}'`,
+    value: `import ${name} from '${mod}'`,
   });
-  return `_${name}`;
+  return `${name}`;
 };
 
 const addExport = function addExport(tree, name, value) {
@@ -15,7 +15,7 @@ const addExport = function addExport(tree, name, value) {
 };
 module.exports.withTableOfContents = () => {
   return (tree) => {
-    const component = addImport(tree, "@/components/heading", "Heading");
+    const component = addImport(tree, "@/components/Heading", "Heading");
     const contents = [];
 
     for (let i = 0; i < tree.children.length; i++) {

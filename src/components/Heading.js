@@ -16,7 +16,7 @@ const useTop = (ref) => {
   return top;
 };
 
-export function Heading({
+export default function Heading({
   level,
   id,
   children,

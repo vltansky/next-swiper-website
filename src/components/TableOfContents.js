@@ -1,4 +1,4 @@
-import sponsors from "./sponsors";
+import sponsors from "../shared/sponsors";
 import clsx from "clsx";
 import { Fragment } from "react";
 

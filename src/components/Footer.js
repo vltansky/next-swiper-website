@@ -1,6 +1,6 @@
-import menuList from "./menu-list";
+import menuList from "../shared/menu-list";
 import Link from "next/link";
-import sponsors from "./sponsors";
+import sponsors from "../shared/sponsors";
 
 const menu = [{ name: "Swiper", link: "/" }, ...menuList].map(
   ({ name, link }) => {
