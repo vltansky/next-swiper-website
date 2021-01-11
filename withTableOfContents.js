@@ -2,9 +2,9 @@ const slugify = require("@sindresorhus/slugify");
 const addImport = function addImport(tree, mod, name) {
   tree.children.unshift({
     type: "import",
-    value: `import { ${name} as _${name} } from '${mod}'`,
+    value: `import ${name} from '${mod}'`,
   });
-  return `_${name}`;
+  return `${name}`;
 };
 
 const addExport = function addExport(tree, name, value) {
