@@ -1,4 +1,4 @@
-import menuList from "./menu-list";
+import menuList from "../shared/menu-list";
 import GithubStats from "./GithubStats";
 import Link from "next/link";
 import { ReactComponent as Logo } from "@/img/logo.svg";
