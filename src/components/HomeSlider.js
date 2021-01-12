@@ -130,17 +130,17 @@ export default function HomeSlider() {
 
               <div className="ml-10">
                 <div className="text-6xl font-bold text-primary">Swiper</div>
-                <div className="text-5xl my-2 font-bold">
+                <div className="text-5xl my-2 font-bold text-black leading-tight">
                   The Most Modern Mobile Touch Slider
                 </div>
-                <nav className="mb-2 mt-12 space-x-4 font-medium">
+                <nav className="mt-12 space-x-4 font-medium">
                   {menuList.map(({ name, link }) => (
                     <Link key={link} href={link}>
                       <a>{name}</a>
                     </Link>
                   ))}
                 </nav>
-                <div className="text-gray-700 mb-5 mt-3">
+                <div className="text-gray-700 text-sm my-5">
                   MIT Licensed, v6.4.5 released on December 18, 2020 |
                   <span> </span>
                   <a
@@ -148,8 +148,7 @@ export default function HomeSlider() {
                     target="_blank"
                   >
                     Changelog
-                  </a>{" "}
-                  !TODO!
+                  </a>
                 </div>
                 <GithubStats />
               </div>
