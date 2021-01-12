@@ -28,7 +28,7 @@ import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/a11y/a11y.min.css";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
-import "swiper/components/thumbs/thumbs.min.css";
+import "swiper/components/lazy/lazy.min.css";
 
 function SlideCenter({ children, className, bgColor = "white" }) {
   return (
@@ -199,12 +199,12 @@ export default function HomeSlider() {
           </SlideCenter>
         </div>
         <div className="swiper-slide swiper-slide-gallery">
-          <SlideCenter bgColor="black" className="text-white">
-            <span className="text-5xl font-bold">
+          <SlideCenter bgColor="gray-900" className="text-white pt-10">
+            <span className="text-5xl font-bold mb-8">
               Build Complex Touch Galleries
             </span>
             <div
-              className="swiper-container swiper-gallery-top"
+              className="swiper-container swiper-gallery-top rounded-lg shadow-md"
               style={{ height: "64%", width: "100%" }}
             >
               <div className="swiper-wrapper">
@@ -212,7 +212,7 @@ export default function HomeSlider() {
                   <div
                     key={index}
                     data-background={`images/demos/nature-${index + 1}.jpg`}
-                    className="swiper-slide swiper-lazy"
+                    className="swiper-slide swiper-lazy bg-cover bg-center"
                   >
                     <div className="swiper-lazy-preloader"></div>
                   </div>
@@ -220,7 +220,7 @@ export default function HomeSlider() {
               </div>
             </div>
             <div
-              className="swiper-container swiper-gallery-thumbs"
+              className="swiper-container swiper-gallery-thumbs my-2"
               style={{ height: "20%", width: "100%" }}
             >
               <div className="swiper-wrapper">
@@ -232,7 +232,7 @@ export default function HomeSlider() {
                         index + 1
                       }.jpg)`,
                     }}
-                    className="swiper-slide"
+                    className="swiper-slide rounded-md shadow bg-cover bg-center"
                   />
                 ))}
               </div>
