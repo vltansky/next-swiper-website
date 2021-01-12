@@ -5,10 +5,10 @@ export default function TableOfContents({ tableOfContents, currentSection }) {
   return (
     <ul className="overflow-x-hidden text-gray-500">
       {tableOfContents.map((section) => {
-        let sectionIsActive =
-          currentSection === section.slug ||
+        let sectionIsActive = currentSection === section.slug;
+        let childSectionIsActive =
           section.children.findIndex(({ slug }) => slug === currentSection) >
-            -1;
+          -1;
 
         return (
           <Fragment key={section.slug}>
@@ -16,9 +16,11 @@ export default function TableOfContents({ tableOfContents, currentSection }) {
               <a
                 href={`#${section.slug}`}
                 className={clsx(
-                  "block py-1 transition-colors duration-200 text-gray-900 hover:text-primary font-medium",
+                  "block py-1 px-2 transition-colors duration-100 text-gray-900 hover:text-primary hover:no-underline font-medium hover:bg-primary hover:bg-opacity-10 rounded",
                   {
-                    "text-primary": sectionIsActive,
+                    "text-primary": sectionIsActive || childSectionIsActive,
+                    "bg-primary": sectionIsActive,
+                    "bg-opacity-10": sectionIsActive,
                   }
                 )}
               >
@@ -33,9 +35,11 @@ export default function TableOfContents({ tableOfContents, currentSection }) {
                   <a
                     href={`#${subsection.slug}`}
                     className={clsx(
-                      "block py-1 transition-colors duration-200 text-gray-900 hover:text-primary",
+                      "block py-1 px-2 transition-colors duration-100 text-gray-900 hover:text-primary hover:no-underline hover:bg-primary hover:bg-opacity-10 rounded",
                       {
                         "text-primary": subsectionIsActive,
+                        "bg-primary": subsectionIsActive,
+                        "bg-opacity-10": subsectionIsActive,
                       }
                     )}
                   >
