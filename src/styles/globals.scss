@@ -24,6 +24,13 @@ body {
     Arial, sans-serif;
   color: #333;
 }
+.prose {
+  font-family: -apple-system, system-ui, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  h1 {
+    font-weight: bold;
+  }
+}
 
 body .prose code:before,
 body .prose code:after {
@@ -52,7 +59,7 @@ body .prose pre code {
 
 .carbon {
   float: right;
-  width: 300px;
+  width: 322px;
   font-size: 13px;
   line-height: 1.4;
   color: #fff;

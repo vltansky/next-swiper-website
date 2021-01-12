@@ -9,7 +9,6 @@ function getLocalStats() {
 }
 
 async function fetchGitStats(local) {
-  console.log(local);
   if (local) {
     return getLocalStats();
   }
@@ -52,12 +51,12 @@ export default function GithubStats() {
       ].map(([value, label]) => (
         <a
           key={label}
-          className="mx-1 text-xs font-medium"
+          className="mx-1 text-xs text-gray-700 hover:text-primary hover:no-underline"
           href="https://github.com/nolimits4web/swiper"
           target="_blank"
         >
-          <span className="text-base text-black">{value}</span>
-          <span className="text-gray-700"> {label}</span>
+          <span className="text-base font-medium">{value}</span>{" "}
+          <span>{label}</span>
         </a>
       ))}
     </div>

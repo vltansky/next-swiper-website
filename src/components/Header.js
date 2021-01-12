@@ -7,13 +7,13 @@ import Carbon from "./Carbon";
 export default function Header() {
   return (
     <header className="bg-white border-b-8 py-6 border-primary">
-      <div className="max-w-5xl mx-auto flex">
+      <div className="max-w-6xl mx-auto flex">
         <Link href="/">
           <a className="flex-shrink-0">
             <Logo
               className="swiper_logo rounded-full"
-              width="134"
-              height="134"
+              width="150"
+              height="150"
               alt="Swiper"
             />
           </a>
@@ -25,7 +25,7 @@ export default function Header() {
               v6.4.5
             </span>
           </div>
-          <div className="text-4xl my-2 font-bold">
+          <div className="text-3xl my-2 font-bold">
             Most Modern Mobile Touch Slider
           </div>
           <nav className="mb-2 mt-4 space-x-4">
@@ -37,7 +37,7 @@ export default function Header() {
           </nav>
           <GithubStats />
         </div>
-        <div>
+        <div className="ml-auto self-center">
           <Carbon />
         </div>
       </div>
