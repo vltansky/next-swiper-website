@@ -40,9 +40,17 @@ export default function Footer() {
             COLOGNE WEBDESIGN
           </a>
         </div>
-        <div className="flex justify-center my-4">{sponsorsEl}</div>
-        <nav className="my-2 space-x-4">{menu}</nav>
-        <div>
+        <div className="grid grid-cols-3 my-4">{sponsorsEl}</div>
+        <div className="text-center my-4">
+          <a href="https://www.netlify.com" target="_blank">
+            <img
+              className="inline"
+              src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg"
+            />
+          </a>
+        </div>
+        <nav className="my-4 space-x-4">{menu}</nav>
+        <div className="text-gray-700">
           {new Date().getFullYear()} © Swiper by{" "}
           <a href="https://github.com/nolimits4web">Vladimir Kharlampidi</a>
         </div>

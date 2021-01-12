@@ -28,7 +28,7 @@ import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "swiper/components/a11y/a11y.min.css";
 import "swiper/components/effect-coverflow/effect-coverflow.min.css";
-import "swiper/components/thumbs/thumbs.min.css";
+import "swiper/components/lazy/lazy.min.css";
 
 function SlideCenter({ children, className, bgColor = "white" }) {
   return (
@@ -130,26 +130,25 @@ export default function HomeSlider() {
 
               <div className="ml-10">
                 <div className="text-6xl font-bold text-primary">Swiper</div>
-                <div className="text-5xl my-2 font-bold">
+                <div className="text-5xl my-2 font-bold text-black leading-tight">
                   The Most Modern Mobile Touch Slider
                 </div>
-                <nav className="mb-2 mt-12 space-x-4 font-medium">
+                <nav className="mt-12 space-x-4 font-medium">
                   {menuList.map(({ name, link }) => (
                     <Link key={link} href={link}>
                       <a>{name}</a>
                     </Link>
                   ))}
                 </nav>
-                <div className="text-gray-700 mb-5 mt-3">
-                  MIT Licensed, v6.4.5 released on December 18, 2020 |
-                  <span> </span>
+                <div className="text-gray-700 text-sm my-5">
+                  MIT Licensed, v{process.env.swiperReleaseVersion} released on{" "}
+                  {process.env.swiperReleaseDate} |<span> </span>
                   <a
                     href="https://github.com/nolimits4web/swiper/blob/master/CHANGELOG.md"
                     target="_blank"
                   >
                     Changelog
-                  </a>{" "}
-                  !TODO!
+                  </a>
                 </div>
                 <GithubStats />
               </div>
@@ -199,12 +198,12 @@ export default function HomeSlider() {
           </SlideCenter>
         </div>
         <div className="swiper-slide swiper-slide-gallery">
-          <SlideCenter bgColor="black" className="text-white">
-            <span className="text-5xl font-bold">
+          <SlideCenter bgColor="gray-900" className="text-white pt-10">
+            <span className="text-5xl font-bold mb-8">
               Build Complex Touch Galleries
             </span>
             <div
-              className="swiper-container swiper-gallery-top"
+              className="swiper-container swiper-gallery-top rounded-lg shadow-md"
               style={{ height: "64%", width: "100%" }}
             >
               <div className="swiper-wrapper">
@@ -212,7 +211,7 @@ export default function HomeSlider() {
                   <div
                     key={index}
                     data-background={`images/demos/nature-${index + 1}.jpg`}
-                    className="swiper-slide swiper-lazy"
+                    className="swiper-slide swiper-lazy bg-cover bg-center"
                   >
                     <div className="swiper-lazy-preloader"></div>
                   </div>
@@ -220,7 +219,7 @@ export default function HomeSlider() {
               </div>
             </div>
             <div
-              className="swiper-container swiper-gallery-thumbs"
+              className="swiper-container swiper-gallery-thumbs my-2"
               style={{ height: "20%", width: "100%" }}
             >
               <div className="swiper-wrapper">
@@ -232,7 +231,7 @@ export default function HomeSlider() {
                         index + 1
                       }.jpg)`,
                     }}
-                    className="swiper-slide"
+                    className="swiper-slide rounded-md shadow bg-cover bg-center"
                   />
                 ))}
               </div>

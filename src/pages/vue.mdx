@@ -60,6 +60,7 @@ Swiper Vue.js plugin is available only via NPM as a part of the main Swiper libr
   <a href="/api/#custom-build">other components</a>, you have to install them
   first.
 </div>
+
 Here is the list of additional modules imports:
 
 - <code>Virtual</code> - Virtual Slides module
@@ -136,7 +137,8 @@ Here is the list of additional modules imports:
 <div className="important-note">
   Note, Swiper Vue.js component will create required elements for Navigation,
   Pagination and Scrollbar if you pass these params without specifying its
-  elements (e.g. without `navigation.nextEl`, `pagination.el`, etc.)
+  elements (e.g. without <code>navigation.nextEl</code>,{" "}
+  <code>pagination.el</code>, etc.)
 </div>
 
 ## Styles
@@ -205,13 +207,13 @@ Swiper component supports all <a href="/api/#events">Swiper events</a>, includin
 
 ## SwiperSlide props
 
-| Prop           | Type      | Default  | Description                                                      |
-| -------------- | --------- | -------- | ---------------------------------------------------------------- |
-| `tag`          | `string`  | `'div'`  | Swiper Slide HTML element tag                                    |
-| `zoom`         | `boolean` | `false`  | Enables additional wrapper required for zoom mode                |
-| `virtualIndex` | `number`  | `'span'` | Actual swiper slide index. Required to be set for virtual slides |
+| Prop           | Type      | Default | Description                                                      |
+| -------------- | --------- | ------- | ---------------------------------------------------------------- |
+| `tag`          | `string`  | `'div'` | Swiper Slide HTML element tag                                    |
+| `zoom`         | `boolean` | `false` | Enables additional wrapper required for zoom mode                |
+| `virtualIndex` | `number`  |         | Actual swiper slide index. Required to be set for virtual slides |
 
-## SwiperSlide props
+## SwiperSlide slot props
 
 `SwiperSlide` component has the following slot props:
 
