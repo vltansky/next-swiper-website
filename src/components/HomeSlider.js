@@ -141,8 +141,8 @@ export default function HomeSlider() {
                   ))}
                 </nav>
                 <div className="text-gray-700 text-sm my-5">
-                  MIT Licensed, v6.4.5 released on December 18, 2020 |
-                  <span> </span>
+                  MIT Licensed, v{process.env.swiperReleaseVersion} released on{" "}
+                  {process.env.swiperReleaseDate} |<span> </span>
                   <a
                     href="https://github.com/nolimits4web/swiper/blob/master/CHANGELOG.md"
                     target="_blank"

@@ -22,7 +22,7 @@ export default function Header() {
           <div className="text-5xl font-bold text-primary">
             Swiper
             <span className="text-xs text-black ml-2 font-medium align-super">
-              v6.4.5
+              v{process.env.swiperReleaseVersion}
             </span>
           </div>
           <div className="text-3xl my-2 font-bold">

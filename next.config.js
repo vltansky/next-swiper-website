@@ -5,6 +5,7 @@ const frontMatter = require("front-matter");
 const rehypePrism = require("@mapbox/rehype-prism");
 const { withTableOfContents } = require("./withTableOfContents");
 const minimatch = require("minimatch");
+const pkg = require("./package.json");
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
@@ -15,6 +16,10 @@ const fallbackLayouts = {
 
 module.exports = withBundleAnalyzer({
   pageExtensions: ["js", "jsx", "mdx"],
+  env: {
+    swiperReleaseVersion: pkg.releaseVersion,
+    swiperReleaseDate: pkg.releaseDate,
+  },
   webpack(config, options) {
     config.module.rules.push({
       test: /\.svg$/,
