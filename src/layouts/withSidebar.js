@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext, useCallback } from "react";
 import PageHeader from "@/components/PageHeader";
 import TableOfContents from "@/components/TableOfContents";
+import Sponsors from "@/components/Sponsors";
 
 export const ContentsContext = createContext();
 function useTableOfContents(tableOfContents) {
@@ -80,8 +81,9 @@ export function WithSidebarLayout({
     <div>
       <div id={meta.containerId} className="w-full flex">
         {toc.length > 0 && (
-          <div className="hidden xl:text-sm xl:block flex-none w-64 px-4 mr-8 bg-gray-100">
+          <div className="hidden text-sm md:block flex-none w-64 px-4 mr-8 bg-gray-100">
             <div className="overflow-y-auto sticky top-0">
+              <Sponsors />
               <TableOfContents
                 tableOfContents={toc}
                 currentSection={currentSection}
