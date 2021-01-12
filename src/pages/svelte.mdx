@@ -101,7 +101,8 @@ Here is the list of additional modules imports:
 <div className="important-note">
   Note, Swiper Svelte component will create required elements for Navigation,
   Pagination and Scrollbar if you pass these params without specifying its
-  elements (e.g. without `navigation.nextEl`, `pagination.el`, etc.)
+  elements (e.g. without <code>navigation.nextEl</code>,{" "}
+  <code>pagination.el</code>, etc.)
 </div>
 
 ## Styles
@@ -171,7 +172,7 @@ Swiper component supports all <a href="/api/#events">Swiper events</a>, includin
 
 <div className="important-note">
   All event arguments will be passed as array and they are accessible in
-  `event.detail`.
+  <code>event.detail</code>.
 </div>
 For example:
 
@@ -202,24 +203,10 @@ For example:
 
 ## SwiperSlide props
 
-table.params-table
-thead
-tr
-th Prop
-th Type
-th Default
-th Description
-tbody
-tr
-td zoom
-td boolean
-td false
-td Enables additional wrapper required for zoom mode
-tr
-td virtualIndex
-td number
-td
-td Actual swiper slide index. Required to be set for virtual slides
+| Prop           | Type      | Default | Description                                                      |
+| -------------- | --------- | ------- | ---------------------------------------------------------------- |
+| `zoom`         | `boolean` | `false` | Enables additional wrapper required for zoom mode                |
+| `virtualIndex` | `number`  |         | Actual swiper slide index. Required to be set for virtual slides |
 
 ## SwiperSlide slot data
 
@@ -464,7 +451,7 @@ SwiperCore.use([EffectFade]);
 
 You can find running <a href="https://swiperjs.com/demos/#fade_effect">effect demos here</a>.
 
-h3 Full Fade Effect Example
+### Full Fade Effect Example
 
 ```html
 <Swiper effect="fade">
