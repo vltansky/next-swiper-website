@@ -12,7 +12,7 @@ export default function TableOfContents({ tableOfContents, currentSection }) {
 
         return (
           <Fragment key={section.slug}>
-            <li>
+            <li className="my-1">
               <a
                 href={`#${section.slug}`}
                 className={clsx(
