@@ -32,3 +32,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+public/package/**/*
+!public/package/swiper-bundle.js
+!public/package/swiper-bundle.min.js
+!public/package/swiper-bundle.css
+!public/package/swiper-bundle.min.css

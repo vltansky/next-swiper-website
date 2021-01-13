@@ -5,14 +5,16 @@
   "releaseVersion": "6.4.5",
   "releaseDate": "December 18, 2020",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "npm run copy-swiper && next dev",
+    "build": "npm run copy-swiper && next build",
+    "start": "next start",
+    "copy-swiper": "node src/copy-swiper.js"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.0.4",
+    "@stackblitz/sdk": "^1.5.2",
     "@tailwindcss/typography": "^0.3.1",
     "clsx": "^1.1.1",
     "gray-matter": "^4.0.2",
@@ -36,6 +38,7 @@
     "@sindresorhus/slugify": "^1.1.0",
     "@svgr/webpack": "^5.5.0",
     "autoprefixer": "^10.1.0",
+    "exec-sh": "^0.3.4",
     "file-loader": "^6.2.0",
     "front-matter": "^4.0.2",
     "postcss": "^8.2.1",

@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import sdk from "@stackblitz/sdk";
 import Heading from "@/components/Heading";
 import { WithSidebarLayout } from "@/layouts/withSidebar";
 import { useLazyDemos } from "src/shared/use-lazy-demos";
@@ -45,6 +46,29 @@ export default function DemosPage({ demos }) {
 
   useLazyDemos();
 
+  const createStackBlitz = (e, title, fileName) => {
+    e.preventDefault();
+    fetch(`demos/${fileName}`)
+      .then((res) => res.text())
+      .then((html) => {
+        html = html
+          .replace(/..\/package\//g, "https://unpkg.com/swiper/")
+          .replace(/.\/images\//g, "https://swiperjs.com/demos/images/");
+
+        const project = {
+          files: {
+            "index.html": html,
+            "index.js": "",
+          },
+          title: `Swiper - ${title}`,
+          description: `Swiper - ${title}`,
+          template: "javascript",
+          tags: ["swiper"],
+        };
+        sdk.openProject(project, { openFile: "index.html" });
+      });
+  };
+
   return (
     <WithSidebarLayout tableOfContents={tableOfContents}>
       <h1>Swiper Demos</h1>
@@ -82,10 +106,8 @@ export default function DemosPage({ demos }) {
             </a>
             <a
               className="no-underline"
-              href={`https://stackblitz.com/edit/swiper-demo-${
-                demoIndex + 1
-              }-${slug}?file=index.html`}
-              target="_blank"
+              href="#"
+              onClick={(e) => createStackBlitz(e, title, fileName)}
             >
               <img
                 className="h-3 inline"
