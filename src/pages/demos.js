@@ -82,14 +82,11 @@ export default function DemosPage({ demos }) {
         </a>
       </p>
       {demos.map(({ title, slug, fileName }, demoIndex) => (
-        <>
-          <Heading key={title} level={2} id={slug} toc={true}>
+        <React.Fragment key={title}>
+          <Heading level={2} id={slug} toc={true}>
             {title}
           </Heading>
-          <div
-            key={`links-${demoIndex}`}
-            className="flex items-center space-x-5 text-sm my-4"
-          >
+          <div className="flex items-center space-x-5 text-sm my-4">
             <a
               className="no-underline"
               href={`/demos/${fileName}`}
@@ -117,10 +114,7 @@ export default function DemosPage({ demos }) {
               <span>Edit in StackBlitz</span>
             </a>
           </div>
-          <div
-            key={`demo-${demoIndex}`}
-            className="my-4 bg-gray-100 shadow demo"
-          >
+          <div className="my-4 bg-gray-100 shadow demo">
             <iframe
               data-src={`/demos/${fileName}`}
               scrolling="no"
@@ -128,7 +122,7 @@ export default function DemosPage({ demos }) {
               className="h-96 block w-full"
             ></iframe>
           </div>
-        </>
+        </React.Fragment>
       ))}
     </WithSidebarLayout>
   );
