@@ -18,7 +18,6 @@ export const useLazyDemos = () => {
         const src = iframeEl.getAttribute("data-src");
         demoEl.classList.add("loaded");
         iframeEl.setAttribute("src", src);
-        console.log("loaded", src);
       }
     }
   };
