@@ -8,7 +8,7 @@
     "dev": "npm run unpkg-demos && next dev",
     "build": "npm run unpkg-demos && npm run build-types && next build",
     "start": "next start",
-    "unpkg-demos": "node build/unpkg-swiper.js",
+    "unpkg-demos": "node build/unpkg-demos.js",
     "build-types": "node build/build-types.js"
   },
   "dependencies": {
