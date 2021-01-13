@@ -42,7 +42,7 @@ export const useScrollSpy = (initialCurrent) => {
     ) {
       current = firstAfterScroll;
     }
-    setCurrentSection(current.id);
+    if (current && current.id) setCurrentSection(current.id);
   };
 
   const onScroll = () => {
