@@ -3,6 +3,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Head from "next/head";
 function App({ Component, pageProps, router }) {
+  if (router.pathname.startsWith("/demos/")) {
+    return <Component {...pageProps} />;
+  }
   const meta = Component.layoutProps?.meta || {};
   // TODO: use https://github.com/garmeeh/next-seo
   return (

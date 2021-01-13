@@ -13,6 +13,7 @@ const withPlugins = require("next-compose-plugins");
 
 const fallbackLayouts = {
   "src/pages/**/*": ["@/layouts/withSidebar", "WithSidebarLayout"],
+  "src/pages/demos/*": ["@/layouts/withSidebar", null],
 };
 
 const nextConfig = {
