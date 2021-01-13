@@ -6,15 +6,16 @@ const rehypePrism = require("@mapbox/rehype-prism");
 const { withTableOfContents } = require("./withTableOfContents");
 const minimatch = require("minimatch");
 const pkg = require("./package.json");
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
+const bundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
+const withPlugins = require("next-compose-plugins");
 
 const fallbackLayouts = {
   "src/pages/**/*": ["@/layouts/withSidebar", "WithSidebarLayout"],
 };
 
-module.exports = withBundleAnalyzer({
+const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx"],
   env: {
     swiperReleaseVersion: pkg.releaseVersion,
@@ -134,4 +135,5 @@ module.exports = withBundleAnalyzer({
       },
     ];
   },
-});
+};
+module.exports = withPlugins([bundleAnalyzer], nextConfig);
