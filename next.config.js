@@ -127,6 +127,11 @@ module.exports = withBundleAnalyzer({
         destination: "/swiper-api",
         permanent: true,
       },
+      {
+        source: "/types",
+        destination: "/types/index.html",
+        permanent: true,
+      },
     ];
   },
 });

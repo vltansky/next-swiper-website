@@ -5,10 +5,11 @@
   "releaseVersion": "6.4.5",
   "releaseDate": "December 18, 2020",
   "scripts": {
-    "dev": "npm run copy-swiper && next dev",
-    "build": "npm run copy-swiper && next build",
+    "dev": "npm run unpkg-demos && next dev",
+    "build": "npm run unpkg-demos && npm run build-types && next build",
     "start": "next start",
-    "copy-swiper": "node src/copy-swiper.js"
+    "unpkg-demos": "node build/unpkg-swiper.js",
+    "build-types": "node build/build-types.js"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",
@@ -34,6 +35,7 @@
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
+    "@angular/core": "^11.0.8",
     "@next/bundle-analyzer": "^10.0.4",
     "@sindresorhus/slugify": "^1.1.0",
     "@svgr/webpack": "^5.5.0",
@@ -42,7 +44,10 @@
     "file-loader": "^6.2.0",
     "front-matter": "^4.0.2",
     "postcss": "^8.2.1",
+    "rxjs": "^6.6.3",
     "simple-functional-loader": "^1.2.1",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "typedoc": "^0.19.2",
+    "typescript": "^4.0.5"
   }
 }
