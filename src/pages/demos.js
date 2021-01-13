@@ -3,6 +3,7 @@ import path from "path";
 import React, { useEffect, useRef } from "react";
 import Heading from "@/components/Heading";
 import { WithSidebarLayout } from "@/layouts/withSidebar";
+import { useLazyDemos } from "src/shared/use-lazy-demos";
 
 export async function getStaticProps() {
   const demosFolder = path.resolve(process.cwd(), "public/demos");
@@ -42,53 +43,7 @@ export default function DemosPage({ demos }) {
     };
   });
 
-  const iframeTimeout = useRef(null);
-
-  const lazyLoadDemos = () => {
-    const demoEls = document.querySelectorAll(".demo");
-    for (let i = 0; i < demoEls.length; i += 1) {
-      const demoEl = demoEls[i];
-      if (demoEl.classList.contains("loaded")) continue;
-      const demoElRect = demoEl.getBoundingClientRect();
-      const iframeEl = demoEl.querySelector("iframe");
-      const offsetTop = demoElRect.top;
-      if (offsetTop + demoEl.offsetHeight < 0) {
-        continue;
-      }
-      if (offsetTop < window.innerHeight + 50) {
-        const src = iframeEl.getAttribute("data-src");
-        demoEl.classList.add("loaded");
-        iframeEl.setAttribute("src", src);
-        console.log("loaded", src);
-      }
-    }
-  };
-
-  const onScroll = () => {
-    clearTimeout(iframeTimeout.current);
-    iframeTimeout.current = setTimeout(function () {
-      lazyLoadDemos();
-    }, 500);
-  };
-
-  const attachEvents = () => {
-    console.log("attachEvents");
-    window.addEventListener("scroll", onScroll);
-    window.addEventListener("resize", onScroll);
-
-    lazyLoadDemos();
-  };
-
-  const detachEvents = () => {
-    console.log("detachEvents");
-    window.removeEventListener("scroll", onScroll);
-    window.removeEventListener("resize", onScroll);
-  };
-
-  useEffect(() => {
-    attachEvents();
-    return () => detachEvents();
-  });
+  useLazyDemos();
 
   return (
     <WithSidebarLayout tableOfContents={tableOfContents}>
