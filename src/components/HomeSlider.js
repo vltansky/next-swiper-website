@@ -210,7 +210,7 @@ export default function HomeSlider() {
                 {Array.from({ length: 5 }).map((el, index) => (
                   <div
                     key={index}
-                    data-background={`images/demos/nature-${index + 1}.jpg`}
+                    data-background={`demos/images/nature-${index + 1}.jpg`}
                     className="swiper-slide swiper-lazy bg-cover bg-center"
                   >
                     <div className="swiper-lazy-preloader"></div>
@@ -227,7 +227,7 @@ export default function HomeSlider() {
                   <div
                     key={index}
                     style={{
-                      backgroundImage: `url(images/demos/nature-${
+                      backgroundImage: `url(demos/images/nature-${
                         index + 1
                       }.jpg)`,
                     }}
