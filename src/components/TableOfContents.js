@@ -1,9 +1,11 @@
 import clsx from "clsx";
 import { Fragment } from "react";
+import { useScrollSpy } from "../shared/use-scroll-spy";
 
-export default function TableOfContents({ tableOfContents, currentSection }) {
+export default function TableOfContents({ tableOfContents }) {
+  const currentSection = useScrollSpy(tableOfContents[0].slug);
   return (
-    <ul className="overflow-x-hidden text-gray-500">
+    <ul className="overflow-x-hidden text-gray-500 table-of-contents">
       {tableOfContents.map((section) => {
         let sectionIsActive = currentSection === section.slug;
         let childSectionIsActive =

@@ -1,20 +1,5 @@
-import { useEffect, useState, useContext, useRef } from "react";
-import { useRect } from "@reach/rect";
-import { ContentsContext } from "@/layouts/withSidebar";
+import { useEffect, useContext } from "react";
 import clsx from "clsx";
-const useTop = (ref) => {
-  let [top, setTop] = useState();
-  let rect = useRect(ref);
-  let rectTop = rect ? rect.top : undefined;
-  useEffect(() => {
-    if (typeof rectTop === "undefined") return;
-    let newTop = rectTop + window.pageYOffset;
-    if (newTop !== top) {
-      setTop(newTop);
-    }
-  }, [rectTop, top]);
-  return top;
-};
 
 export default function Heading({
   level,
@@ -29,25 +14,11 @@ export default function Heading({
   ...props
 }) {
   let Component = `h${level}`;
-  const { registerHeading, unregisterHeading } = useContext(ContentsContext);
-
-  let ref = useRef();
-  let top = useTop(ref);
-
-  useEffect(() => {
-    if (toc && typeof top !== "undefined") {
-      registerHeading(id, top);
-    }
-    return () => {
-      unregisterHeading(id);
-    };
-  }, [toc, top, id, registerHeading, unregisterHeading]);
 
   return (
     <Component
       className={clsx("group flex whitespace-pre-wrap", className)}
       id={id}
-      ref={ref}
       style={{ ...(hidden ? { marginBottom: 0 } : {}), ...style }}
       {...props}
     >
