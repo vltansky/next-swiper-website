@@ -34,7 +34,7 @@ function SlideCenter({ children, className, bgColor = "white" }) {
   return (
     <div className={`bg-${bgColor}`}>
       <div
-        className={`mx-auto max-w-4xl flex justify-center flex-col ${className}`}
+        className={`mx-auto max-w-6xl flex justify-center flex-col px-4 ${className}`}
         style={{ height: 500 }}
       >
         {children}
@@ -130,7 +130,7 @@ export default function HomeSlider() {
 
               <div className="ml-10">
                 <div className="text-6xl font-bold text-primary">Swiper</div>
-                <div className="text-5xl my-2 font-bold text-black leading-tight">
+                <div className="text-5xl my-2 font-bold text-black leading-tight max-w-2xl">
                   The Most Modern Mobile Touch Slider
                 </div>
                 <nav className="mt-12 space-x-4 font-medium">
@@ -157,8 +157,10 @@ export default function HomeSlider() {
         </div>
         <div className="swiper-slide">
           <SlideCenter>
-            <span className="text-5xl font-bold mb-16">Top Notch Features</span>
-            <ul className="flex flex-wrap text-lg text-black font-medium">
+            <span className="text-5xl font-bold mb-16 text-gray-900">
+              Top Notch Features
+            </span>
+            <ul className="flex flex-wrap text-lg text-gray-900 font-medium">
               {[
                 "Library Agnostic",
                 "Mutation Observer",
@@ -240,7 +242,16 @@ export default function HomeSlider() {
         </div>
         <div className="swiper-slide">
           <SlideCenter className="items-center">
-            <span className="text-5xl font-bold">Start Using It Now</span>
+            <div className="text-5xl font-bold text-gray-900 w-full text-center">
+              Start Using It Now
+            </div>
+            <div className="mt-4">
+              <Link href="/get-started">
+                <a className="bg-primary rounded-3xl text-white shadow-lg hover:no-underline hover:bg-opacity-95 duration-200 inline-block w-48 px-4 py-2 my-2 text-center font-bold text-lg">
+                  Get Started
+                </a>
+              </Link>
+            </div>
           </SlideCenter>
         </div>
       </div>

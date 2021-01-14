@@ -112,7 +112,11 @@ const logos = [
 ];
 
 export function HomeHeading({ children }) {
-  return <h2 className="text-5xl text-center font-bold mb-12">{children}</h2>;
+  return (
+    <h2 className="text-5xl text-gray-900 text-center font-bold mb-12">
+      {children}
+    </h2>
+  );
 }
 export default function Home() {
   return (
@@ -121,9 +125,9 @@ export default function Home() {
       <div className="flex justify-center items-center bg-primary py-5 mb-20">
         <Carbon />
       </div>
-      <div className="mx-auto max-w-6xl text-lg">
+      <div className="mx-auto max-w-6xl text-lg px-4">
         <div className="flex flex-col space-y-5">
-          <h1 className="text-5xl font-bold mb-6">Swiper</h1>
+          <h1 className="text-5xl text-gray-900 font-bold mb-6">Swiper</h1>
           <p>
             Swiper is the most modern free mobile touch slider with hardware
             accelerated transitions and amazing native behavior. It is intended
@@ -151,10 +155,12 @@ export default function Home() {
         </div>
         <div className="mt-24">
           <HomeHeading>Powered With Top Notch Features</HomeHeading>
-          <ul className="grid grid-cols-3 gap-x-6 gap-y-8 text-md">
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 text-md">
             {feats.map(({ title, descr }) => (
               <li key={title}>
-                <h3 className="font-bold text-2xl mb-4">{title}</h3>
+                <h3 className="font-bold text-gray-900 text-2xl mb-4">
+                  {title}
+                </h3>
                 {descr}
               </li>
             ))}

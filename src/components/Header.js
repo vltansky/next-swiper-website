@@ -25,7 +25,7 @@ export default function Header() {
               v{process.env.swiperReleaseVersion}
             </span>
           </div>
-          <div className="text-3xl my-2 font-bold">
+          <div className="text-3xl my-2 font-bold text-gray-900">
             Most Modern Mobile Touch Slider
           </div>
           <nav className="mb-2 mt-4 space-x-4">

@@ -15,7 +15,7 @@ const menu = [{ name: "Swiper", link: "/" }, ...menuList].map(
 const sponsorsEl = sponsors.map(({ href, title, src, width }) => {
   return (
     <a
-      className="flex justify-center items-center p-4 mx-2 border text-center hover:bg-gray-50"
+      className="flex justify-center items-center p-4 border text-center hover:bg-gray-50"
       href={href}
       key={src}
       title={title}
@@ -28,7 +28,7 @@ const sponsorsEl = sponsors.map(({ href, title, src, width }) => {
 
 export default function Footer() {
   return (
-    <footer className="border-t-8 border-primary text-center py-4">
+    <footer className="border-t-8 border-primary text-center p-4">
       <div className="max-w-5xl mx-auto">
         <div>
           Supported by:{" "}
@@ -40,7 +40,9 @@ export default function Footer() {
             COLOGNE WEBDESIGN
           </a>
         </div>
-        <div className="grid grid-cols-3 my-4">{sponsorsEl}</div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 my-4 gap-x-3">
+          {sponsorsEl}
+        </div>
         <div className="text-center my-4">
           <a href="https://www.netlify.com" target="_blank">
             <img
