@@ -20,17 +20,9 @@
 }
 
 body {
-  font-family: Sailec, -apple-system, system-ui, Helvetica Neue, Helvetica,
-    Arial, sans-serif;
-  color: #333;
-  -webkit-font-smoothing: antialiased;
-}
-.prose {
-  font-family: -apple-system, system-ui, Helvetica Neue, Helvetica, Arial,
+  font-family: Inter, -apple-system, system-ui, Helvetica Neue, Helvetica, Arial,
     sans-serif;
-  h1 {
-    font-weight: bold;
-  }
+  color: #333;
 }
 
 body .prose code:before,
