@@ -4,5 +4,5 @@ const dir = "./public/types";
 fs.removeSync(dir);
 fs.ensureDirSync(dir);
 exec(
-  `npx typedoc --json ./src/types.json ./node_modules/swiper/types --includeDeclarations --excludeExternals`
+  "npx typedoc --out ./public/types ./node_modules/swiper --includeDeclarations --excludeExternals"
 );

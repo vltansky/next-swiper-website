@@ -9,6 +9,7 @@
     "build": "npm run unpkg-demos && npm run build-types && next build",
     "start": "next start",
     "unpkg-demos": "node build/unpkg-demos.js",
+    "types-for-demos": "npx typedoc --json ./src/types.json ./node_modules/swiper/types --includeDeclarations --excludeExternals",
     "build-types": "node build/build-types.js"
   },
   "dependencies": {
