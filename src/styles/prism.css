@@ -5,9 +5,10 @@
  */
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #abb2bf;
+  color: #ddd;
   background: none;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: Menlo, ui-monospace, SFMono-Regular, Monaco, Consolas,
+    Liberation Mono, Courier New, monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -68,11 +69,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #5c6370;
+  color: #717a88;
 }
 
 .token.punctuation {
-  color: #abb2bf;
+  color: #ddd;
 }
 
 .token.selector,
