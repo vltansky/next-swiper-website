@@ -1,19 +1,25 @@
 const fs = require("fs-extra");
 const path = require("path");
+const elapsed = require("elapsed-time-logger");
+const chalk = require("chalk");
+const { promise: exec } = require("exec-sh");
 
-async function init() {
+(async () => {
+  elapsed.start("Typedoc");
+  await exec(
+    `npx typedoc --json ./src/types.json ./node_modules/swiper/types --includeDeclarations --excludeExternals`
+  );
+  elapsed.end("Typedoc");
+  elapsed.start("Generate all types");
   const types = await fs.readJSON(path.join(__dirname, "../src/types.json"));
-  const comp = types.children
+  types.children
     .filter(({ flags }) => flags.isExported)
     .forEach(async ({ name, children, originalName }) => {
       const _name = name.replace(/^\"(.*).d\"$/, "$1");
       if (_name === "public-api" || _name === "shared") {
         return;
       }
-      const filePath = path.join(
-        __dirname,
-        `../src/components/types/${_name}.js`
-      );
+      const filePath = path.join(__dirname, `../src/types_data/${_name}.js`);
       await fs.ensureDir(path.dirname(filePath));
       const data = children
         .filter((v) => !!v.children)
@@ -42,6 +48,6 @@ async function init() {
       const JSON_data = JSON.stringify(data, null, 2);
       await fs.writeFile(filePath, `export default ${JSON_data}`);
     });
-}
-
-init();
+  elapsed.end("Generate all types");
+  console.log(chalk.green(`Types generation finished`));
+})();
