@@ -11,43 +11,36 @@ const { promise: exec } = require("exec-sh");
   );
   elapsed.end("Typedoc");
   elapsed.start("Generate all types");
-  const types = await fs.readJSON(path.join(__dirname, "../src/types.json"));
-  types.children
-    .filter(({ flags }) => flags.isExported)
-    .forEach(async ({ name, children, originalName }) => {
-      const _name = name.replace(/^\"(.*).d\"$/, "$1");
-      if (_name === "public-api" || _name === "shared") {
-        return;
-      }
-      const filePath = path.join(__dirname, `../src/types_data/${_name}.js`);
-      await fs.ensureDir(path.dirname(filePath));
-      const data = children
-        .filter((v) => !!v.children)
-        .map((v) => {
-          return {
-            name: v.name,
-            children: v.children.map((prop) => {
-              //   if (prop.kindString !== "Property") {
-              //     // prop.kindString can be Constructor, Method, Property
-              //     console.log("how?", prop.kindString);
-              //   }
+  const typesPath = path.join(__dirname, "../src/types.json");
+  const { children } = await fs.readJSON(typesPath);
+  const types = {};
+  children.forEach(async ({ name, children, flags, originalName }) => {
+    const _name = name.replace(/^\"(.*).d\"$/, "$1");
+    if (_name === "public-api" || _name === "shared" || !flags.isExported) {
+      return;
+    }
+    children.forEach((v) => {
+      if (!v.children) return;
+      types[v.name] = v.children.map((prop) => {
+        //   if (prop.kindString !== "Property") {
+        //     // prop.kindString can be Constructor, Method, Property
+        //     console.log("how?", prop.kindString);
+        //   }
 
-              const default_value =
-                prop.comment && prop.comment.tags && prop.comment.tags[0];
-              return {
-                name: prop.name,
-                default: default_value
-                  ? default_value.text.replace("\n", "")
-                  : null,
-                type: prop.type,
-                comment: prop.comment,
-              };
-            }),
-          };
-        });
-      const JSON_data = JSON.stringify(data, null, 2);
-      await fs.writeFile(filePath, `export default ${JSON_data}`);
+        const default_value =
+          prop.comment && prop.comment.tags && prop.comment.tags[0];
+        return {
+          name: prop.name,
+          default_value: default_value
+            ? default_value.text.replace("\n", "")
+            : null,
+          type: prop.type,
+          comment: prop.comment,
+        };
+      });
     });
+  });
+  await fs.writeFile(typesPath, `${JSON.stringify(types, null, 4)}`);
   elapsed.end("Generate all types");
   console.log(chalk.green(`Types generation finished`));
 })();
