@@ -3,6 +3,9 @@ title: Swiper API
 description: SwipersJS API.
 ---
 
+import TypesTable from "@/components/TypesTable";
+import Types from "src/types.json";
+
 ## Swiper Full HTML Layout
 
 ```html
@@ -121,7 +124,11 @@ mySwiper.slideNext();
 
 ## Swiper Parameters
 
+<TypesTable items={Types.SwiperOptions} />
+
 ## Slider Methods & Properties
+
+<TypesTable items={Types.SwiperEvents} />
 
 ## Events
 
@@ -160,41 +167,79 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
 
 ### Navigation
 
+<TypesTable items={Types.NavigationOptions} />
+
 ### Pagination
+
+<TypesTable items={Types.PaginationOptions} />
 
 ### Scrollbar
 
+<TypesTable items={Types.ScrollbarOptions} />
+
 ### Autoplay
+
+<TypesTable items={Types.AutoplayOptions} />
 
 ### Parallax
 
+<TypesTable items={Types.ParallaxOptions} />
+
 ### Lazy Loading
+
+<TypesTable items={Types.LazyOptions} />
 
 ### Fade Effect
 
+<TypesTable items={Types.FadeEffectOptions} />
+
 ### Coverflow Effect
+
+<TypesTable items={Types.CoverflowEffectOptions} />
 
 ### Flip Effect
 
+<TypesTable items={Types.FlipEffectOptions} />
+
 ### Cube Effect
+
+<TypesTable items={Types.CubeEffectOptions} />
 
 ### Thumbs
 
+<TypesTable items={Types.ThumbsOptions} />
+
 ### Zoom
+
+<TypesTable items={Types.ZoomOptions} />
 
 ### Keyboard Control
 
+<TypesTable items={Types.KeyboardOptions} />
+
 ### Mousewheel Control
+
+<TypesTable items={Types.MousewheelOptions} />
 
 ### Virtual Slides
 
+<TypesTable items={Types.VirtualOptions} />
+
 ### Hash Navigation
+
+<TypesTable items={Types.HashNavigationOptions} />
 
 ### History Navigation
 
+<TypesTable items={Types.HistoryOptions} />
+
 ### Controller
 
+<TypesTable items={Types.ControllerOptions} />
+
 ### Accessibility (a11y)
+
+<TypesTable items={Types.AccessibilityOptions} />
 
 ## Custom Build
 
