@@ -27,8 +27,18 @@ const { promise: exec } = require("exec-sh");
         //     console.log("how?", prop.kindString);
         //   }
 
-        const default_value =
-          prop.comment && prop.comment.tags && prop.comment.tags[0];
+        let default_value =
+          prop.comment &&
+          prop.comment.tags &&
+          prop.comment.tags.find((tag) => tag.tag === "default");
+
+        const defaultValueIsNoteOrExample = prop?.comment?.tags?.find(
+          (tag) =>
+            (tag.tag === "note" || tag.tag === "example") &&
+            tag.text === default_value
+        );
+        if (defaultValueIsNoteOrExample) default_value = "";
+
         return {
           name: prop.name,
           default_value: default_value
