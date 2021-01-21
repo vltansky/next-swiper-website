@@ -9,8 +9,8 @@
     "build": "npm run unpkg-demos && npm run build-types && next build",
     "start": "next start",
     "unpkg-demos": "node build/unpkg-demos.js",
-    "types-for-demos": "npx typedoc --json ./src/types.json ./node_modules/swiper/types --includeDeclarations --excludeExternals",
-    "build-types": "node build/build-types.js"
+    "types:json": "node build/types-components.js",
+    "types:web": "node build/build-types.js"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.5.0",
@@ -18,7 +18,9 @@
     "@next/mdx": "^10.0.4",
     "@stackblitz/sdk": "^1.5.2",
     "@tailwindcss/typography": "^0.3.1",
+    "chalk": "^4.1.0",
     "clsx": "^1.1.1",
+    "elapsed-time-logger": "^1.1.6",
     "fs-extra": "^9.0.1",
     "next": "10.0.4",
     "next-mdx-remote": "^2.0.0",
