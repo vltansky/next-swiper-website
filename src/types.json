@@ -205,7 +205,7 @@
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 1212,
+                    "id": 1214,
                     "name": "__type",
                     "kind": 65536,
                     "kindString": "Type literal",
@@ -214,7 +214,7 @@
                     },
                     "signatures": [
                         {
-                            "id": 1213,
+                            "id": 1215,
                             "name": "__call",
                             "kind": 4096,
                             "kindString": "Call signature",
@@ -223,7 +223,7 @@
                             },
                             "parameters": [
                                 {
-                                    "id": 1214,
+                                    "id": 1216,
                                     "name": "swiper",
                                     "kind": 32768,
                                     "kindString": "Parameter",
@@ -262,7 +262,7 @@
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 1204,
+                    "id": 1206,
                     "name": "__type",
                     "kind": 65536,
                     "kindString": "Type literal",
@@ -271,7 +271,7 @@
                     },
                     "signatures": [
                         {
-                            "id": 1205,
+                            "id": 1207,
                             "name": "__call",
                             "kind": 4096,
                             "kindString": "Call signature",
@@ -280,7 +280,7 @@
                             },
                             "parameters": [
                                 {
-                                    "id": 1206,
+                                    "id": 1208,
                                     "name": "swiper",
                                     "kind": 32768,
                                     "kindString": "Parameter",
@@ -319,7 +319,7 @@
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 1208,
+                    "id": 1210,
                     "name": "__type",
                     "kind": 65536,
                     "kindString": "Type literal",
@@ -328,7 +328,7 @@
                     },
                     "signatures": [
                         {
-                            "id": 1209,
+                            "id": 1211,
                             "name": "__call",
                             "kind": 4096,
                             "kindString": "Call signature",
@@ -337,7 +337,7 @@
                             },
                             "parameters": [
                                 {
-                                    "id": 1210,
+                                    "id": 1212,
                                     "name": "swiper",
                                     "kind": 32768,
                                     "kindString": "Parameter",
@@ -402,11 +402,11 @@
             },
             "comment": {
                 "shortText": "Delay between transitions (in ms). If this parameter is not specified, auto play will be disabled",
-                "text": "If you need to specify different delay for specifi slides you can do it by using\ndata-swiper-autoplay (in ms) attribute on slide.\n",
+                "text": "If you need to specify different delay for specific slides you can do it by using\n`data-swiper-autoplay` (in ms) attribute on slide.\n",
                 "tags": [
                     {
                         "tag": "example",
-                        "text": "\n<!-- hold this slide for 2 seconds -->\n<div class=\"swiper-slide\" data-swiper-autoplay=\"2000\">\n"
+                        "text": "\n```html\n<!-- hold this slide for 2 seconds -->\n<div class=\"swiper-slide\" data-swiper-autoplay=\"2000\">\n```\n"
                     },
                     {
                         "tag": "default",
@@ -423,7 +423,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to false and autoplay will not be disabled after\nuser interactions (swipes), it will be restarted\nevery time after interaction",
+                "shortText": "Set to `false` and autoplay will not be disabled after user interactions (swipes),\nit will be restarted every time after interaction",
                 "tags": [
                     {
                         "tag": "default",
@@ -516,7 +516,7 @@
                 ]
             },
             "comment": {
-                "shortText": "Can be 'slide' or 'container'. Defines a way how to control another slider: slide by slide\n(with respect to other slider's grid) or depending on all slides/container\n(depending on total slider percentage).",
+                "shortText": "Defines a way how to control another slider: slide by slide\n(with respect to other slider's grid) or depending on all slides/container\n(depending on total slider percentage).",
                 "tags": [
                     {
                         "tag": "default",
@@ -545,7 +545,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true and controlling will be in inverse direction",
+                "shortText": "Set to `true` and controlling will be in inverse direction",
                 "tags": [
                     {
                         "tag": "default",
@@ -581,7 +581,7 @@
                 "name": "number"
             },
             "comment": {
-                "shortText": "Effect multipler",
+                "shortText": "Effect multiplier",
                 "tags": [
                     {
                         "tag": "default",
@@ -909,7 +909,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true to enable also navigation through slides (when hashnav\nis enabled) by browser history or by setting directly hash on document location",
+                "shortText": "Set to `true` to enable also navigation through slides (when hashnav\nis enabled) by browser history or by setting directly hash on document location",
                 "tags": [
                     {
                         "tag": "default",
@@ -1057,7 +1057,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true to enable keyboard contro",
+                "shortText": "Set to `true` to enable keyboard contro",
                 "tags": [
                     {
                         "tag": "default",
@@ -1282,90 +1282,138 @@
     "LazyOptions": [
         {
             "name": "checkInView",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Enables to check is the Swiper in view before lazy loading images on initial slides"
+                "shortText": "Enables to check is the Swiper in view before lazy loading images on initial slides",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
             "name": "elementClass",
-            "default_value": null,
+            "default_value": "'swiper-lazy'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name of lazy element"
+                "shortText": "CSS class name of lazy element",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-lazy'\n"
+                    }
+                ]
             }
         },
         {
             "name": "loadOnTransitionStart",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "By default, Swiper will load lazy images after transition to this slide, so you may enable this parameter if you need it to start loading of new image in the beginning of transition"
+                "shortText": "By default, Swiper will load lazy images after transition to this slide, so you may enable this parameter if you need it to start loading of new image in the beginning of transition",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
             "name": "loadPrevNext",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to \"true\" to enable lazy loading for the closest slides images (for previous and next slide images)"
+                "shortText": "Set to `true` to enable lazy loading for the closest slides images (for previous and next slide images)",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
             "name": "loadPrevNextAmount",
-            "default_value": null,
+            "default_value": "1",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "Amount of next/prev slides to preload lazy images in. Can't be less than slidesPerView"
+                "shortText": "Amount of next/prev slides to preload lazy images in. Can't be less than `slidesPerView`",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "1\n"
+                    }
+                ]
             }
         },
         {
             "name": "loadedClass",
-            "default_value": null,
+            "default_value": "'swiper-lazy-loaded'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name of lazy loaded element"
+                "shortText": "CSS class name of lazy loaded element",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-lazy-loaded'\n"
+                    }
+                ]
             }
         },
         {
             "name": "loadingClass",
-            "default_value": null,
+            "default_value": "'swiper-lazy-loading'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name of lazy loading element"
+                "shortText": "CSS class name of lazy loading element",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-lazy-loading'\n"
+                    }
+                ]
             }
         },
         {
             "name": "preloaderClass",
-            "default_value": null,
+            "default_value": "'swiper-lazy-preloader'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name of lazy preloader"
+                "shortText": "CSS class name of lazy preloader",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-lazy-preloader'\n"
+                    }
+                ]
             }
         },
         {
@@ -1394,7 +1442,7 @@
                 ]
             },
             "comment": {
-                "shortText": "Element to check scrolling on for \"checkInView\". Defaults to window"
+                "shortText": "Element to check scrolling on for `checkInView`. Defaults to `window`"
             }
         }
     ],
@@ -1535,7 +1583,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true to force mousewheel swipes to axis. So in horizontal mode mousewheel will work only with horizontal mousewheel scrolling, and only with vertical scrolling in vertical mode.",
+                "shortText": "Set to `true` to force mousewheel swipes to axis. So in horizontal mode mousewheel will work only with horizontal mousewheel scrolling, and only with vertical scrolling in vertical mode.",
                 "tags": [
                     {
                         "tag": "default",
@@ -1552,7 +1600,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true to invert sliding direction",
+                "shortText": "Set to `true` to invert sliding direction",
                 "tags": [
                     {
                         "tag": "default",
@@ -1569,7 +1617,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true and swiper will release mousewheel event and allow page scrolling when swiper is on edge positions (in the beginning or in the end)",
+                "shortText": "Set to `true` and swiper will release mousewheel event and allow page scrolling when swiper is on edge positions (in the beginning or in the end)",
                 "tags": [
                     {
                         "tag": "default",
@@ -2234,95 +2282,143 @@
     "PaginationOptions": [
         {
             "name": "bulletActiveClass",
-            "default_value": null,
+            "default_value": "'swiper-pagination-bullet-active'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name of currently active pagination bullet"
+                "shortText": "CSS class name of currently active pagination bullet",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-pagination-bullet-active'\n"
+                    }
+                ]
             }
         },
         {
             "name": "bulletClass",
-            "default_value": null,
+            "default_value": "'swiper-pagination-bullet'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name of single pagination bullet"
+                "shortText": "CSS class name of single pagination bullet",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-pagination-bullet'\n"
+                    }
+                ]
             }
         },
         {
             "name": "bulletElement",
-            "default_value": null,
+            "default_value": "'span'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "Defines which HTML tag will be used to represent single pagination bullet. Only for bullets pagination type."
+                "shortText": "Defines which HTML tag will be used to represent single pagination bullet. Only for `'bullets'` pagination type.",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'span'\n"
+                    }
+                ]
             }
         },
         {
             "name": "clickable",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "If true then clicking on pagination button will cause transition to appropriate slide. Only for bullets pagination type"
+                "shortText": "If `true` then clicking on pagination button will cause transition to appropriate slide. Only for bullets pagination type",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
             "name": "clickableClass",
-            "default_value": null,
+            "default_value": "'swiper-pagination-clickable'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name set to pagination when it is clickable"
+                "shortText": "CSS class name set to pagination when it is clickable",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-pagination-clickable'\n"
+                    }
+                ]
             }
         },
         {
             "name": "currentClass",
-            "default_value": null,
+            "default_value": "'swiper-pagination-current'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name of the element with currently active index in \"fraction\" pagination"
+                "shortText": "CSS class name of the element with currently active index in \"fraction\" pagination",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-pagination-current'\n"
+                    }
+                ]
             }
         },
         {
             "name": "dynamicBullets",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Good to enable if you use bullets pagination with a lot of slides. So it will keep only few bullets visible at the same time."
+                "shortText": "Good to enable if you use bullets pagination with a lot of slides. So it will keep only few bullets visible at the same time.",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
             "name": "dynamicMainBullets",
-            "default_value": null,
+            "default_value": "1",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "The number of main bullets visible when dynamicBullets enabled."
+                "shortText": "The number of main bullets visible when `dynamicBullets` enabled.",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "1\n"
+                    }
+                ]
             }
         },
         {
             "name": "el",
-            "default_value": null,
+            "default_value": "null",
             "type": {
                 "type": "union",
                 "types": [
@@ -2334,11 +2430,21 @@
                     {
                         "type": "reference",
                         "name": "HTMLElement"
+                    },
+                    {
+                        "type": "intrinsic",
+                        "name": "null"
                     }
                 ]
             },
             "comment": {
-                "shortText": "String with CSS selector or HTML element of the container with pagination"
+                "shortText": "String with CSS selector or HTML element of the container with pagination",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "null\n"
+                    }
+                ]
             }
         },
         {
@@ -2387,7 +2493,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/components/pagination.d.ts",
-                            "line": 107,
+                            "line": 123,
                             "character": 25
                         }
                     ]
@@ -2443,7 +2549,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/components/pagination.d.ts",
-                            "line": 113,
+                            "line": 129,
                             "character": 23
                         }
                     ]
@@ -2455,84 +2561,126 @@
         },
         {
             "name": "hiddenClass",
-            "default_value": null,
+            "default_value": "'swiper-pagination-hidden'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name of pagination when it becomes inactive"
+                "shortText": "CSS class name of pagination when it becomes inactive",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-pagination-hidden'\n"
+                    }
+                ]
             }
         },
         {
             "name": "hideOnClick",
-            "default_value": null,
+            "default_value": "true",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Toggle (hide/true) pagination container visibility after click on Slider's container"
+                "shortText": "Toggle (hide/show) pagination container visibility after click on Slider's container",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "true\n"
+                    }
+                ]
             }
         },
         {
             "name": "lockClass",
-            "default_value": null,
+            "default_value": "'swiper-pagination-lock'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name set to pagination when it is disabled"
+                "shortText": "CSS class name set to pagination when it is disabled",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-pagination-lock'\n"
+                    }
+                ]
             }
         },
         {
             "name": "modifierClass",
-            "default_value": null,
+            "default_value": "'swiper-pagination-'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "The beginning of the modifier CSS class name that will be added to pagination depending on parameters"
+                "shortText": "The beginning of the modifier CSS class name that will be added to pagination depending on parameters",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-pagination-'\n"
+                    }
+                ]
             }
         },
         {
             "name": "progressbarFillClass",
-            "default_value": null,
+            "default_value": "'swiper-pagination-progressbar-fill'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name of pagination progressbar fill element"
+                "shortText": "CSS class name of pagination progressbar fill element",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-pagination-progressbar-fill'\n"
+                    }
+                ]
             }
         },
         {
             "name": "progressbarOpposite",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Makes pagination progressbar opposite to Swiper's `direction` parameter, means vertical progressbar for horizontal swiper\ndirection and horizontal progressbar for vertical swiper direction"
+                "shortText": "Makes pagination progressbar opposite to Swiper's `direction` parameter, means vertical progressbar for horizontal swiper\ndirection and horizontal progressbar for vertical swiper direction",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
             "name": "progressbarOppositeClass",
-            "default_value": null,
+            "default_value": "'swiper-pagination-progressbar-opposite'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name of pagination progressbar opposite"
+                "shortText": "CSS class name of pagination progressbar opposite",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-pagination-progressbar-opposite'\n"
+                    }
+                ]
             }
         },
         {
             "name": "renderBullet",
-            "default_value": null,
+            "default_value": "null",
             "type": {
                 "type": "reflection",
                 "declaration": {
@@ -2589,19 +2737,29 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/components/pagination.d.ts",
-                            "line": 119,
+                            "line": 147,
                             "character": 16
                         }
                     ]
                 }
             },
             "comment": {
-                "shortText": "This parameter allows totally customize pagination bullets, you need to pass here a function that accepts index number of\npagination bullet and required element class name (className). Only for bullets pagination type"
+                "shortText": "This parameter allows totally customize pagination bullets, you need to pass here a function that accepts `index` number of\npagination bullet and required element class name (`className`). Only for `'bullets'` pagination type",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "null\n"
+                    },
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar swiper = new Swiper('.swiper-container', {\n  //...\n  renderBullet: function (index, className) {\n    return '<span class=\"' + className + '\">' + (index + 1) + '</span>';\n  }\n});\n```\n"
+                    }
+                ]
             }
         },
         {
             "name": "renderCustom",
-            "default_value": null,
+            "default_value": "null",
             "type": {
                 "type": "reflection",
                 "declaration": {
@@ -2672,25 +2830,29 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/components/pagination.d.ts",
-                            "line": 145,
+                            "line": 201,
                             "character": 16
                         }
                     ]
                 }
             },
             "comment": {
-                "shortText": "This parameter is required for custom pagination type where you have to specify\nhow it should be rendered.",
+                "shortText": "This parameter is required for `'custom'` pagination type where you have to specify\nhow it should be rendered.",
                 "tags": [
                     {
+                        "tag": "default",
+                        "text": "null\n"
+                    },
+                    {
                         "tag": "example",
-                        "text": "\n```\nvar swiper = new Swiper('.swiper-container', {\n  //...\n  renderCustom: function (swiper, current, total) {\n    return current + ' of ' + total;\n  }\n});\n```\n"
+                        "text": "\n```js\nvar swiper = new Swiper('.swiper-container', {\n  //...\n  renderCustom: function (swiper, current, total) {\n    return current + ' of ' + total;\n  }\n});\n```\n"
                     }
                 ]
             }
         },
         {
             "name": "renderFraction",
-            "default_value": null,
+            "default_value": "null",
             "type": {
                 "type": "reflection",
                 "declaration": {
@@ -2747,19 +2909,29 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/components/pagination.d.ts",
-                            "line": 124,
+                            "line": 166,
                             "character": 18
                         }
                     ]
                 }
             },
             "comment": {
-                "shortText": "This parameter allows to customize \"fraction\" pagination html. Only for fraction pagination type"
+                "shortText": "This parameter allows to customize \"fraction\" pagination html. Only for `'fraction'` pagination type",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "null\n"
+                    },
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar swiper = new Swiper('.swiper-container', {\n  //...\n  renderFraction: function (currentClass, totalClass) {\n      return '<span class=\"' + currentClass + '\"></span>' +\n              ' of ' +\n              '<span class=\"' + totalClass + '\"></span>';\n  }\n});\n```\n"
+                    }
+                ]
             }
         },
         {
             "name": "renderProgressbar",
-            "default_value": null,
+            "default_value": "null",
             "type": {
                 "type": "reflection",
                 "declaration": {
@@ -2803,30 +2975,46 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/components/pagination.d.ts",
-                            "line": 129,
+                            "line": 183,
                             "character": 21
                         }
                     ]
                 }
             },
             "comment": {
-                "shortText": "This parameter allows to customize \"progress\" pagination. Only for progress pagination type"
+                "shortText": "This parameter allows to customize \"progress\" pagination. Only for `'progress'` pagination type",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "null\n"
+                    },
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar swiper = new Swiper('.swiper-container', {\n  //...\n  renderProgressbar: function (progressbarFillClass) {\n      return '<span class=\"' + progressbarFillClass + '\"></span>';\n  }\n});\n```\n"
+                    }
+                ]
             }
         },
         {
             "name": "totalClass",
-            "default_value": null,
+            "default_value": "'swiper-pagination-total'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
             },
             "comment": {
-                "shortText": "CSS class name of the element with total number of \"snaps\" in \"fraction\" pagination"
+                "shortText": "CSS class name of the element with total number of \"snaps\" in \"fraction\" pagination",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-pagination-total'\n"
+                    }
+                ]
             }
         },
         {
             "name": "type",
-            "default_value": null,
+            "default_value": "'bullets'",
             "type": {
                 "type": "union",
                 "types": [
@@ -2849,7 +3037,13 @@
                 ]
             },
             "comment": {
-                "shortText": "String with type of pagination. Can be \"bullets\", \"fraction\", \"progressbar\" or \"custom\""
+                "shortText": "String with type of pagination. Can be \"bullets\", \"fraction\", \"progressbar\" or \"custom\"",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'bullets'\n"
+                    }
+                ]
             }
         }
     ],
@@ -3196,7 +3390,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true to enable make scrollbar draggable that allows you to control slider position",
+                "shortText": "Set to `true` to enable make scrollbar draggable that allows you to control slider position",
                 "tags": [
                     {
                         "tag": "default",
@@ -3207,7 +3401,7 @@
         },
         {
             "name": "el",
-            "default_value": null,
+            "default_value": "null",
             "type": {
                 "type": "union",
                 "types": [
@@ -3219,11 +3413,21 @@
                     {
                         "type": "reference",
                         "name": "HTMLElement"
+                    },
+                    {
+                        "type": "intrinsic",
+                        "name": "null"
                     }
                 ]
             },
             "comment": {
-                "shortText": "String with CSS selector or HTML element of the container with scrollbar."
+                "shortText": "String with CSS selector or HTML element of the container with scrollbar.",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "null\n"
+                    }
+                ]
             }
         },
         {
@@ -3268,7 +3472,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true to snap slider position to slides when you release scrollbar",
+                "shortText": "Set to `true` to snap slider position to slides when you release scrollbar",
                 "tags": [
                     {
                         "tag": "default",
@@ -3630,7 +3834,7 @@
                 }
             },
             "comment": {
-                "shortText": "Function for external rendering (e.g. using some other library to handle DOM manipulations and state like React.js or Vue.js). As an argument it accepts data object with the following properties:",
+                "shortText": "Function for external rendering (e.g. using some other library to handle DOM manipulations and state like React.js or Vue.js):",
                 "tags": [
                     {
                         "tag": "default",
@@ -3731,7 +3935,7 @@
                 }
             },
             "comment": {
-                "shortText": "Function to render slide. As an argument it accepts current slide item for slides array and index number of the current slide. Function must return an outter HTML of the swiper slide.",
+                "shortText": "Function to render slide. As an argument it accepts current slide item for `slides` array and index number of the current slide. Function must return an outter HTML of the swiper slide.",
                 "tags": [
                     {
                         "tag": "default",
@@ -4095,7 +4299,7 @@
             "default_value": null,
             "type": {
                 "type": "reference",
-                "id": 1196,
+                "id": 1198,
                 "name": "AutoplayMethods"
             }
         },
@@ -4625,6 +4829,10 @@
             "default_value": null
         },
         {
+            "name": "init",
+            "default_value": null
+        },
+        {
             "name": "isHorizontal",
             "default_value": null
         },
@@ -4817,7 +5025,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 213,
+                            "line": 217,
                             "character": 21
                         }
                     ]
@@ -4887,7 +5095,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 217,
+                            "line": 221,
                             "character": 21
                         }
                     ]
@@ -4970,7 +5178,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 221,
+                            "line": 225,
                             "character": 15
                         }
                     ]
@@ -5027,7 +5235,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 225,
+                            "line": 229,
                             "character": 11
                         }
                     ]
@@ -5084,7 +5292,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 229,
+                            "line": 233,
                             "character": 20
                         }
                     ]
@@ -5141,7 +5349,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 241,
+                            "line": 245,
                             "character": 12
                         }
                     ]
@@ -5369,7 +5577,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 58,
+                            "line": 62,
                             "character": 16
                         }
                     ]
@@ -5426,7 +5634,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 245,
+                            "line": 249,
                             "character": 13
                         }
                     ]
@@ -5483,7 +5691,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 198,
+                            "line": 202,
                             "character": 16
                         }
                     ]
@@ -5540,7 +5748,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 249,
+                            "line": 253,
                             "character": 15
                         }
                     ]
@@ -5597,7 +5805,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 253,
+                            "line": 257,
                             "character": 25
                         }
                     ]
@@ -5680,7 +5888,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 257,
+                            "line": 261,
                             "character": 24
                         }
                     ]
@@ -5751,7 +5959,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 208,
+                            "line": 212,
                             "character": 13
                         }
                     ]
@@ -5808,7 +6016,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 261,
+                            "line": 265,
                             "character": 18
                         }
                     ]
@@ -5891,7 +6099,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 133,
+                            "line": 137,
                             "character": 8
                         }
                     ]
@@ -5948,7 +6156,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 269,
+                            "line": 273,
                             "character": 10
                         }
                     ]
@@ -6031,7 +6239,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 265,
+                            "line": 269,
                             "character": 14
                         }
                     ]
@@ -6114,7 +6322,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 143,
+                            "line": 147,
                             "character": 12
                         }
                     ]
@@ -6171,7 +6379,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 173,
+                            "line": 177,
                             "character": 11
                         }
                     ]
@@ -6342,7 +6550,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 148,
+                            "line": 152,
                             "character": 14
                         }
                     ]
@@ -6399,7 +6607,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 53,
+                            "line": 57,
                             "character": 7
                         }
                     ]
@@ -6410,15 +6618,15 @@
                 "tags": [
                     {
                         "tag": "note",
-                        "text": "Note that with swiper.on('init') syntax it will\nwork only in case you set init: false parameter.\n"
+                        "text": "Note that with `swiper.on('init')` syntax it will\nwork only in case you set `init: false` parameter.\n"
                     },
                     {
                         "tag": "example",
-                        "text": "\nvar swiper = new Swiper('.swiper-container', {\n  init: false,\n  // other parameters\n});\nswiper.on('init', function() {\n // do something\n});\n// init Swiper\nswiper.init();\n"
+                        "text": "\n```js\nvar swiper = new Swiper('.swiper-container', {\n  init: false,\n  // other parameters\n});\nswiper.on('init', function() {\n // do something\n});\n// init Swiper\nswiper.init();\n```\n"
                     },
                     {
                         "tag": "example",
-                        "text": "\n// Otherwise use it as the parameter:\nvar swiper = new Swiper('.swiper-container', {\n  // other parameters\n  on: {\n    init: function () {\n      // do something\n    },\n  }\n});\n"
+                        "text": "\n```js\n// Otherwise use it as the parameter:\nvar swiper = new Swiper('.swiper-container', {\n  // other parameters\n  on: {\n    init: function () {\n      // do something\n    },\n  }\n});\n```\n"
                     }
                 ]
             }
@@ -6706,7 +6914,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 203,
+                            "line": 207,
                             "character": 10
                         }
                     ]
@@ -6763,7 +6971,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 273,
+                            "line": 277,
                             "character": 17
                         }
                     ]
@@ -6934,7 +7142,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 193,
+                            "line": 197,
                             "character": 17
                         }
                     ]
@@ -6991,7 +7199,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 277,
+                            "line": 281,
                             "character": 20
                         }
                     ]
@@ -7315,7 +7523,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 153,
+                            "line": 157,
                             "character": 11
                         }
                     ]
@@ -7372,7 +7580,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 158,
+                            "line": 162,
                             "character": 17
                         }
                     ]
@@ -7429,7 +7637,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 163,
+                            "line": 167,
                             "character": 11
                         }
                     ]
@@ -7486,7 +7694,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 237,
+                            "line": 241,
                             "character": 18
                         }
                     ]
@@ -7543,7 +7751,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 188,
+                            "line": 192,
                             "character": 9
                         }
                     ]
@@ -7932,7 +8140,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 183,
+                            "line": 187,
                             "character": 16
                         }
                     ]
@@ -8002,7 +8210,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 178,
+                            "line": 182,
                             "character": 15
                         }
                     ]
@@ -8059,7 +8267,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 63,
+                            "line": 67,
                             "character": 14
                         }
                     ]
@@ -8116,7 +8324,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 73,
+                            "line": 77,
                             "character": 27
                         }
                     ]
@@ -8173,7 +8381,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 68,
+                            "line": 72,
                             "character": 29
                         }
                     ]
@@ -8230,7 +8438,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 83,
+                            "line": 87,
                             "character": 25
                         }
                     ]
@@ -8287,7 +8495,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 78,
+                            "line": 82,
                             "character": 27
                         }
                     ]
@@ -8344,7 +8552,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 93,
+                            "line": 97,
                             "character": 25
                         }
                     ]
@@ -8401,7 +8609,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 88,
+                            "line": 92,
                             "character": 27
                         }
                     ]
@@ -8458,7 +8666,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 285,
+                            "line": 289,
                             "character": 26
                         }
                     ]
@@ -8515,7 +8723,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 281,
+                            "line": 285,
                             "character": 28
                         }
                     ]
@@ -8585,7 +8793,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 289,
+                            "line": 293,
                             "character": 18
                         }
                     ]
@@ -8668,7 +8876,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 123,
+                            "line": 127,
                             "character": 13
                         }
                     ]
@@ -8725,7 +8933,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 297,
+                            "line": 301,
                             "character": 25
                         }
                     ]
@@ -8782,7 +8990,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 293,
+                            "line": 297,
                             "character": 21
                         }
                     ]
@@ -8839,7 +9047,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 301,
+                            "line": 305,
                             "character": 23
                         }
                     ]
@@ -8896,7 +9104,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 233,
+                            "line": 237,
                             "character": 18
                         }
                     ]
@@ -8979,7 +9187,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 138,
+                            "line": 142,
                             "character": 6
                         }
                     ]
@@ -9036,7 +9244,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 168,
+                            "line": 172,
                             "character": 9
                         }
                     ]
@@ -9119,7 +9327,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 128,
+                            "line": 132,
                             "character": 11
                         }
                     ]
@@ -9202,7 +9410,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 113,
+                            "line": 117,
                             "character": 12
                         }
                     ]
@@ -9285,7 +9493,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 118,
+                            "line": 122,
                             "character": 20
                         }
                     ]
@@ -9368,7 +9576,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 108,
+                            "line": 112,
                             "character": 13
                         }
                     ]
@@ -9425,7 +9633,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 103,
+                            "line": 107,
                             "character": 16
                         }
                     ]
@@ -9482,7 +9690,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 98,
+                            "line": 102,
                             "character": 18
                         }
                     ]
@@ -9539,7 +9747,7 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-events.d.ts",
-                            "line": 305,
+                            "line": 309,
                             "character": 9
                         }
                     ]
@@ -9649,23 +9857,13 @@
     "SwiperOptions": [
         {
             "name": "_emitClasses",
-            "default_value": "55",
+            "default_value": null,
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "!INTERNAL When enabled will emit \"_containerClasses\" and \"_slideClasses\" events",
-                "tags": [
-                    {
-                        "tag": "default",
-                        "text": "55"
-                    },
-                    {
-                        "tag": "note",
-                        "text": "Sweet Sauce\n"
-                    }
-                ]
+                "shortText": "!INTERNAL When enabled will emit \"_containerClasses\" and \"_slideClasses\" events"
             }
         },
         {
@@ -9675,6 +9873,15 @@
                 "type": "reference",
                 "id": 4,
                 "name": "A11yOptions"
+            },
+            "comment": {
+                "shortText": "Object with a11y parameters or boolean `true` to enable with default settings.",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  a11y: {\n    prevSlideMessage: 'Previous slide',\n    nextSlideMessage: 'Next slide',\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
@@ -9685,7 +9892,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to false to disable swiping to next slide direction (to right or bottom)",
+                "shortText": "Set to `false` to disable swiping to next slide direction (to right or bottom)",
                 "tags": [
                     {
                         "tag": "default",
@@ -9702,7 +9909,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to false to disable swiping to previous slide direction (to left or top)",
+                "shortText": "Set to `false` to disable swiping to previous slide direction (to left or top)",
                 "tags": [
                     {
                         "tag": "default",
@@ -9713,13 +9920,19 @@
         },
         {
             "name": "allowTouchMove",
-            "default_value": null,
+            "default_value": "true",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "If false, then the only way to switch the slide is use of external API functions like slidePrev or slideNext"
+                "shortText": "If `false`, then the only way to switch the slide is use of external API functions like slidePrev or slideNext",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "true\n"
+                    }
+                ]
             }
         },
         {
@@ -9730,7 +9943,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true and slider wrapper will adapt its height to the height of the currently active slide",
+                "shortText": "Set to `true` and slider wrapper will adapt its height to the height of the currently active slide",
                 "tags": [
                     {
                         "tag": "default",
@@ -9747,12 +9960,21 @@
                 "types": [
                     {
                         "type": "reference",
-                        "id": 1215,
+                        "id": 1217,
                         "name": "AutoplayOptions"
                     },
                     {
                         "type": "intrinsic",
                         "name": "boolean"
+                    }
+                ]
+            },
+            "comment": {
+                "shortText": "Object with autoplay parameters or boolean `true` to enable with default settings",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n autoplay: {\n   delay: 5000,\n },\n});\n```\n"
                     }
                 ]
             }
@@ -9763,7 +9985,7 @@
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 933,
+                    "id": 942,
                     "name": "__type",
                     "kind": 65536,
                     "kindString": "Type literal",
@@ -9772,7 +9994,7 @@
                     },
                     "indexSignature": [
                         {
-                            "id": 936,
+                            "id": 945,
                             "name": "__index",
                             "kind": 8192,
                             "kindString": "Index signature",
@@ -9781,7 +10003,7 @@
                             },
                             "parameters": [
                                 {
-                                    "id": 937,
+                                    "id": 946,
                                     "name": "ratio",
                                     "kind": 32768,
                                     "kindString": "Parameter",
@@ -9804,33 +10026,58 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-options.d.ts",
-                            "line": 539,
+                            "line": 712,
                             "character": 15
                         }
                     ]
                 }
+            },
+            "comment": {
+                "shortText": "Allows to set different parameter for different responsive breakpoints (screen sizes). Not all parameters can be changed in breakpoints, only those which are not required different layout and logic, like `slidesPerView`, `slidesPerGroup`, `spaceBetween`, `slidesPerColumn`. Such parameters like `loop` and `effect` won't work",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar swiper = new Swiper('.swiper-container', {\n  // Default parameters\n  slidesPerView: 1,\n  spaceBetween: 10,\n  // Responsive breakpoints\n  breakpoints: {\n    // when window width is >= 320px\n    320: {\n      slidesPerView: 2,\n      spaceBetween: 20\n    },\n    // when window width is >= 480px\n    480: {\n      slidesPerView: 3,\n      spaceBetween: 30\n    },\n    // when window width is >= 640px\n    640: {\n      slidesPerView: 4,\n      spaceBetween: 40\n    }\n  }\n})\n```\n"
+                    },
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar swiper = new Swiper('.swiper-container', {\n  slidesPerView: 1,\n  spaceBetween: 10,\n  // using \"ratio\" endpoints\n  breakpoints: {\n    '@0.75': {\n      slidesPerView: 2,\n      spaceBetween: 20,\n    },\n    '@1.00': {\n      slidesPerView: 3,\n      spaceBetween: 40,\n    },\n    '@1.50': {\n      slidesPerView: 4,\n      spaceBetween: 50,\n    },\n  }\n});\n```\n"
+                    }
+                ]
             }
         },
         {
             "name": "centerInsufficientSlides",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "When enabled it center slides if the amount of slides less than `slidesPerView`. Not intended to be used loop mode and slidesPerColumn"
+                "shortText": "When enabled it center slides if the amount of slides less than `slidesPerView`. Not intended to be used `loop` mode and `slidesPerColumn`",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
             "name": "centeredSlides",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "If true, then active slide will be centered, not always on the left side."
+                "shortText": "If `true`, then active slide will be centered, not always on the left side.",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
@@ -9841,7 +10088,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "If true, then active slide will be centered without adding gaps at the beginning and end of slider.\nRequired centeredSlides: true. Not intended to be used with loop or pagination",
+                "shortText": "If `true`, then active slide will be centered without adding gaps at the beginning and end of slider.\nRequired `centeredSlides: true`. Not intended to be used with `loop` or `pagination`",
                 "tags": [
                     {
                         "tag": "default",
@@ -9852,10 +10099,19 @@
         },
         {
             "name": "containerModifierClass",
-            "default_value": null,
+            "default_value": "'swiper-container-'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "The beginning of the modifier CSS class that can be added to swiper container depending on different parameters",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-container-'\n"
+                    }
+                ]
             }
         },
         {
@@ -9865,6 +10121,15 @@
                 "type": "reference",
                 "id": 19,
                 "name": "ControllerOptions"
+            },
+            "comment": {
+                "shortText": "Object with controller parameters or boolean `true` to enable with default settings",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  controller: {\n    inverse: true,\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
@@ -9874,6 +10139,15 @@
                 "type": "reference",
                 "id": 26,
                 "name": "CoverflowEffectOptions"
+            },
+            "comment": {
+                "shortText": "Object with Coverflow-effect parameters.",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  coverflowEffect: {\n    rotate: 30,\n    slideShadows: false,\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
@@ -9885,6 +10159,7 @@
             },
             "comment": {
                 "shortText": "When enabled it will use modern CSS Scroll Snap API.\nIt doesn't support all of Swiper's features, but potentially should bring a much better performance in simple configurations.",
+                "text": "This is what is not supported when it is enabled:\n\n- All effects (Fade, Coverflow, Flip, Cube)\n- Zoom\n- Virtual Slides\n- `speed` parameter will have no effect\n- All transition start/end related events (use `slideChange` instead)\n- `slidesPerGroup` has limited support\n- `centeredSlides` is not supported\n- Changing slides with anything except touch/swipe and mousewheel will happen without transition in browsers without `scrollTo.behaviour = 'smooth'` support (e.g. in desktop and iOS Safari)\n- `simulateTouch` doesn't have effect and \"dragging\" with mouse doesn't work\n- `resistance` doesn't have any effect\n- `allowSlidePrev/Next`\n- `swipeHandler`\n- `freeMode` and all relevant features\n",
                 "tags": [
                     {
                         "tag": "default",
@@ -9900,6 +10175,15 @@
                 "type": "reference",
                 "id": 35,
                 "name": "CubeEffectOptions"
+            },
+            "comment": {
+                "shortText": "Object with Cube-effect parameters",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  cubeEffect: {\n    slideShadows: false,\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
@@ -9919,11 +10203,54 @@
                 ]
             },
             "comment": {
-                "shortText": "Could be 'horizontal' or 'vertical' (for vertical slider).",
+                "shortText": "Can be `'horizontal'` or `'vertical'` (for vertical slider).",
                 "tags": [
                     {
                         "tag": "default",
                         "text": "'horizontal'\n"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "edgeSwipeDetection",
+            "default_value": "false",
+            "type": {
+                "type": "union",
+                "types": [
+                    {
+                        "type": "intrinsic",
+                        "name": "boolean"
+                    },
+                    {
+                        "type": "intrinsic",
+                        "name": "string"
+                    }
+                ]
+            },
+            "comment": {
+                "shortText": "Enable to release Swiper events for swipe-back work in app. If set to `'prevent'` then it will prevent system swipe-back navigation instead",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "edgeSwipeThreshold",
+            "default_value": "20",
+            "type": {
+                "type": "intrinsic",
+                "name": "number"
+            },
+            "comment": {
+                "shortText": "Area (in px) from left edge of the screen to release touch events for swipe-back in app",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "20\n"
                     }
                 ]
             }
@@ -9957,7 +10284,7 @@
                 ]
             },
             "comment": {
-                "shortText": "Transition effect. Could be \"slide\", \"fade\", \"cube\", \"coverflow\" or \"flip\"",
+                "shortText": "Transition effect. Can be \"slide\", \"fade\", \"cube\", \"coverflow\" or \"flip\"",
                 "tags": [
                     {
                         "tag": "default",
@@ -9973,6 +10300,15 @@
                 "type": "reference",
                 "id": 43,
                 "name": "FadeEffectOptions"
+            },
+            "comment": {
+                "shortText": "Object with Fade-effect parameters",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  effect: 'fade',\n  fadeEffect: {\n    crossFade: true\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
@@ -9982,17 +10318,32 @@
                 "type": "reference",
                 "id": 48,
                 "name": "FlipEffectOptions"
+            },
+            "comment": {
+                "shortText": "Object with Flip-effect parameters",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  flipEffect: {\n    slideShadows: false,\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
             "name": "followFinger",
-            "default_value": null,
+            "default_value": "true",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "If disabled, then slider will be animated only when you release it, it will not move while you hold your finger on it"
+                "shortText": "If disabled, then slider will be animated only when you release it, it will not move while you hold your finger on it",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "true\n"
+                    }
+                ]
             }
         },
         {
@@ -10054,7 +10405,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to false if you want to disable momentum bounce in free mode",
+                "shortText": "Set to `false` if you want to disable momentum bounce in free mode",
                 "tags": [
                     {
                         "tag": "default",
@@ -10133,10 +10484,19 @@
         },
         {
             "name": "grabCursor",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
+            },
+            "comment": {
+                "shortText": "This option may a little improve desktop usability. If `true`, user will see the \"grab\" cursor when hover on Swiper",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
@@ -10153,6 +10513,15 @@
                     {
                         "type": "intrinsic",
                         "name": "boolean"
+                    }
+                ]
+            },
+            "comment": {
+                "shortText": "Enables hash url navigation to for slides.\nObject with hash navigation parameters or boolean `true` to enable with default settings",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  hashNavigation: {\n    replaceState: true,\n  },\n});\n```\n"
                     }
                 ]
             }
@@ -10178,7 +10547,7 @@
                 "tags": [
                     {
                         "tag": "default",
-                        "text": "null"
+                        "text": "null\n"
                     },
                     {
                         "tag": "note",
@@ -10203,28 +10572,20 @@
                         "name": "boolean"
                     }
                 ]
-            }
-        },
-        {
-            "name": "iOSEdgeSwipeDetection",
-            "default_value": null,
-            "type": {
-                "type": "intrinsic",
-                "name": "boolean"
             },
             "comment": {
-                "shortText": "Enable to release Swiper events for swipe-to-go-back work in iOS UIWebView"
-            }
-        },
-        {
-            "name": "iOSEdgeSwipeThreshold",
-            "default_value": null,
-            "type": {
-                "type": "intrinsic",
-                "name": "number"
-            },
-            "comment": {
-                "shortText": "Area (in px) from left edge of the screen to release touch events for swipe-to-go-back in iOS UIWebView"
+                "shortText": "Enables history push state where every slide will have its own url. In this parameter you have to specify main slides url like `\"slides\"` and specify every slide url using `data-history` attribute.",
+                "text": "Object with history navigation parameters or boolean `true` to enable with default settings\n",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  history: {\n    replaceState: true,\n  },\n});\n```\n"
+                    },
+                    {
+                        "tag": "example",
+                        "text": "\n```html\n<!-- will produce \"slides/slide1\" url in browser history -->\n<div class=\"swiper-slide\" data-history=\"slide1\"></div>\n```\n"
+                    }
+                ]
             }
         },
         {
@@ -10235,7 +10596,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Whether Swiper should be initialised automatically when you create an instance.\nIf disabled, then you need to init it manually by calling mySwiper.init()",
+                "shortText": "Whether Swiper should be initialised automatically when you create an instance.\nIf disabled, then you need to init it manually by calling `mySwiper.init()`",
                 "tags": [
                     {
                         "tag": "default",
@@ -10277,6 +10638,15 @@
                         "name": "boolean"
                     }
                 ]
+            },
+            "comment": {
+                "shortText": "Enables navigation through slides using keyboard. Object with keyboard parameters or boolean `true` to enable with default settings",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  keyboard: {\n    enabled: true,\n    onlyInViewport: false,\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
@@ -10295,39 +10665,66 @@
                         "name": "boolean"
                     }
                 ]
+            },
+            "comment": {
+                "shortText": "Enables images lazy loading. Object with lazy loading parameters or boolean `true` to enable with default settings",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  lazy: {\n    loadPrevNext: true,\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
             "name": "longSwipes",
-            "default_value": null,
+            "default_value": "true",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to false if you want to disable long swipes"
+                "shortText": "Set to `false` if you want to disable long swipes",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "true\n"
+                    }
+                ]
             }
         },
         {
             "name": "longSwipesMs",
-            "default_value": null,
+            "default_value": "300",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "Minimal duration (in ms) to trigger swipe to next/previous slide during long swipes"
+                "shortText": "Minimal duration (in ms) to trigger swipe to next/previous slide during long swipes",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "300\n"
+                    }
+                ]
             }
         },
         {
             "name": "longSwipesRatio",
-            "default_value": null,
+            "default_value": "0.5",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "Ratio to trigger swipe to next/previous slide during long swipes"
+                "shortText": "Ratio to trigger swipe to next/previous slide during long swipes",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "0.5\n"
+                    }
+                ]
             }
         },
         {
@@ -10338,11 +10735,16 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Enables continuous loop mode",
+                "shortText": "Set to `true` to enable continuous loop mode",
+                "text": "Because of nature of how the loop mode works, it will add duplicated slides. Such duplicated slides will have additional classes:\n- `swiper-slide-duplicate` - represents duplicated slide\n- `swiper-slide-duplicate-active` - represents slide duplicated to the currently active slide\n- `swiper-slide-duplicate-next` - represents slide duplicated to the slide next to active\n- `swiper-slide-duplicate-prev` - represents slide duplicated to the slide previous to active\n",
                 "tags": [
                     {
                         "tag": "default",
                         "text": "false\n"
+                    },
+                    {
+                        "tag": "note",
+                        "text": "If you use it along with `slidesPerView: 'auto'` then you need to specify `loopedSlides` parameter with amount of slides to loop (duplicate)\n"
                     }
                 ]
             }
@@ -10372,7 +10774,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Enable and loop mode will fill groups with insufficient number of slides with blank slides. Good to be used with slidesPerGroup parameter",
+                "shortText": "Enable and loop mode will fill groups with insufficient number of slides with blank slides. Good to be used with `slidesPerGroup` parameter",
                 "tags": [
                     {
                         "tag": "default",
@@ -10415,7 +10817,7 @@
                 ]
             },
             "comment": {
-                "shortText": "If you use slidesPerView:'auto' with loop mode you should tell to Swiper how many slides it should loop (duplicate) using this parameter",
+                "shortText": "If you use `slidesPerView:'auto'` with loop mode you should tell to Swiper how many slides it should loop (duplicate) using this parameter",
                 "tags": [
                     {
                         "tag": "default",
@@ -10440,6 +10842,15 @@
                         "name": "boolean"
                     }
                 ]
+            },
+            "comment": {
+                "shortText": "Enables navigation through slides using mouse wheel. Object with mousewheel parameters or boolean `true` to enable with default settings",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  mousewheel: {\n    invert: true,\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
@@ -10458,6 +10869,15 @@
                         "name": "boolean"
                     }
                 ]
+            },
+            "comment": {
+                "shortText": "Object with navigation parameters",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  navigation: {\n    nextEl: '.swiper-button-next',\n    prevEl: '.swiper-button-prev',\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
@@ -10468,7 +10888,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true on  Swiper for correct touch events interception. Use only on\nswipers that use same direction as the parent one",
+                "shortText": "Set to `true` on  Swiper for correct touch events interception. Use only on\nswipers that use same direction as the parent one",
                 "tags": [
                     {
                         "tag": "default",
@@ -10485,7 +10905,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Enable/disable swiping on elements matched to class specified in noSwipingClass",
+                "shortText": "Enable/disable swiping on elements matched to class specified in `noSwipingClass`",
                 "tags": [
                     {
                         "tag": "default",
@@ -10502,7 +10922,7 @@
                 "name": "string"
             },
             "comment": {
-                "shortText": "Specify noSwiping's' element css class",
+                "shortText": "Specify `noSwiping`'s element css class",
                 "tags": [
                     {
                         "tag": "default",
@@ -10519,7 +10939,7 @@
                 "name": "string"
             },
             "comment": {
-                "shortText": "Can be used instead of noSwipingClass to specify elements to disable swiping on.\nFor example 'input' will disable swiping on all inputs",
+                "shortText": "Can be used instead of `noSwipingClass` to specify elements to disable swiping on.\nFor example `'input'` will disable swiping on all inputs",
                 "tags": [
                     {
                         "tag": "default",
@@ -10530,13 +10950,19 @@
         },
         {
             "name": "normalizeSlideIndex",
-            "default_value": null,
+            "default_value": "true",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Normalize slide index."
+                "shortText": "Normalize slide index.",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "true\n"
+                    }
+                ]
             }
         },
         {
@@ -10547,7 +10973,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true if you also need to watch Mutations for Swiper parent elements",
+                "shortText": "Set to `true` if you also need to watch Mutations for Swiper parent elements",
                 "tags": [
                     {
                         "tag": "default",
@@ -10564,7 +10990,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true if you also need to watch Mutations for Swiper slide children elements",
+                "shortText": "Set to `true` if you also need to watch Mutations for Swiper slide children elements",
                 "tags": [
                     {
                         "tag": "default",
@@ -10581,7 +11007,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true to enable Mutation Observer on Swiper and its elements. In this case Swiper will be updated (reinitialized) each time if you change its style (like hide/show) or modify its child elements (like adding/removing slides)",
+                "shortText": "Set to `true` to enable Mutation Observer on Swiper and its elements. In this case Swiper will be updated (reinitialized) each time if you change its style (like hide/show) or modify its child elements (like adding/removing slides)",
                 "tags": [
                     {
                         "tag": "default",
@@ -10596,7 +11022,7 @@
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 870,
+                    "id": 872,
                     "name": "__type",
                     "kind": 65536,
                     "kindString": "Type literal",
@@ -10606,14 +11032,14 @@
                     "sources": [
                         {
                             "fileName": "swiper/types/swiper-options.d.ts",
-                            "line": 148,
+                            "line": 168,
                             "character": 6
                         }
                     ]
                 }
             },
             "comment": {
-                "shortText": "Register event handlers."
+                "shortText": "Register event handlers"
             }
         },
         {
@@ -10632,6 +11058,15 @@
                         "name": "boolean"
                     }
                 ]
+            },
+            "comment": {
+                "shortText": "Object with navigation parameters",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  pagination: {\n    el: '.swiper-pagination',\n    type: 'bullets',\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
@@ -10640,17 +11075,26 @@
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
+            },
+            "comment": {
+                "shortText": "Enable, if you want to use \"parallaxed\" elements inside of slider"
             }
         },
         {
             "name": "passiveListeners",
-            "default_value": null,
+            "default_value": "true",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Passive event listeners will be used by default where possible to improve scrolling performance on mobile devices.\nBut if you need to use `e.preventDefault` and you have conflict with it, then you should disable this parameter"
+                "shortText": "Passive event listeners will be used by default where possible to improve scrolling performance on mobile devices.\nBut if you need to use `e.preventDefault` and you have conflict with it, then you should disable this parameter",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "true\n"
+                    }
+                ]
             }
         },
         {
@@ -10678,7 +11122,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true to prevent accidental unwanted clicks on links during swiping",
+                "shortText": "Set to `true` to prevent accidental unwanted clicks on links during swiping",
                 "tags": [
                     {
                         "tag": "default",
@@ -10695,7 +11139,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true to stop clicks event propagation on links during swiping",
+                "shortText": "Set to `true` to stop clicks event propagation on links during swiping",
                 "tags": [
                     {
                         "tag": "default",
@@ -10723,24 +11167,36 @@
         },
         {
             "name": "resistance",
-            "default_value": null,
+            "default_value": "true",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to false if you want to disable resistant bounds"
+                "shortText": "Set to `false` if you want to disable resistant bounds",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "true\n"
+                    }
+                ]
             }
         },
         {
             "name": "resistanceRatio",
-            "default_value": null,
+            "default_value": "0.85",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "This option allows you to control resistance ratio"
+                "shortText": "This option allows you to control resistance ratio",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "0.85\n"
+                    }
+                ]
             }
         },
         {
@@ -10751,7 +11207,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true to round values of slides width and height to prevent blurry texts on usual\nresolution screens (if you have such)",
+                "shortText": "Set to `true` to round values of slides width and height to prevent blurry texts on usual\nresolution screens (if you have such)",
                 "tags": [
                     {
                         "tag": "default",
@@ -10793,111 +11249,219 @@
                         "name": "boolean"
                     }
                 ]
+            },
+            "comment": {
+                "shortText": "Object with scrollbar parameters",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  scrollbar: {\n    el: '.swiper-scrollbar',\n    draggable: true,\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
             "name": "setWrapperSize",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Enabled this option and plugin will set width/height on swiper wrapper equal to total size of all slides.\nMostly should be used as compatibility fallback option for browser that don't support flexbox layout well"
+                "shortText": "Enabled this option and plugin will set width/height on swiper wrapper equal to total size of all slides.\nMostly should be used as compatibility fallback option for browser that don't support flexbox layout well",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
             "name": "shortSwipes",
-            "default_value": null,
+            "default_value": "true",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to false if you want to disable short swipes"
+                "shortText": "Set to `false` if you want to disable short swipes",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "true\n"
+                    }
+                ]
             }
         },
         {
             "name": "simulateTouch",
-            "default_value": null,
+            "default_value": "true",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "If true, Swiper will accept mouse events like touch events (click and drag to change slides)"
+                "shortText": "If `true`, Swiper will accept mouse events like touch events (click and drag to change slides)",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "true\n"
+                    }
+                ]
             }
         },
         {
             "name": "slideActiveClass",
-            "default_value": null,
+            "default_value": "'swiper-slide-active'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "CSS class name of currently active slide",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-slide-active'\n"
+                    }
+                ]
             }
         },
         {
             "name": "slideBlankClass",
-            "default_value": null,
+            "default_value": "'swiper-slide-invisible-blank'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "CSS class name of blank slide append to fill groups in loop mode when `loopFillGroupWithBlank` is also enabled",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-slide-invisible-blank'\n"
+                    }
+                ]
             }
         },
         {
             "name": "slideClass",
-            "default_value": null,
+            "default_value": "'swiper-slide'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "CSS class name of slide",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-slide'\n"
+                    }
+                ]
             }
         },
         {
             "name": "slideDuplicateActiveClass",
-            "default_value": null,
+            "default_value": "'swiper-slide-duplicate-active'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "CSS class name of duplicated slide which represents the currently active slide",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-slide-duplicate-active'\n"
+                    }
+                ]
             }
         },
         {
             "name": "slideDuplicateClass",
-            "default_value": null,
+            "default_value": "'swiper-slide-duplicate'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "CSS class name of slide duplicated by loop mode",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-slide-duplicate'\n"
+                    }
+                ]
             }
         },
         {
             "name": "slideDuplicateNextClass",
-            "default_value": null,
+            "default_value": "'swiper-slide-duplicate-next'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "CSS class name of duplicated slide which represents the slide next to active slide",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-slide-duplicate-next'\n"
+                    }
+                ]
             }
         },
         {
             "name": "slideDuplicatePrevClass",
-            "default_value": null,
+            "default_value": "'swiper-slide-duplicate-prev'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "CSS class name of duplicated slide which represents the slide previous to active slide",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-slide-duplicate-prev'\n"
+                    }
+                ]
             }
         },
         {
             "name": "slideNextClass",
-            "default_value": null,
+            "default_value": "'swiper-slide-next'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "CSS class name of slide which is right after currently active slide",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-slide-next'\n"
+                    }
+                ]
             }
         },
         {
             "name": "slidePrevClass",
-            "default_value": null,
+            "default_value": "'swiper-slide-prev'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "CSS class name of slide which is right before currently active slide",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-slide-prev'\n"
+                    }
+                ]
             }
         },
         {
@@ -10908,7 +11472,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Set to true and click on any slide will produce transition to this slide",
+                "shortText": "Set to `true` and click on any slide will produce transition to this slide",
                 "tags": [
                     {
                         "tag": "default",
@@ -10919,48 +11483,79 @@
         },
         {
             "name": "slideVisibleClass",
-            "default_value": null,
+            "default_value": "'swiper-slide-visible'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "CSS class name of currently visible slide",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-slide-visible'\n"
+                    }
+                ]
             }
         },
         {
             "name": "slidesOffsetAfter",
-            "default_value": null,
+            "default_value": "0",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "Add (in px) additional slide offset in the end of the container (after all slides)"
+                "shortText": "Add (in px) additional slide offset in the end of the container (after all slides)",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "0\n"
+                    }
+                ]
             }
         },
         {
             "name": "slidesOffsetBefore",
-            "default_value": null,
+            "default_value": "0",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "Add (in px) additional slide offset in the beginning of the container (before all slides)"
+                "shortText": "Add (in px) additional slide offset in the beginning of the container (before all slides)",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "0\n"
+                    }
+                ]
             }
         },
         {
             "name": "slidesPerColumn",
-            "default_value": null,
+            "default_value": "1",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "Number of slides per column, for multirow layout\nslidesPerColumn > 1 is currently not compatible with loop mode (loop: true)"
+                "shortText": "Number of slides per column, for multirow layout",
+                "tags": [
+                    {
+                        "tag": "note",
+                        "text": "`slidesPerColumn` > 1 is currently not compatible with loop mode (`loop: true`)\n"
+                    },
+                    {
+                        "tag": "default",
+                        "text": "1\n"
+                    }
+                ]
             }
         },
         {
             "name": "slidesPerColumnFill",
-            "default_value": null,
+            "default_value": "'column'",
             "type": {
                 "type": "union",
                 "types": [
@@ -10975,18 +11570,30 @@
                 ]
             },
             "comment": {
-                "shortText": "Could be 'column' or 'row'. Defines how slides should fill rows, by column or by row"
+                "shortText": "Can be 'column' or 'row'. Defines how slides should fill rows, by column or by row",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'column'\n"
+                    }
+                ]
             }
         },
         {
             "name": "slidesPerGroup",
-            "default_value": null,
+            "default_value": "1",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "Set numbers of slides to define and enable group sliding. Useful to use with slidesPerView > 1"
+                "shortText": "Set numbers of slides to define and enable group sliding. Useful to use with slidesPerView > 1",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "1\n"
+                    }
+                ]
             }
         },
         {
@@ -11008,7 +11615,7 @@
         },
         {
             "name": "slidesPerView",
-            "default_value": null,
+            "default_value": "1",
             "type": {
                 "type": "union",
                 "types": [
@@ -11023,18 +11630,42 @@
                 ]
             },
             "comment": {
-                "shortText": "Number of slides per view (slides visible at the same time on slider's container).\nIf you use it with \"auto\" value and along with loop: true then you need to specify loopedSlides parameter with amount of slides to loop (duplicate)\nslidesPerView: 'auto' is currently not compatible with multirow mode, when slidesPerColumn > 1"
+                "shortText": "Number of slides per view (slides visible at the same time on slider's container).",
+                "tags": [
+                    {
+                        "tag": "note",
+                        "text": "If you use it with \"auto\" value and along with `loop: true` then you need to specify `loopedSlides` parameter with amount of slides to loop (duplicate)"
+                    },
+                    {
+                        "tag": "note",
+                        "text": "`slidesPerView: 'auto'` is currently not compatible with multirow mode, when `slidesPerColumn` > 1\n"
+                    },
+                    {
+                        "tag": "default",
+                        "text": "1\n"
+                    }
+                ]
             }
         },
         {
             "name": "spaceBetween",
-            "default_value": null,
+            "default_value": "0",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "Distance between slides in px."
+                "shortText": "Distance between slides in px.",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "0\n"
+                    },
+                    {
+                        "tag": "note",
+                        "text": "If you use \"margin\" css property to the elements which go into Swiper in which you pass \"spaceBetween\" into, navigation might not work property.\n"
+                    }
+                ]
             }
         },
         {
@@ -11087,13 +11718,19 @@
         },
         {
             "name": "threshold",
-            "default_value": null,
+            "default_value": "0",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "Threshold value in px. If \"touch distance\" will be lower than this value then swiper will not move"
+                "shortText": "Threshold value in px. If \"touch distance\" will be lower than this value then swiper will not move",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "0\n"
+                    }
+                ]
             }
         },
         {
@@ -11103,22 +11740,37 @@
                 "type": "reference",
                 "id": 437,
                 "name": "ThumbsOptions"
+            },
+            "comment": {
+                "shortText": "Object with thumbs component parameters",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  ...\n  thumbs: {\n    swiper: thumbsSwiper\n  }\n});\n```\n"
+                    }
+                ]
             }
         },
         {
             "name": "touchAngle",
-            "default_value": null,
+            "default_value": "45",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "Allowable angle (in degrees) to trigger touch move"
+                "shortText": "Allowable angle (in degrees) to trigger touch move",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "45\n"
+                    }
+                ]
             }
         },
         {
             "name": "touchEventsTarget",
-            "default_value": null,
+            "default_value": "'wrapper'",
             "type": {
                 "type": "union",
                 "types": [
@@ -11133,62 +11785,98 @@
                 ]
             },
             "comment": {
-                "shortText": "Target element to listen touch events on. Can be 'container' (to listen for touch events on swiper-container) or 'wrapper'\n(to listen for touch events on swiper-wrapper)"
+                "shortText": "Target element to listen touch events on. Can be `'container'` (to listen for touch events on swiper-container) or `'wrapper'`\n(to listen for touch events on swiper-wrapper)",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'wrapper'\n"
+                    }
+                ]
             }
         },
         {
             "name": "touchMoveStopPropagation",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "If enabled, then propagation of \"touchmove\" will be stopped"
+                "shortText": "If enabled, then propagation of \"touchmove\" will be stopped",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
             "name": "touchRatio",
-            "default_value": null,
+            "default_value": "1",
             "type": {
                 "type": "intrinsic",
                 "name": "number"
             },
             "comment": {
-                "shortText": "Touch ratio"
+                "shortText": "Touch ratio",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "1\n"
+                    }
+                ]
             }
         },
         {
             "name": "touchReleaseOnEdges",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Enable to release touch events on slider edge position (beginning, end) to allow for further page scrolling"
+                "shortText": "Enable to release touch events on slider edge position (beginning, end) to allow for further page scrolling",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
             "name": "touchStartForcePreventDefault",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Force to always prevent default for `touchstart` (`mousedown`) event"
+                "shortText": "Force to always prevent default for `touchstart` (`mousedown`) event",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
             "name": "touchStartPreventDefault",
-            "default_value": null,
+            "default_value": "true",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "If disabled, `touchstart` (`mousedown`) event won't be prevented"
+                "shortText": "If disabled, `touchstart` (`mousedown`) event won't be prevented",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "true\n"
+                    }
+                ]
             }
         },
         {
@@ -11199,7 +11887,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "If enabled (by default) and navigation elements' parameters passed as a string (like \".pagination\")\nthen Swiper will look for such elements through child elements first.\nApplies for pagination, prev/next buttons and scrollbar elements",
+                "shortText": "If enabled (by default) and navigation elements' parameters passed as a string (like `\".pagination\"`)\nthen Swiper will look for such elements through child elements first.\nApplies for pagination, prev/next buttons and scrollbar elements",
                 "tags": [
                     {
                         "tag": "default",
@@ -11216,7 +11904,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "When enabled Swiper will be reinitialized after all inner images (<img> tags) are loaded. Required preloadImages: true",
+                "shortText": "When enabled Swiper will be reinitialized after all inner images (<img> tags) are loaded. Required `preloadImages: true`",
                 "tags": [
                     {
                         "tag": "default",
@@ -11310,17 +11998,32 @@
                         "name": "boolean"
                     }
                 ]
+            },
+            "comment": {
+                "shortText": "Enables virtual slides functionality. Object with virtual slides parameters or boolean `true` to enable with default settings.",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  virtual: {\n    slides: ['Slide 1', 'Slide 2', 'Slide 3', 'Slide 4', 'Slide 5'],\n  },\n});\n```\n"
+                    }
+                ]
             }
         },
         {
             "name": "virtualTranslate",
-            "default_value": null,
+            "default_value": "false",
             "type": {
                 "type": "intrinsic",
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "Enabled this option and swiper will be operated as usual except it will not move, real translate values on wrapper will not be set.\nUseful when you may need to create custom slide transition"
+                "shortText": "Enabled this option and swiper will be operated as usual except it will not move, real translate values on wrapper will not be set.\nUseful when you may need to create custom slide transition",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "false\n"
+                    }
+                ]
             }
         },
         {
@@ -11365,7 +12068,7 @@
                 "name": "boolean"
             },
             "comment": {
-                "shortText": "watchSlidesProgress should be enabled. Enable this option and slides that are in viewport will have additional visible class",
+                "shortText": "`watchSlidesProgress` should be enabled. Enable this option and slides that are in viewport will have additional visible class",
                 "tags": [
                     {
                         "tag": "default",
@@ -11395,7 +12098,7 @@
                 "tags": [
                     {
                         "tag": "default",
-                        "text": "null"
+                        "text": "null\n"
                     },
                     {
                         "tag": "note",
@@ -11406,10 +12109,19 @@
         },
         {
             "name": "wrapperClass",
-            "default_value": null,
+            "default_value": "'swiper-wrapper'",
             "type": {
                 "type": "intrinsic",
                 "name": "string"
+            },
+            "comment": {
+                "shortText": "CSS class name of slides' wrapper",
+                "tags": [
+                    {
+                        "tag": "default",
+                        "text": "'swiper-wrapper'\n"
+                    }
+                ]
             }
         },
         {
@@ -11426,6 +12138,15 @@
                     {
                         "type": "intrinsic",
                         "name": "boolean"
+                    }
+                ]
+            },
+            "comment": {
+                "shortText": "Enables zooming functionality. Object with zoom parameters or boolean `true` to enable with default settings",
+                "tags": [
+                    {
+                        "tag": "example",
+                        "text": "\n```js\nvar mySwiper = new Swiper('.swiper-container', {\n  zoom: {\n    maxRatio: 5,\n  },\n});\n```\n"
                     }
                 ]
             }
