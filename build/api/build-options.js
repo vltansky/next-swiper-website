@@ -10,12 +10,14 @@ const buildOptions = async (
   parentTypesData
 ) => {
   items =
-    typesData[typesName]
-      ?.filter(
-        (item) => !item.comment?.shortText.toLowerCase().includes("internal")
+    (typesData[typesName] || [])
+      .filter((item) =>
+        item.comment && item.comment.shortText
+          ? !item.comment.shortText.toLowerCase().includes("internal")
+          : true
       )
-      ?.filter((item) => !ignoreOptions.includes(item.name))
-      ?.filter((item) => {
+      .filter((item) => !ignoreOptions.includes(item.name))
+      .filter((item) => {
         if (item.type && item.type.name && ignoreTypes.includes(item.type.name))
           return false;
         if (item.type && item.type.types) {
@@ -39,12 +41,10 @@ const buildOptions = async (
       return types.join(`{' | '}`);
     }
     if (typeObj.type === "reflection") {
-      if (typeObj?.declaration?.signatures) {
-        const args = typeObj.declaration.signatures[0].parameters
-          ?.map(
-            (param) => `<span className="text-red-700">${param.name}</span>`
-          )
-          ?.join(", ");
+      if (typeObj && typeObj.declaration && typeObj.declaration.signatures) {
+        const args = (typeObj.declaration.signatures[0].parameters || [])
+          .map((param) => `<span className="text-red-700">${param.name}</span>`)
+          .join(", ");
         return `function(${args || ""})`;
       }
       return `object`;
@@ -107,7 +107,7 @@ export const ${typesName} = () => {
             : ""
         }
         ${items
-          ?.map(
+          .map(
             (item) => `
           <tr className="border-t ${
             parentType ? "params-table-nested-row" : ""

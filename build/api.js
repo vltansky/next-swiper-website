@@ -52,11 +52,14 @@ const components = [
           prop.comment.tags &&
           prop.comment.tags.find((tag) => tag.tag === "default");
 
-        const defaultValueIsNoteOrExample = prop?.comment?.tags?.find(
-          (tag) =>
-            (tag.tag === "note" || tag.tag === "example") &&
-            tag.text === default_value
-        );
+        const defaultValueIsNoteOrExample =
+          prop.comment && prop.comment.tags
+            ? prop.comment.tags.find(
+                (tag) =>
+                  (tag.tag === "note" || tag.tag === "example") &&
+                  tag.text === default_value
+              )
+            : false;
         if (defaultValueIsNoteOrExample) default_value = "";
 
         return {

@@ -4,9 +4,11 @@ const description = require("./description");
 
 const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
   items =
-    typesData[typesName]
-      ?.filter(
-        (item) => !item.comment?.shortText.toLowerCase().includes("internal")
+    (typesData[typesName] || [])
+      .filter((item) =>
+        item.comment && item.comment.shortText
+          ? !item.comment.shortText.toLowerCase().includes("internal")
+          : true
       )
       .filter((item) => !ignoreEvents.includes(item.name)) || [];
 
@@ -24,12 +26,16 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
   };
 
   const args = (item) => {
-    const params = (
-      item?.type?.declaration?.signatures[0]?.parameters || []
-    ).map((param) => param.name);
+    if (item.type && item.type.declaration && item.type.signatures) {
+      const params = (item.type.declaration.signatures[0].parameters || []).map(
+        (param) => param.name
+      );
 
-    if (!params.length) return "";
-    return `(${params.join(", ")})`;
+      if (!params.length) return "";
+      return `(${params.join(", ")})`;
+    }
+
+    return "";
   };
 
   const content = `
@@ -45,7 +51,7 @@ export const ${typesName} = () => {
       </thead>
       <tbody>
         ${items
-          ?.map(
+          .map(
             (item) => `
           <tr className="border-t">
             <td className="w-1/4 font-mono font-semibold">
