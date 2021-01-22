@@ -5,6 +5,29 @@ const chalk = require("chalk");
 const { promise: exec } = require("exec-sh");
 
 const buildOptions = require("./api/build-options");
+const buildEvents = require("./api/build-events");
+const buildMethods = require("./api/build-methods");
+
+const components = [
+  "A11y",
+  "Autoplay",
+  "Controller",
+  "CoverflowEffect",
+  "CubeEffect",
+  "FadeEffect",
+  "FlipEffect",
+  "HashNavigation",
+  "History",
+  "Keyboard",
+  "Lazy",
+  "Mousewheel",
+  "Navigation",
+  "Pagination",
+  "Scrollbar",
+  "Thumbs",
+  "Virtual",
+  "Zoom",
+];
 
 (async () => {
   elapsed.start("Typedoc");
@@ -24,11 +47,6 @@ const buildOptions = require("./api/build-options");
     children.forEach((v) => {
       if (!v.children) return;
       types[v.name] = v.children.map((prop) => {
-        //   if (prop.kindString !== "Property") {
-        //     // prop.kindString can be Constructor, Method, Property
-        //     console.log("how?", prop.kindString);
-        //   }
-
         let default_value =
           prop.comment &&
           prop.comment.tags &&
@@ -48,30 +66,41 @@ const buildOptions = require("./api/build-options");
             : null,
           type: prop.type,
           comment: prop.comment,
+          signatures: prop.signatures,
         };
       });
     });
   });
 
-  buildOptions("SwiperOptions", types);
-  buildOptions("A11yOptions", types);
-  buildOptions("AutoplayOptions", types);
-  buildOptions("ControllerOptions", types);
-  buildOptions("CoverflowEffectOptions", types);
-  buildOptions("CubeEffectOptions", types);
-  buildOptions("FadeEffectOptions", types);
-  buildOptions("FlipEffectOptions", types);
-  buildOptions("HashNavigationOptions", types);
-  buildOptions("HistoryOptions", types);
-  buildOptions("KeyboardOptions", types);
-  buildOptions("LazyOptions", types);
-  buildOptions("MousewheelOptions", types);
-  buildOptions("NavigationOptions", types);
-  buildOptions("PaginationOptions", types);
-  buildOptions("ScrollbarOptions", types);
-  buildOptions("ThumbsOptions", types);
-  buildOptions("VirtualOptions", types);
-  buildOptions("ZoomOptions", types);
+  const componentsEventsList = [];
+  const componentsOptionsList = [];
+  components.forEach((component) => {
+    buildOptions(`${component}Options`, types, [], [], types.SwiperOptions);
+    buildEvents(`${component}Events`, types);
+    buildMethods(`${component}Methods`, types);
+    const eventsList = (types[`${component}Events`] || []).map(
+      (item) => item.name
+    );
+    componentsEventsList.push(...eventsList);
+    componentsOptionsList.push(`${component}Options`);
+  });
+
+  buildOptions("SwiperOptions", types, ["parallax"], componentsOptionsList);
+  buildEvents("SwiperEvents", types, componentsEventsList);
+  buildMethods(
+    "Swiper",
+    types,
+    [
+      "modules",
+      "currentBreakpoint",
+      "destroyed",
+      "rtlTranslate",
+      "constructor",
+      "isHorizontal",
+      "setBreakpoint",
+    ],
+    [...components.map((c) => `${c}Methods`), "ParallaxMethods"]
+  );
 
   await fs.writeFile(typesPath, `${JSON.stringify(types, null, 4)}`);
   elapsed.end("Generate all types");

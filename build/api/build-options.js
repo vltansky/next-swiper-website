@@ -1,97 +1,55 @@
 const fs = require("fs-extra");
 const path = require("path");
-const unified = require("unified");
-const parse = require("remark-parse");
-const remark2rehype = require("remark-rehype");
-const rehypePrism = require("@mapbox/rehype-prism");
-const html = require("rehype-stringify");
+const description = require("./description");
 
-const references = {
-  A11yOptions: "#accessibility-parameters",
-  AutoplayOptions: "#autoplay-parameters",
-  ControllerOptions: "#controller-parameters",
-  CoverflowEffectOptions: "#coverflow-effect-parameters",
-  CubeEffectOptions: "#cube-effect-parameters",
-  FadeEffectOptions: "#cade-effect-parameters",
-  FlipEffectOptions: "#clip-effect-parameters",
-  HashNavigationOptions: "#hash-navigation-parameters",
-  HistoryOptions: "#history-navigation-parameters",
-  KeyboardOptions: "#keyboard-control-parameters",
-  LazyOptions: "#lazy-loading-parameters",
-  MousewheelOptions: "#mousewheel-control-parameters",
-  NavigationOptions: "#navigation-parameters",
-  PaginationOptions: "#pagination-parameters",
-  ScrollbarOptions: "#scrollbar-parameters",
-  ThumbsOptions: "#thumbs-parameters",
-  VirtualOptions: "#virtual-slides-parameters",
-  ZoomOptions: "#zoom-parameters",
-};
+const buildOptions = async (
+  typesName,
+  typesData,
+  ignoreOptions = [],
+  ignoreTypes = [],
+  parentTypesData
+) => {
+  items =
+    typesData[typesName]
+      ?.filter(
+        (item) => !item.comment?.shortText.toLowerCase().includes("internal")
+      )
+      ?.filter((item) => !ignoreOptions.includes(item.name))
+      ?.filter((item) => {
+        if (item.type && item.type.name && ignoreTypes.includes(item.type.name))
+          return false;
+        if (item.type && item.type.types) {
+          let inIgnored = false;
+          item.type.types.forEach((type) => {
+            if (ignoreTypes.includes(type.name)) inIgnored = true;
+          });
+          if (inIgnored) return false;
+        }
+        return true;
+      }) || [];
 
-const buildOptions = async (typesName, typesData) => {
-  items = typesData[typesName]?.filter(
-    (item) => !item.comment?.shortText.toLowerCase().includes("internal")
-  );
-
-  const processDescription = (text) => {
-    const result = unified()
-      .use(parse)
-      .use(remark2rehype)
-      .use(rehypePrism)
-      .use(html)
-      .processSync(text).contents;
-    return result
-      .replace(/>\{</g, `>{'{'}<`)
-      .replace(/>\}</g, `>{'}'}<`)
-      .replace(/ class="/g, ' className="')
-      .replace(/<code className="([a-z-]*)">([^№]*)<\/code>/g, (...args) => {
-        const lang = args[1];
-        const inner = args[2]
-          .replace(/>([^№^<^>]*)</g, (...args) => {
-            return `>${args[1].replace(
-              /[ ]{1,}/g,
-              (spaces) => `{'${spaces}'}`
-            )}<`;
-          })
-          .replace(/\n/g, "{`\n`}");
-        return `<code className="${lang}">${inner}</code>`;
-      });
-  };
-
-  const typeReference = (name) => {
-    if (references[name]) return `<a href="${references[name]}">${name}</a>`;
-
-    return name;
-  };
   const type = (item = {}) => {
     const typeObj = item.type || {};
     if (typeObj.type === "union") {
       const types = [];
       typeObj.types.forEach(({ name, value }) => {
         if (value) types.push(`'${value}'`);
-        else types.push(typeReference(name));
+        else types.push(name);
       });
       return types.join(`{' | '}`);
     }
-    return typeReference(typeObj.name || "");
-  };
-
-  const description = (item = {}) => {
-    const { shortText, text, tags = [] } = item.comment || {};
-
-    const textContent = [shortText, text].filter((el) => !!el).join("\n\n");
-
-    const tagsContent = tags
-      .filter((tag) => tag.tag === "note" || tag.tag === "example")
-      .map((tag) => {
-        if (tag.tag === "note") {
-          return `> ${tag.text}`;
-        }
-
-        if (tag.tag === "example") return tag.text;
-      })
-      .join("\n\n");
-
-    return processDescription([textContent, tagsContent].join("\n\n"));
+    if (typeObj.type === "reflection") {
+      if (typeObj?.declaration?.signatures) {
+        const args = typeObj.declaration.signatures[0].parameters
+          ?.map(
+            (param) => `<span className="text-red-700">${param.name}</span>`
+          )
+          ?.join(", ");
+        return `function(${args || ""})`;
+      }
+      return `object`;
+    }
+    return typeObj.name || "";
   };
 
   const defaultValue = (item) => {
@@ -100,6 +58,20 @@ const buildOptions = async (typesName, typesData) => {
       (bracket) => `{'${bracket}'}`
     );
   };
+  let parentType;
+  if (parentTypesData) {
+    // look for typesName in parent
+    parentTypesData.forEach((item) => {
+      if (item.type && item.type.name === typesName) {
+        parentType = item;
+      } else if (item.type && item.type.types) {
+        item.type.types.forEach((type) => {
+          if (type.name === typesName) parentType = item;
+        });
+      }
+    });
+  }
+
   const content = `
 export const ${typesName} = () => {
   return (
@@ -113,10 +85,33 @@ export const ${typesName} = () => {
         </tr>
       </thead>
       <tbody>
+        ${
+          parentType
+            ? `
+          <tr className="border-t">
+            <td className="w-1/6 text-red-700 font-mono font-semibold">
+              ${parentType.name}
+            </td>
+            <td className="w-1/6 text-green-700 font-mono font-semibold">
+              ${type(parentType)}
+            </td>
+            <td className="w-1/6 text-red-700 font-mono font-semibold">
+              ${defaultValue(parentType)}
+            </td>
+            <td className="w-3/6 space-y-2">${description(parentType)}</td>
+          </tr>
+          <tr className="params-table-nested-open">
+            <td colSpan="4" className="font-semibold">{'{'}</td>
+          </tr>
+        `
+            : ""
+        }
         ${items
           ?.map(
             (item) => `
-          <tr className="border-t">
+          <tr className="border-t ${
+            parentType ? "params-table-nested-row" : ""
+          }">
             <td className="w-1/6 text-red-700 font-mono font-semibold">
               ${item.name}
             </td>
@@ -131,7 +126,15 @@ export const ${typesName} = () => {
         `
           )
           .join("")}
-        
+          ${
+            parentType
+              ? `
+            <tr className="params-table-nested-close">
+              <td colSpan="4" className="font-semibold">{'}'}</td>
+            </tr>
+          `
+              : ""
+          }
       </tbody>
     </table>
   )

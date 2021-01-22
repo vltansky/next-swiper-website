@@ -1,4 +1,6 @@
-.params-table {
+.params-table,
+.events-table,
+.methods-table {
   p:first-child {
     margin-top: 0;
   }
@@ -12,4 +14,21 @@
       content: "";
     }
   }
+  tbody tr {
+    border-bottom: none;
+  }
+  pre,
+  pre code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+.params-table tbody td:nth-child(4) {
+  word-break: break-word;
+}
+.params-table-nested-open + tr {
+  border-top: none;
+}
+.params-table-nested-row td:first-child {
+  padding-left: 2rem !important;
 }
