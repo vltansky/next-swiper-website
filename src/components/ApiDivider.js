@@ -1,3 +1,3 @@
 export default function ApiDivider() {
-  return <div className="my-8 bg-primary h-4 -m-4" />;
+  return <div className="my-8 bg-primary h-2 -m-4" />;
 }

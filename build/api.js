@@ -85,9 +85,14 @@ const components = [
     componentsOptionsList.push(`${component}Options`);
   });
 
-  buildOptions("SwiperOptions", types, ["parallax"], componentsOptionsList);
-  buildEvents("SwiperEvents", types, componentsEventsList);
-  buildMethods(
+  await buildOptions(
+    "SwiperOptions",
+    types,
+    ["parallax"],
+    componentsOptionsList
+  );
+  await buildEvents("SwiperEvents", types, componentsEventsList);
+  await buildMethods(
     "Swiper",
     types,
     [

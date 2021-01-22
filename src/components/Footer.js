@@ -51,7 +51,9 @@ export default function Footer() {
             />
           </a>
         </div>
-        <nav className="my-4 space-x-4">{menu}</nav>
+        <nav className="my-4 space-x-4 flex flex-wrap justify-center">
+          {menu}
+        </nav>
         <div className="text-gray-700">
           {new Date().getFullYear()} © Swiper by{" "}
           <a href="https://github.com/nolimits4web">Vladimir Kharlampidi</a>
