@@ -4,6 +4,8 @@ const elapsed = require("elapsed-time-logger");
 const chalk = require("chalk");
 const { promise: exec } = require("exec-sh");
 
+const buildOptions = require("./api/build-options");
+
 (async () => {
   elapsed.start("Typedoc");
   await exec(
@@ -50,6 +52,27 @@ const { promise: exec } = require("exec-sh");
       });
     });
   });
+
+  buildOptions("SwiperOptions", types);
+  buildOptions("A11yOptions", types);
+  buildOptions("AutoplayOptions", types);
+  buildOptions("ControllerOptions", types);
+  buildOptions("CoverflowEffectOptions", types);
+  buildOptions("CubeEffectOptions", types);
+  buildOptions("FadeEffectOptions", types);
+  buildOptions("FlipEffectOptions", types);
+  buildOptions("HashNavigationOptions", types);
+  buildOptions("HistoryOptions", types);
+  buildOptions("KeyboardOptions", types);
+  buildOptions("LazyOptions", types);
+  buildOptions("MousewheelOptions", types);
+  buildOptions("NavigationOptions", types);
+  buildOptions("PaginationOptions", types);
+  buildOptions("ScrollbarOptions", types);
+  buildOptions("ThumbsOptions", types);
+  buildOptions("VirtualOptions", types);
+  buildOptions("ZoomOptions", types);
+
   await fs.writeFile(typesPath, `${JSON.stringify(types, null, 4)}`);
   elapsed.end("Generate all types");
   console.log(chalk.green(`Types generation finished`));

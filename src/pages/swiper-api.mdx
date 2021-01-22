@@ -3,8 +3,25 @@ title: Swiper API
 description: SwipersJS API.
 ---
 
-import TypesTable from "@/components/TypesTable";
-import Types from "src/types.json";
+import { SwiperOptions } from "@/components/api/SwiperOptions";
+import { A11yOptions } from "@/components/api/A11yOptions";
+import { AutoplayOptions } from "@/components/api/AutoplayOptions";
+import { ControllerOptions } from "@/components/api/ControllerOptions";
+import { CoverflowEffectOptions } from "@/components/api/CoverflowEffectOptions";
+import { CubeEffectOptions } from "@/components/api/CubeEffectOptions";
+import { FadeEffectOptions } from "@/components/api/FadeEffectOptions";
+import { FlipEffectOptions } from "@/components/api/FlipEffectOptions";
+import { HashNavigationOptions } from "@/components/api/HashNavigationOptions";
+import { HistoryOptions } from "@/components/api/HistoryOptions";
+import { KeyboardOptions } from "@/components/api/KeyboardOptions";
+import { LazyOptions } from "@/components/api/LazyOptions";
+import { MousewheelOptions } from "@/components/api/MousewheelOptions";
+import { NavigationOptions } from "@/components/api/NavigationOptions";
+import { PaginationOptions } from "@/components/api/PaginationOptions";
+import { ScrollbarOptions } from "@/components/api/ScrollbarOptions";
+import { ThumbsOptions } from "@/components/api/ThumbsOptions";
+import { VirtualOptions } from "@/components/api/VirtualOptions";
+import { ZoomOptions } from "@/components/api/ZoomOptions";
 
 ## Swiper Full HTML Layout
 
@@ -124,11 +141,9 @@ mySwiper.slideNext();
 
 ## Swiper Parameters
 
-<TypesTable items={Types.SwiperOptions} />
+<SwiperOptions />
 
 ## Slider Methods & Properties
-
-<TypesTable items={Types.Swiper} />
 
 ## Events
 
@@ -163,123 +178,119 @@ Swiper comes with a bunch of useful events you can listen. Events can be assigne
   to Swiper instance
 </div>
 
-<TypesTable items={Types.SwiperEvents} />
-
 ## Components
 
 ### Navigation
 
 #### Navigation Parameters
 
-<TypesTable items={Types.NavigationOptions} />
+<NavigationOptions />
 
 ### Pagination
 
 #### Pagination Parameters
 
-<TypesTable items={Types.PaginationOptions} />
+<PaginationOptions />
 
 ### Scrollbar
 
 #### Scrollbar Parameters
 
-<TypesTable items={Types.ScrollbarOptions} />
+<ScrollbarOptions />
 
 ### Autoplay
 
 #### Autoplay Parameters
 
-<TypesTable items={Types.AutoplayOptions} />
+<AutoplayOptions />
 
 ### Parallax
 
 #### Parallax Parameters
 
-<TypesTable items={Types.ParallaxOptions} />
-
 ### Lazy Loading
 
 #### Lazy Loading Parameters
 
-<TypesTable items={Types.LazyOptions} />
+<LazyOptions />
 
 ### Fade Effect
 
 #### Fade Effect Parameters
 
-<TypesTable items={Types.FadeEffectOptions} />
+<FadeEffectOptions />
 
 ### Coverflow Effect
 
 #### Coverflow Effect Parameters
 
-<TypesTable items={Types.CoverflowEffectOptions} />
+<CoverflowEffectOptions />
 
 ### Flip Effect
 
 #### Flip Effect Parameters
 
-<TypesTable items={Types.FlipEffectOptions} />
+<FlipEffectOptions />
 
 ### Cube Effect
 
 #### Cube Effect Parameters
 
-<TypesTable items={Types.CubeEffectOptions} />
+<CubeEffectOptions />
 
 ### Thumbs
 
 #### Thumbs Parameters
 
-<TypesTable items={Types.ThumbsOptions} />
+<ThumbsOptions />
 
 ### Zoom
 
 #### Zoom Parameters
 
-<TypesTable items={Types.ZoomOptions} />
+<ZoomOptions />
 
 ### Keyboard Control
 
 #### Keyboard Control Parameters
 
-<TypesTable items={Types.KeyboardOptions} />
+<KeyboardOptions />
 
 ### Mousewheel Control
 
 #### Mousewheel Control Parameters
 
-<TypesTable items={Types.MousewheelOptions} />
+<MousewheelOptions />
 
 ### Virtual Slides
 
 #### Virtual Slides Parameters
 
-<TypesTable items={Types.VirtualOptions} />
+<VirtualOptions />
 
 ### Hash Navigation
 
 #### Hash Navigation Parameters
 
-<TypesTable items={Types.HashNavigationOptions} />
+<HashNavigationOptions />
 
 ### History Navigation
 
 #### History Navigation Parameters
 
-<TypesTable items={Types.HistoryOptions} />
+<HistoryOptions />
 
 ### Controller
 
 #### Controller Parameters
 
-<TypesTable items={Types.ControllerOptions} />
+<ControllerOptions />
 
 ### Accessibility (a11y)
 
 #### Accessibility Parameters
 
-<TypesTable items={Types.A11yOptions} />
+<A11yOptions />
 
 ## Custom Build
 

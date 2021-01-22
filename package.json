@@ -6,10 +6,10 @@
   "releaseDate": "December 18, 2020",
   "scripts": {
     "dev": "npm run unpkg-demos && next dev",
-    "build": "npm run unpkg-demos && npm run types:web && npm run types:json && next build",
+    "build": "npm run unpkg-demos && npm run types:web && npm run api && next build",
     "start": "next start",
     "unpkg-demos": "node build/unpkg-demos.js",
-    "types:json": "node build/types-components.js",
+    "api": "node build/api.js",
     "types:web": "node build/build-types.js"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "rehype-react": "^6.2.0",
+    "rehype-stringify": "^8.0.0",
     "remark": "^13.0.0",
     "remark-frontmatter": "^3.0.0",
     "remark-html": "^13.0.1",
