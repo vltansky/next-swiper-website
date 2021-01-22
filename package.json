@@ -26,7 +26,6 @@
     "next-optimized-images": "^2.6.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "rehype-raw": "^5.0.0",
     "rehype-react": "^6.2.0",
     "remark": "^13.0.0",
     "remark-frontmatter": "^3.0.0",

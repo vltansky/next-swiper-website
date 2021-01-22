@@ -4,7 +4,6 @@ import rehype2react from "rehype-react";
 import parse from "remark-parse";
 import remark2rehype from "remark-rehype";
 import unified from "unified";
-import raw from "rehype-raw";
 
 const references = {
   A11yOptions: "#accessibility-parameters",
@@ -31,7 +30,6 @@ const processDescription = (text) => {
   return unified()
     .use(parse)
     .use(remark2rehype, { allowDangerousHtml: true })
-    .use(raw)
     .use(rehypePrism)
     .use(rehype2react, {
       createElement: React.createElement,
