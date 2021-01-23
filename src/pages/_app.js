@@ -1,9 +1,14 @@
-import "../styles/globals.scss";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Head from "next/head";
+import '../styles/globals.scss';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import Head from 'next/head';
+import { useGA } from 'src/shared/use-ga';
+
 function App({ Component, pageProps, router }) {
   const meta = Component.layoutProps?.meta || {};
+
+  useGA(router);
+
   // TODO: use https://github.com/garmeeh/next-seo
   return (
     <>
@@ -11,7 +16,7 @@ function App({ Component, pageProps, router }) {
         <title key="title">
           {meta.metaTitle ||
             meta.title ||
-            "Swiper - The Most Modern Mobile Touch Slider"}
+            'Swiper - The Most Modern Mobile Touch Slider'}
         </title>
         <meta
           property="og:title"
@@ -40,7 +45,7 @@ function App({ Component, pageProps, router }) {
         />
         <link rel="shortcut icon" href="/images/favicon.png" />
       </Head>
-      {router.pathname !== "/" && <Header />}
+      {router.pathname !== '/' && <Header />}
       <Component {...pageProps} />
       <Footer />
     </>
