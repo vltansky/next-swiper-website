@@ -1,20 +1,20 @@
-const fs = require("fs-extra");
-const path = require("path");
-const description = require("./description");
+const fs = require('fs-extra');
+const path = require('path');
+const description = require('./description');
 
 const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
   items =
     (typesData[typesName] || [])
       .filter((item) =>
         item.comment && item.comment.shortText
-          ? !item.comment.shortText.toLowerCase().includes("internal")
+          ? !item.comment.shortText.toLowerCase().includes('internal')
           : true
       )
       .filter((item) => !ignoreEvents.includes(item.name)) || [];
 
   const type = (item = {}) => {
     const typeObj = item.type || {};
-    if (typeObj.type === "union") {
+    if (typeObj.type === 'union') {
       const types = [];
       typeObj.types.forEach(({ name, value }) => {
         if (value) types.push(`'${value}'`);
@@ -22,7 +22,7 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
       });
       return types.join(`{' | '}`);
     }
-    return typeObj.name || "";
+    return typeObj.name || '';
   };
 
   const args = (item) => {
@@ -31,11 +31,11 @@ const buildEvents = async (typesName, typesData, ignoreEvents = []) => {
         (param) => param.name
       );
 
-      if (!params.length) return "";
-      return `(${params.join(", ")})`;
+      if (!params.length) return '';
+      return `(${params.join(', ')})`;
     }
 
-    return "";
+    return '';
   };
 
   const content = `
@@ -64,7 +64,7 @@ export const ${typesName} = () => {
           </tr>
         `
           )
-          .join("")}
+          .join('')}
         
       </tbody>
     </table>

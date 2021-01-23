@@ -1,8 +1,8 @@
-import menuList from "../shared/menu-list";
-import GithubStats from "./GithubStats";
-import Link from "next/link";
-import { ReactComponent as Logo } from "@/img/logo.svg";
-import Carbon from "./Carbon";
+import menuList from '../shared/menu-list';
+import GithubStats from './GithubStats';
+import Link from 'next/link';
+import { ReactComponent as Logo } from '@/img/logo.svg';
+import Carbon from './Carbon';
 
 export default function Header() {
   return (
@@ -17,7 +17,7 @@ export default function Header() {
           </a>
         </Link>
         <div className="md:ml-5 min-w-0">
-          <div className="text-5xl font-bold text-primary mt-4 lg:mt-0">
+          <div className="text-5xl font-extrabold text-primary mt-4 lg:mt-0">
             Swiper
             <span className="text-xs text-black ml-2 font-medium align-super">
               v{process.env.swiperReleaseVersion}

@@ -1,6 +1,6 @@
-import PageHeader from "@/components/PageHeader";
-import TableOfContents from "@/components/TableOfContents";
-import Sponsors from "@/components/Sponsors";
+import PageHeader from '@/components/PageHeader';
+import TableOfContents from '@/components/TableOfContents';
+import Sponsors from '@/components/Sponsors';
 
 export function WithSidebarLayout({
   children,
@@ -12,8 +12,8 @@ export function WithSidebarLayout({
     ...(classes
       ? [
           {
-            title: "Default class reference",
-            slug: "class-reference",
+            title: 'Default class reference',
+            slug: 'class-reference',
             children: [],
           },
         ]
@@ -25,7 +25,7 @@ export function WithSidebarLayout({
     <div>
       <div id={meta.containerId} className="w-full flex">
         {toc.length > 0 && (
-          <div className="hidden text-sm lg:block flex-none w-64 mr-8 bg-gray-100">
+          <div className="hidden text-sm lg:block flex-none w-64 bg-gray-100">
             <div className="overflow-y-auto overscroll-contain sticky top-0 p-4 max-h-screen">
               <Sponsors />
               <TableOfContents tableOfContents={toc} />

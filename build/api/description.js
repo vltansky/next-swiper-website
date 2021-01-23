@@ -1,8 +1,8 @@
-const unified = require("unified");
-const parse = require("remark-parse");
-const remark2rehype = require("remark-rehype");
-const rehypePrism = require("@mapbox/rehype-prism");
-const html = require("rehype-stringify");
+const unified = require('unified');
+const parse = require('remark-parse');
+const remark2rehype = require('remark-rehype');
+const rehypePrism = require('@mapbox/rehype-prism');
+const html = require('rehype-stringify');
 
 const processDescription = (text) => {
   const result = unified()
@@ -24,7 +24,7 @@ const processDescription = (text) => {
             (spaces) => `{'${spaces}'}`
           )}<`;
         })
-        .replace(/\n/g, "{`\n`}");
+        .replace(/\n/g, '{`\n`}');
       return `<code className="${lang}">${inner}</code>`;
     });
 };
@@ -32,18 +32,18 @@ const processDescription = (text) => {
 module.exports = (typesItem) => {
   const { shortText, text, tags = [] } = typesItem.comment || {};
 
-  const textContent = [shortText, text].filter((el) => !!el).join("\n\n");
+  const textContent = [shortText, text].filter((el) => !!el).join('\n\n');
 
   const tagsContent = tags
-    .filter((tag) => tag.tag === "note" || tag.tag === "example")
+    .filter((tag) => tag.tag === 'note' || tag.tag === 'example')
     .map((tag) => {
-      if (tag.tag === "note") {
+      if (tag.tag === 'note') {
         return `> ${tag.text}`;
       }
 
-      if (tag.tag === "example") return tag.text;
+      if (tag.tag === 'example') return tag.text;
     })
-    .join("\n\n");
+    .join('\n\n');
 
-  return processDescription([textContent, tagsContent].join("\n\n"));
+  return processDescription([textContent, tagsContent].join('\n\n'));
 };

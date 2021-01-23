@@ -38,7 +38,7 @@ Swiper Svelte is available only via NPM as a part of the main Swiper library:
 
 <div className="important-note">
   By default Swiper Svelte uses core version of Swiper (without any additional
-  components). If you want to use Navigation, Pagination and{" "}
+  components). If you want to use Navigation, Pagination and{' '}
   <a href="/api/#custom-build">other components</a>, you have to install them
   first.
 </div>
@@ -101,7 +101,7 @@ Here is the list of additional modules imports:
 <div className="important-note">
   Note, Swiper Svelte component will create required elements for Navigation,
   Pagination and Scrollbar if you pass these params without specifying its
-  elements (e.g. without <code>navigation.nextEl</code>,{" "}
+  elements (e.g. without <code>navigation.nextEl</code>,{' '}
   <code>pagination.el</code>, etc.)
 </div>
 
@@ -444,7 +444,7 @@ The following effects are available:
 To use effects you have to import and install them first (as all other modules) (Fade example):
 
 ```js
-import SwiperCore, { EffectFade } from "swiper";
+import SwiperCore, { EffectFade } from 'swiper';
 
 SwiperCore.use([EffectFade]);
 ```
@@ -460,11 +460,11 @@ You can find running <a href="https://swiperjs.com/demos/#fade_effect">effect de
   <SwiperSlide>Slide 3</SwiperSlide>
 </Swiper>
 <script>
-  import { Swiper, SwiperSlide } from "swiper/svelte";
-  import SwiperCore, { EffectFade } from "swiper";
+  import { Swiper, SwiperSlide } from 'swiper/svelte';
+  import SwiperCore, { EffectFade } from 'swiper';
 
-  import "swiper/swiper.scss";
-  import "swiper/components/effect-fade/effect-fade.scss";
+  import 'swiper/swiper.scss';
+  import 'swiper/components/effect-fade/effect-fade.scss';
 
   SwiperCore.use([EffectFade]);
 </script>

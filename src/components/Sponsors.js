@@ -1,4 +1,4 @@
-import sponsors from "../shared/sponsors";
+import sponsors from '../shared/sponsors';
 
 export default function Sponsors() {
   return (

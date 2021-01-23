@@ -1,6 +1,6 @@
-const fs = require("fs-extra");
-const path = require("path");
-const description = require("./description");
+const fs = require('fs-extra');
+const path = require('path');
+const description = require('./description');
 
 const buildMethods = async (
   typesName,
@@ -12,7 +12,7 @@ const buildMethods = async (
     (typesData[typesName] || [])
       .filter((item) =>
         item.comment && item.comment.shortText
-          ? !item.comment.shortText.toLowerCase().includes("internal")
+          ? !item.comment.shortText.toLowerCase().includes('internal')
           : true
       )
       .filter((item) => !ignoreOptions.includes(item.name))
@@ -31,7 +31,7 @@ const buildMethods = async (
 
   const type = (item = {}) => {
     const typeObj = item.type || {};
-    if (typeObj.type === "union") {
+    if (typeObj.type === 'union') {
       const types = [];
       typeObj.types.forEach(({ name, value }) => {
         if (value) types.push(`'${value}'`);
@@ -39,16 +39,16 @@ const buildMethods = async (
       });
       return types.join(`{' | '}`);
     }
-    if (typeObj.type === "reflection") {
+    if (typeObj.type === 'reflection') {
       if (typeObj && typeObj.declaration && typeObj.declaration.signatures) {
         const args = (typeObj.declaration.signatures[0].parameters || [])
           .map((param) => `<span className="text-red-700">${param.name}</span>`)
-          .join(", ");
-        return `function(${args || ""})`;
+          .join(', ');
+        return `function(${args || ''})`;
       }
       return `object`;
     }
-    return typeObj.name || "";
+    return typeObj.name || '';
   };
 
   const methodDescription = (item) => {
@@ -58,7 +58,7 @@ const buildMethods = async (
         const { comment } = param;
         if (comment && comment.text) params.push(param);
       });
-      if (!params.length) return "";
+      if (!params.length) return '';
       return `
         <ul>
           ${params
@@ -68,29 +68,29 @@ const buildMethods = async (
             param.name
           }</span> - <span className="text-green-700 font-mono font-semibold">${type(
                 param
-              )}</span> - ${param.comment.text || ""}</li>
+              )}</span> - ${param.comment.text || ''}</li>
           `
             )
-            .join("")}
+            .join('')}
           
         </ul>
       `;
     }
-    return "";
+    return '';
   };
 
-  let parentProp = "";
+  let parentProp = '';
   typesData.Swiper.forEach((item) => {
     if (item.type && item.type.name === typesName) parentProp = item.name;
   });
 
   const name = (item) => {
     const isMethod = !!item.signatures;
-    let args = "";
+    let args = '';
     if (isMethod) {
       args = (item.signatures[0].parameters || [])
         .map((param) => `<span className="text-red-700">${param.name}</span>`)
-        .join(", ");
+        .join(', ');
       args = `(${args})`;
     }
 
@@ -113,7 +113,7 @@ export const ${typesName} = () => {
             <th colSpan="3" className="p-4 bg-gray-100">Properties</th>
           </tr>
         `
-            : ""
+            : ''
         }
         ${props
           .map(
@@ -130,7 +130,7 @@ export const ${typesName} = () => {
           </tr>
         `
           )
-          .join("")}
+          .join('')}
           
           ${
             methods.length
@@ -139,7 +139,7 @@ export const ${typesName} = () => {
               <th colSpan="3" className="p-4 bg-gray-100">Methods</th>
             </tr>
             `
-              : ""
+              : ''
           }
           ${methods
             .map(
@@ -156,7 +156,7 @@ export const ${typesName} = () => {
             </tr>
           `
             )
-            .join("")}
+            .join('')}
           
       </tbody>
     </table>

@@ -1,23 +1,23 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect } from 'react';
 
 export const useLazyDemos = () => {
   const iframeTimeout = useRef(null);
 
   const lazyLoadDemos = () => {
-    const demoEls = document.querySelectorAll(".demo");
+    const demoEls = document.querySelectorAll('.demo');
     for (let i = 0; i < demoEls.length; i += 1) {
       const demoEl = demoEls[i];
-      if (demoEl.classList.contains("loaded")) continue;
+      if (demoEl.classList.contains('loaded')) continue;
       const demoElRect = demoEl.getBoundingClientRect();
-      const iframeEl = demoEl.querySelector("iframe");
+      const iframeEl = demoEl.querySelector('iframe');
       const offsetTop = demoElRect.top;
       if (offsetTop + demoEl.offsetHeight < 0) {
         continue;
       }
       if (offsetTop < window.innerHeight + 50) {
-        const src = iframeEl.getAttribute("data-src");
-        demoEl.classList.add("loaded");
-        iframeEl.setAttribute("src", src);
+        const src = iframeEl.getAttribute('data-src');
+        demoEl.classList.add('loaded');
+        iframeEl.setAttribute('src', src);
       }
     }
   };
@@ -30,13 +30,13 @@ export const useLazyDemos = () => {
   };
 
   const attachEvents = () => {
-    window.addEventListener("scroll", onScroll);
-    window.addEventListener("resize", onScroll);
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('resize', onScroll);
   };
 
   const detachEvents = () => {
-    window.removeEventListener("scroll", onScroll);
-    window.removeEventListener("resize", onScroll);
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onScroll);
   };
 
   useEffect(() => {

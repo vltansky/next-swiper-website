@@ -16,7 +16,7 @@ npm i swiper
 ### Import `SwiperModule` module
 
 ```js
-import { SwiperModule } from "swiper/angular";
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   imports: [SwiperModule],
@@ -29,7 +29,7 @@ export class YourAppModule {}
 Import Swipers CSS in `styles.scss`
 
 ```css
-@import "~swiper/swiper-bundle";
+@import '~swiper/swiper-bundle';
 ```
 
 Or you can import only components that you need
@@ -81,13 +81,13 @@ SCSS styles are also separate styles for core version and components:
 ## Usage
 
 ```js
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 // import Swiper core and required components
-import SwiperCore from "swiper/core";
+import SwiperCore from 'swiper/core';
 
 @Component({
-  selector: "app-swiper-example",
+  selector: 'app-swiper-example',
   template: `
     <swiper
       [slidesPerView]="3"
@@ -106,14 +106,14 @@ export class AppComponent {
     console.log(swiper);
   }
   onSlideChange() {
-    console.log("slide change");
+    console.log('slide change');
   }
 }
 ```
 
 <div className="important-note">
   By default Swiper Angular uses core version of Swiper (without any additional
-  components). If you want to use Navigation, Pagination and{" "}
+  components). If you want to use Navigation, Pagination and{' '}
   <a href="/api/#custom-build">other components</a>, you have to install them
   first. Here is the list of additional modules imports:
 </div>
@@ -139,7 +139,7 @@ export class AppComponent {
 - `Thumbs` - Thumbs module
 
 ```js
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 // import Swiper core and required components
 import SwiperCore, {
@@ -147,13 +147,13 @@ import SwiperCore, {
   Pagination,
   Scrollbar,
   A11y,
-} from "swiper/core";
+} from 'swiper/core';
 
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 @Component({
-  selector: "app-swiper-example",
+  selector: 'app-swiper-example',
   template: `
     <swiper
       [slidesPerView]="3"
@@ -178,7 +178,7 @@ export class AppComponent {
     console.log(swiper);
   }
   onSlideChange() {
-    console.log("slide change");
+    console.log('slide change');
   }
 }
 <a href="https://stackblitz.com/edit/swiper-angular-example?file=src/app/app.component.ts">
@@ -274,16 +274,16 @@ Will be rendered as:
 Virtual Slides rendering here is fully handled by Angular and not required anything except setting `[virtual]="true"`:
 
 ```js
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 // import Swiper core and required components
-import SwiperCore, { Virtual } from "swiper/core";
+import SwiperCore, { Virtual } from 'swiper/core';
 
 // install Swiper components
 SwiperCore.use([Virtual]);
 
 @Component({
-  selector: "app-swiper-virtual-example",
+  selector: 'app-swiper-virtual-example',
   template: ` <swiper [slidesPerView]="3" [spaceBetween]="50" [virtual]="true">
     <ng-container *ngFor="let slide of slides; index as i">
       <ng-template swiperSlide>Slide {{ slide }}</ng-template>
@@ -309,7 +309,7 @@ The following effects are available: - Fade - Cube - Overflow - Flip
 To use effects you have to import and install them first (as all other modules) (Fade example):
 
 ```js
-import SwiperCore, { EffectFade } from "swiper";
+import SwiperCore, { EffectFade } from 'swiper';
 
 SwiperCore.use([EffectFade]);
 ```

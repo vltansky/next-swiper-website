@@ -1,6 +1,6 @@
-const fs = require("fs-extra");
-const path = require("path");
-const description = require("./description");
+const fs = require('fs-extra');
+const path = require('path');
+const description = require('./description');
 
 const buildOptions = async (
   typesName,
@@ -13,7 +13,7 @@ const buildOptions = async (
     (typesData[typesName] || [])
       .filter((item) =>
         item.comment && item.comment.shortText
-          ? !item.comment.shortText.toLowerCase().includes("internal")
+          ? !item.comment.shortText.toLowerCase().includes('internal')
           : true
       )
       .filter((item) => !ignoreOptions.includes(item.name))
@@ -32,7 +32,7 @@ const buildOptions = async (
 
   const type = (item = {}) => {
     const typeObj = item.type || {};
-    if (typeObj.type === "union") {
+    if (typeObj.type === 'union') {
       const types = [];
       typeObj.types.forEach(({ name, value }) => {
         if (value) types.push(`'${value}'`);
@@ -40,20 +40,20 @@ const buildOptions = async (
       });
       return types.join(`{' | '}`);
     }
-    if (typeObj.type === "reflection") {
+    if (typeObj.type === 'reflection') {
       if (typeObj && typeObj.declaration && typeObj.declaration.signatures) {
         const args = (typeObj.declaration.signatures[0].parameters || [])
           .map((param) => `<span className="text-red-700">${param.name}</span>`)
-          .join(", ");
-        return `function(${args || ""})`;
+          .join(', ');
+        return `function(${args || ''})`;
       }
       return `object`;
     }
-    return typeObj.name || "";
+    return typeObj.name || '';
   };
 
   const defaultValue = (item) => {
-    return (item.default_value || "").replace(
+    return (item.default_value || '').replace(
       /[{}]/g,
       (bracket) => `{'${bracket}'}`
     );
@@ -104,13 +104,13 @@ export const ${typesName} = () => {
             <td colSpan="4" className="font-semibold">{'{'}</td>
           </tr>
         `
-            : ""
+            : ''
         }
         ${items
           .map(
             (item) => `
           <tr className="border-t ${
-            parentType ? "params-table-nested-row" : ""
+            parentType ? 'params-table-nested-row' : ''
           }">
             <td className="w-1/6 text-red-700 font-mono font-semibold">
               ${item.name}
@@ -125,7 +125,7 @@ export const ${typesName} = () => {
           </tr>
         `
           )
-          .join("")}
+          .join('')}
           ${
             parentType
               ? `
@@ -133,7 +133,7 @@ export const ${typesName} = () => {
               <td colSpan="4" className="font-semibold">{'}'}</td>
             </tr>
           `
-              : ""
+              : ''
           }
       </tbody>
     </table>
