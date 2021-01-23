@@ -32,3 +32,7 @@ yarn-error.log*
 
 public/types/**/*
 !public/types/.gitkeep
+
+src/components/api/*.js
+src/types.json
+src/demos.json

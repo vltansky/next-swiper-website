@@ -34,7 +34,7 @@ Swiper Vue.js plugin is available only via NPM as a part of the main Swiper libr
 </template>
 <script>
   // Import Swiper Vue.js components
-  import { Swiper, SwiperSlide } from "swiper/vue";
+  import { Swiper, SwiperSlide } from 'swiper/vue';
 
   // Import Swiper styles
   export default {
@@ -47,7 +47,7 @@ Swiper Vue.js plugin is available only via NPM as a part of the main Swiper libr
         console.log(swiper);
       },
       onSlideChange() {
-        console.log("slide change");
+        console.log('slide change');
       },
     },
   };
@@ -56,7 +56,7 @@ Swiper Vue.js plugin is available only via NPM as a part of the main Swiper libr
 
 <div className="important-note">
   By default Swiper Vue.js uses core version of Swiper (without any additional
-  components). If you want to use Navigation, Pagination and{" "}
+  components). If you want to use Navigation, Pagination and{' '}
   <a href="/api/#custom-build">other components</a>, you have to install them
   first.
 </div>
@@ -102,16 +102,16 @@ Here is the list of additional modules imports:
 </template>
 <script>
   // import Swiper core and required components
-  import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+  import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
   // Import Swiper Vue.js components
-  import { Swiper, SwiperSlide } from "swiper/vue";
+  import { Swiper, SwiperSlide } from 'swiper/vue';
 
   // Import Swiper styles
-  import "swiper/swiper.scss";
-  import "swiper/components/navigation/navigation.scss";
-  import "swiper/components/pagination/pagination.scss";
-  import "swiper/components/scrollbar/scrollbar.scss";
+  import 'swiper/swiper.scss';
+  import 'swiper/components/navigation/navigation.scss';
+  import 'swiper/components/pagination/pagination.scss';
+  import 'swiper/components/scrollbar/scrollbar.scss';
 
   // install Swiper components
   SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
@@ -127,7 +127,7 @@ Here is the list of additional modules imports:
         console.log(swiper);
       },
       onSlideChange() {
-        console.log("slide change");
+        console.log('slide change');
       },
     },
   };
@@ -137,7 +137,7 @@ Here is the list of additional modules imports:
 <div className="important-note">
   Note, Swiper Vue.js component will create required elements for Navigation,
   Pagination and Scrollbar if you pass these params without specifying its
-  elements (e.g. without <code>navigation.nextEl</code>,{" "}
+  elements (e.g. without <code>navigation.nextEl</code>,{' '}
   <code>pagination.el</code>, etc.)
 </div>
 
@@ -285,8 +285,8 @@ Virtual Slides rendering here is fully handled by Vue.js and not required anythi
   </swiper>
 </template>
 <script>
-  import SwiperCore, { Virtual } from "swiper";
-  import { Swiper, SwiperSlide } from "swiper/vue";
+  import SwiperCore, { Virtual } from 'swiper';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
 
   // install Virtual module
   SwiperCore.use([Virtual]);
@@ -323,8 +323,8 @@ Controller requires to pass one Swiper instance to another:
   <swiper @swiper="setControlledSwiper" ...> ... </swiper>
 </template>
 <script>
-  import SwiperCore, { Controller } from "swiper";
-  import { Swiper, SwiperSlide } from "swiper/vue";
+  import SwiperCore, { Controller } from 'swiper';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
 
   // install Swiper's Controller component
   SwiperCore.use([Controller]);
@@ -360,8 +360,8 @@ For two-way control (when both Swipers control each other) it should be like thi
   </swiper>
 </template>
 <script>
-  import SwiperCore, { Controller } from "swiper";
-  import { Swiper, SwiperSlide } from "swiper/vue";
+  import SwiperCore, { Controller } from 'swiper';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
 
   // install Swiper's Controller component
   SwiperCore.use([Controller]);
@@ -410,8 +410,8 @@ Same as with controller we need to store thumbs instance and pass it to main gal
   </swiper>
 </template>
 <script>
-  import SwiperCore, { Thumbs } from "swiper";
-  import { Swiper, SwiperSlide } from "swiper/vue";
+  import SwiperCore, { Thumbs } from 'swiper';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
 
   // install Swiper's Thumbs component
   SwiperCore.use([Thumbs]);
@@ -447,7 +447,7 @@ The following effects are available:
 To use effects you have to import and install them first (as all other modules) (Fade example):
 
 ```js
-import SwiperCore, { EffectFade } from "swiper";
+import SwiperCore, { EffectFade } from 'swiper';
 
 SwiperCore.use([EffectFade]);
 ```
@@ -466,11 +466,11 @@ You can find running <a href="https://swiperjs.com/demos/#fade_effect">effect de
   </swiper>
 </template>
 <script>
-  import SwiperCore, { EffectFade } from "swiper";
-  import { Swiper, SwiperSlide } from "swiper/vue";
+  import SwiperCore, { EffectFade } from 'swiper';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
 
-  import "swiper/swiper.scss";
-  import "swiper/components/effect-fade/effect-fade.scss";
+  import 'swiper/swiper.scss';
+  import 'swiper/components/effect-fade/effect-fade.scss';
 
   SwiperCore.use([EffectFade]);
 

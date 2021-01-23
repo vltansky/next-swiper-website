@@ -35,6 +35,9 @@ body .prose code {
   padding: 1px 4px;
   border-radius: 4px;
 }
+.prose > ul > li code {
+  word-break: break-word;
+}
 body .prose pre code {
   background: transparent;
   border-radius: 0px;
@@ -54,3 +57,4 @@ body .prose pre code {
 @import "carbon";
 @import "demos";
 @import "prism";
+@import "docs";

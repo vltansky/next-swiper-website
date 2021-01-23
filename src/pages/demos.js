@@ -1,41 +1,13 @@
-import fs from "fs";
-import path from "path";
-import React from "react";
-import sdk from "@stackblitz/sdk";
-import Heading from "@/components/Heading";
-import { WithSidebarLayout } from "@/layouts/withSidebar";
-import { useLazyDemos } from "src/shared/use-lazy-demos";
-
-export async function getStaticProps() {
-  const demosFolder = path.resolve(process.cwd(), "public/demos");
-  const demosFiles = fs
-    .readdirSync(demosFolder)
-    .filter((f) => f.includes(".html"));
-
-  const demos = demosFiles.map((fileName) => {
-    const slug = fileName.slice(4).replace(".html", "");
-    const title = slug
-      .replace(/-/g, " ")
-      .split(" ")
-      .map((word) => `${word[0].toUpperCase()}${word.slice(1)}`)
-      .join(" ");
-    return {
-      slug,
-      title,
-      fileName,
-    };
-  });
-
-  return {
-    props: {
-      demos,
-    },
-  };
-}
+import React from 'react';
+import sdk from '@stackblitz/sdk';
+import Heading from '@/components/Heading';
+import { WithSidebarLayout } from '@/layouts/withSidebar';
+import { useLazyDemos } from 'src/shared/use-lazy-demos';
+import demos from 'src/demos.json';
 
 let tableOfContents;
 
-export default function DemosPage({ demos }) {
+export default function DemosPage() {
   tableOfContents = demos.map(({ title, slug }) => {
     return {
       title,
@@ -52,20 +24,20 @@ export default function DemosPage({ demos }) {
       .then((res) => res.text())
       .then((html) => {
         html = html
-          .replace(/..\/package\//g, "https://unpkg.com/swiper/")
-          .replace(/.\/images\//g, "https://swiperjs.com/demos/images/");
+          .replace(/..\/package\//g, 'https://unpkg.com/swiper/')
+          .replace(/.\/images\//g, 'https://swiperjs.com/demos/images/');
 
         const project = {
           files: {
-            "index.html": html,
-            "index.js": "",
+            'index.html': html,
+            'index.js': '',
           },
           title: `Swiper - ${title}`,
           description: `Swiper - ${title}`,
-          template: "javascript",
-          tags: ["swiper"],
+          template: 'javascript',
+          tags: ['swiper'],
         };
-        sdk.openProject(project, { openFile: "index.html" });
+        sdk.openProject(project, { openFile: 'index.html' });
       });
   };
 
@@ -73,7 +45,7 @@ export default function DemosPage({ demos }) {
     <WithSidebarLayout tableOfContents={tableOfContents}>
       <h1>Swiper Demos</h1>
       <p>
-        You can download all these demos and hook into the code from GitHub{" "}
+        You can download all these demos and hook into the code from GitHub{' '}
         <a
           href="https://github.com/nolimits4web/Swiper/tree/master/demos/"
           target="_blank"
@@ -86,9 +58,9 @@ export default function DemosPage({ demos }) {
           <Heading level={2} id={slug} toc={true}>
             {title}
           </Heading>
-          <div className="flex items-center space-x-5 text-sm my-4">
+          <div className="flex flex-wrap text-sm my-4">
             <a
-              className="no-underline"
+              className="no-underline mr-4 mb-2"
               href={`/demos/${fileName}`}
               target="_blank"
             >
@@ -129,7 +101,7 @@ export default function DemosPage({ demos }) {
 }
 
 const meta = {
-  title: "Swiper Demos",
+  title: 'Swiper Demos',
 };
 
 DemosPage.layoutProps = {

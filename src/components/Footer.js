@@ -1,37 +1,25 @@
-import menuList from "../shared/menu-list";
-import Link from "next/link";
-import sponsors from "../shared/sponsors";
+import menuList from '../shared/menu-list';
+import Link from 'next/link';
+import FooterSponsors from './FooterSponsors';
 
-const menu = [{ name: "Swiper", link: "/" }, ...menuList].map(
-  ({ name, link }) => {
-    return (
-      <Link key={link} href={link}>
-        {name}
-      </Link>
-    );
-  }
-);
-
-const sponsorsEl = sponsors.map(({ href, title, src, width }) => {
+const menu = [
+  { name: 'Swiper', link: '/' },
+  ...menuList,
+  { name: 'Sponsors', link: '/sponsors' },
+].map(({ name, link }) => {
   return (
-    <a
-      className="flex justify-center items-center p-4 border text-center hover:bg-gray-50"
-      href={href}
-      key={src}
-      title={title}
-      target="_blank"
-    >
-      <img width={width} src={`images/${src}`} />
-    </a>
+    <Link key={link} href={link}>
+      {name}
+    </Link>
   );
 });
 
 export default function Footer() {
   return (
-    <footer className="border-t-8 border-primary text-center p-4">
-      <div className="max-w-5xl mx-auto">
+    <footer className="border-t-8 border-primary text-center py-10 px-4">
+      <div className="max-w-5xl mx-auto font-medium">
         <div>
-          Supported by:{" "}
+          Supported by:{' '}
           <a
             href="https://www.colognewebdesign.de"
             target="_blank"
@@ -40,10 +28,8 @@ export default function Footer() {
             COLOGNE WEBDESIGN
           </a>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 my-4 gap-x-3">
-          {sponsorsEl}
-        </div>
-        <div className="text-center my-4">
+        <FooterSponsors />
+        <div className="text-center my-8">
           <a href="https://www.netlify.com" target="_blank">
             <img
               className="inline"
@@ -51,9 +37,11 @@ export default function Footer() {
             />
           </a>
         </div>
-        <nav className="my-4 space-x-4">{menu}</nav>
+        <nav className="my-8 space-x-4 flex flex-wrap justify-center">
+          {menu}
+        </nav>
         <div className="text-gray-700">
-          {new Date().getFullYear()} © Swiper by{" "}
+          {new Date().getFullYear()} © Swiper by{' '}
           <a href="https://github.com/nolimits4web">Vladimir Kharlampidi</a>
         </div>
       </div>

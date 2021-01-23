@@ -1,6 +1,6 @@
-import sponsors from "../shared/sponsors";
+import sponsors from '../shared/sponsors';
 
-export default function Sponsors() {
+export default function SidebarSponsors() {
   return (
     <div className="border-b-2 border-gray-200 mb-4">
       <div className="font-semibold mb-2">Sponsors:</div>
@@ -12,7 +12,11 @@ export default function Sponsors() {
           title={title}
           target="_blank"
         >
-          <img width="200" src={`images/${src_h || src}`} />
+          <img
+            width="200"
+            className="max-h-12"
+            src={`images/${src_h || src}`}
+          />
         </a>
       ))}
     </div>

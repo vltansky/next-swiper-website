@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
 export const useScrollSpy = (initialCurrent) => {
   const [currentSection, setCurrentSection] = useState(initialCurrent);
@@ -6,7 +6,7 @@ export const useScrollSpy = (initialCurrent) => {
   const windowHeight = useRef(0);
 
   const getHeadings = () => {
-    const els = document.querySelectorAll(".prose h2[id], .prose h3[id]");
+    const els = document.querySelectorAll('.prose h2[id], .prose h3[id]');
     for (let i = 0; i < els.length; i += 1) {
       const el = els[i];
       headings.current.push({
@@ -55,12 +55,12 @@ export const useScrollSpy = (initialCurrent) => {
   };
 
   const attachEvents = () => {
-    window.addEventListener("scroll", onScroll);
-    window.addEventListener("resize", onResize);
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('resize', onResize);
   };
   const detachEvents = () => {
-    window.removeEventListener("scroll", onScroll);
-    window.removeEventListener("resize", onResize);
+    window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onResize);
   };
 
   useEffect(() => {

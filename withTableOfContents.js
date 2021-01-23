@@ -1,7 +1,7 @@
-const slugify = require("@sindresorhus/slugify");
+const slugify = require('@sindresorhus/slugify');
 const addImport = function addImport(tree, mod, name) {
   tree.children.unshift({
-    type: "import",
+    type: 'import',
     value: `import ${name} from '${mod}'`,
   });
   return `${name}`;
@@ -9,24 +9,24 @@ const addImport = function addImport(tree, mod, name) {
 
 const addExport = function addExport(tree, name, value) {
   tree.children.push({
-    type: "export",
+    type: 'export',
     value: `export const ${name} = ${JSON.stringify(value)}`,
   });
 };
 module.exports.withTableOfContents = () => {
   return (tree) => {
-    const component = addImport(tree, "@/components/Heading", "Heading");
+    const component = addImport(tree, '@/components/Heading', 'Heading');
     const contents = [];
 
     for (let i = 0; i < tree.children.length; i++) {
       let node = tree.children[i];
 
-      if (node.type === "heading" && [2, 3].includes(node.depth)) {
+      if (node.type === 'heading' && [2, 3, 4].includes(node.depth)) {
         const level = node.depth;
         const title = node.children
-          .filter((n) => n.type === "text")
+          .filter((n) => n.type === 'text')
           .map((n) => n.value)
-          .join("");
+          .join('');
         let slug = slugify(title);
 
         let allOtherSlugs = contents.flatMap((entry) => [
@@ -39,10 +39,10 @@ module.exports.withTableOfContents = () => {
           i++;
         }
 
-        node.type = "jsx";
+        node.type = 'jsx';
 
         if (
-          node.children[0].type === "jsx" &&
+          node.children[0].type === 'jsx' &&
           /^\s*<Heading[\s>]/.test(node.children[0].value)
         ) {
           node.value =
@@ -53,26 +53,28 @@ module.exports.withTableOfContents = () => {
             node.children
               .slice(1)
               .map((n) => n.value)
-              .join("");
+              .join('');
         } else {
           node.value = `<${component} level={${level}} id="${slug}" toc={true}>${node.children
             .map(({ value }) => value)
-            .join("")}</${component}>`;
+            .join('')}</${component}>`;
         }
 
-        if (level === 2) {
-          contents.push({ title, slug, children: [] });
-        } else {
-          contents[contents.length - 1].children.push({ title, slug });
+        if (level !== 4) {
+          if (level === 2) {
+            contents.push({ title, slug, children: [] });
+          } else {
+            contents[contents.length - 1].children.push({ title, slug });
+          }
         }
       } else if (
-        node.type === "jsx" &&
+        node.type === 'jsx' &&
         /^\s*<Heading[\s>]/.test(node.value) &&
         !/^\s*<Heading[^>]*\sid=/.test(node.value)
       ) {
         const title = node.value
-          .replace(/<[^>]+>/g, "")
-          .replace(/\{(["'])((?:(?=(\\?))\3.)*?)\1\}/g, "$2");
+          .replace(/<[^>]+>/g, '')
+          .replace(/\{(["'])((?:(?=(\\?))\3.)*?)\1\}/g, '$2');
         node.value = node.value.replace(
           /^\s*<Heading([\s>])/,
           `<Heading id="${slugify(title)}"$1`
@@ -80,6 +82,6 @@ module.exports.withTableOfContents = () => {
       }
     }
 
-    addExport(tree, "tableOfContents", contents);
+    addExport(tree, 'tableOfContents', contents);
   };
 };
