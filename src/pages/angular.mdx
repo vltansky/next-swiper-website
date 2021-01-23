@@ -204,22 +204,15 @@ Swiper component supports all <a href="/api/#events">Swiper events</a>, includin
 | -------------- | -------- | ------- | ---------------------------------------------------------------- |
 | `virtualIndex` | `number` |         | Actual swiper slide index. Required to be set for virtual slides |
 
-<div className="important-note font-bold">
-  Swiper Angular forces the use of <code>ng-template</code> in favor of
-  supporting full featured loop mode
-</div>
-
 ```html
 <swiper>
   <ng-template swiperSlide>
     <div>Slide</div>
   </ng-template>
 
-  <ng-container *ngFor="slide of slides">
-    <ng-template swiperSlide>
-      <div>Slide</div>
-    </ng-template>
-  </ng-container>
+  <ng-template swiperSlide *ngFor="slide of slides">
+    <div>Slide</div>
+  </ng-template>
 </swiper>
 ```
 
