@@ -1,6 +1,6 @@
 import PageHeader from '@/components/PageHeader';
 import TableOfContents from '@/components/TableOfContents';
-import Sponsors from '@/components/Sponsors';
+import SidebarSponsors from '@/components/SidebarSponsors';
 
 export function WithSidebarLayout({
   children,
@@ -27,7 +27,7 @@ export function WithSidebarLayout({
         {toc.length > 0 && (
           <div className="hidden text-sm lg:block flex-none w-64 bg-gray-100">
             <div className="overflow-y-auto overscroll-contain sticky top-0 p-4 max-h-screen">
-              <Sponsors />
+              <SidebarSponsors />
               <TableOfContents tableOfContents={toc} />
             </div>
           </div>

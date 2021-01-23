@@ -1,28 +1,16 @@
 import menuList from '../shared/menu-list';
 import Link from 'next/link';
-import sponsors from '../shared/sponsors';
+import FooterSponsors from './FooterSponsors';
 
-const menu = [{ name: 'Swiper', link: '/' }, ...menuList].map(
-  ({ name, link }) => {
-    return (
-      <Link key={link} href={link}>
-        {name}
-      </Link>
-    );
-  }
-);
-
-const sponsorsEl = sponsors.map(({ href, title, src, width }) => {
+const menu = [
+  { name: 'Swiper', link: '/' },
+  ...menuList,
+  { name: 'Sponsors', link: '/sponsors' },
+].map(({ name, link }) => {
   return (
-    <a
-      className="flex justify-center items-center p-4 border text-center hover:bg-gray-50"
-      href={href}
-      key={src}
-      title={title}
-      target="_blank"
-    >
-      <img width={width} src={`images/${src}`} />
-    </a>
+    <Link key={link} href={link}>
+      {name}
+    </Link>
   );
 });
 
@@ -40,9 +28,7 @@ export default function Footer() {
             COLOGNE WEBDESIGN
           </a>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 my-8 gap-x-3">
-          {sponsorsEl}
-        </div>
+        <FooterSponsors />
         <div className="text-center my-8">
           <a href="https://www.netlify.com" target="_blank">
             <img

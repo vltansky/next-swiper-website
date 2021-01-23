@@ -4,6 +4,7 @@ import Link from 'next/link';
 import menuList from 'src/shared/menu-list';
 import Carbon from '@/components/Carbon';
 import HomeSlider from '@/components/HomeSlider';
+import HomeSponsors from '@/components/HomeSponsors';
 
 const feats = [
   {
@@ -184,15 +185,39 @@ export default function Home() {
             Swiper is completely free and open-source (MIT Licensed)
           </div>
 
-          <nav className="font-bold space-x-2 text-lg font-normal">
+          <nav className="space-x-2 text-lg">
             {menuList.map(({ name, link }) => (
               <Link key={link} href={link}>
-                <a className="bg-primary rounded-3xl text-white shadow-lg hover:no-underline hover:bg-opacity-95 duration-200 inline-block w-40 sm:w-48 px-4 py-2 my-2">
+                <a className="bg-primary font-bold  rounded-3xl text-white shadow-lg hover:no-underline hover:bg-opacity-95 duration-200 inline-block w-40 sm:w-48 px-4 py-2 my-2">
                   {name}
                 </a>
               </Link>
             ))}
           </nav>
+        </div>
+
+        <div className="mt-24 text-center mb-20">
+          <HomeHeading>Sponsors</HomeHeading>
+          <div className="my-4">
+            Support Swiper on{' '}
+            <a href="http://opencollective.com/swiper" target="_blank">
+              Open Collective
+            </a>{' '}
+            and help us to make it even better!
+            <br />
+            Your support means a lot for us!
+          </div>
+          <div className="my-4">
+            <a
+              href="http://opencollective.com/swiper"
+              target="_blank"
+              className="bg-primary font-bold rounded-full text-white shadow-lg hover:no-underline hover:bg-opacity-95 duration-200 inline-block w-96 px-4 py-6 my-2 max-w-full text-xl"
+            >
+              Become a sponsor
+            </a>
+          </div>
+
+          {/* <HomeSponsors /> */}
         </div>
       </div>
     </>
