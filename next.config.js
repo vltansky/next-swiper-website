@@ -21,6 +21,7 @@ const nextConfig = {
     swiperReleaseVersion: pkg.releaseVersion,
     swiperReleaseDate: pkg.releaseDate,
   },
+  target: 'serverless',
   webpack(config, options) {
     config.module.rules.push({
       test: /\.svg$/,
